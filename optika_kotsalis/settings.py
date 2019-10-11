@@ -17,7 +17,7 @@ DEBUG = True
 PRODUCTION = True
 
 if PRODUCTION:
-    ALLOWED_HOSTS = ['optikakotsalis.herokuapp.com', '127.0.0.1']
+    ALLOWED_HOSTS = ['optikakotsalis.herokuapp.com', '127.0.0.1', 'www.optikakotsalis.gr']
 else:
     ALLOWED_HOSTS = ['*']
 
