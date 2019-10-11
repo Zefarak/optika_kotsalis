@@ -124,7 +124,7 @@ class SearchView(ListViewMixin, ListView):
         return context
 
 
-class BrandListView(SearchMixin, ListView):
+class BrandListView(ListView):
     template_name = 'frontend/brand_view.html'
     model = Brand
     queryset = Brand.objects.filter(active=True)
@@ -214,3 +214,6 @@ def demo_only_view_restart_session(request):
     return HttpResponseRedirect('/')
 
 
+def error_404(request, exception):
+    data = {}
+    return render(request, 'frontend/extra/404.html', data)

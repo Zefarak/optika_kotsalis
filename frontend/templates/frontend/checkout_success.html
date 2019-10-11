@@ -12,6 +12,7 @@
                     <h2>Σας ευχαριστουμε!</h2>
                     <p>Η παραγγελία σας ολοκληρώθηκε επιτυχώς. Θα σας αποστείλουμε τα προϊόντα το συντομότερο δυνατόν.</p>
                     <p>Transaction ID: {{ order.number }}</p>
+
                 </div>
             </div>
         </div>
@@ -96,6 +97,20 @@
                             <h2>{{ order.get_status_display }}</h2></div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div style="margin-top: 5%" class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-12">
+                {% if order.payment_method.payment_type == 'b' %}
+                    <h4>Παρακαλούμε μόλις καταθέσετε τα χρήματα να μας ενημερώσετε τηλεφωνικά στο 2732022566 για άμεση αποστολή των προϊόντων.</h4>
+                    <br>
+                    <p>Εθνική Τράπεζα --> &nbsp;&nbsp;&nbsp;&nbsp; GR 0501104180000041893101182</p>
+                    <p>Τράπεζα Πειραιώς --> GR 5401405650565002101028488</p>
+                    <p>Alpha Bank --> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GR 3001713410006341128057491</p>
+                    <p>Δικαιούχως -->  Κότσαλης Δημήτρης</p>
+
+                {%  endif %}
             </div>
         </div>
     </div>
