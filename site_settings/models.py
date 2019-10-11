@@ -176,7 +176,7 @@ class BannerManager(models.Manager):
 class Banner(models.Model):
     BANNER_TYPE = (('a', 'Μεγάλο Banner --> (1970*718)'),
                    ('b', 'Μεσαίο Banner --> No Use. For future'),
-                   ('c', 'Μικρό Banner -->(1000*550)')
+                   ('c', 'Μικρό Banner -->(600*250)')
                    )
     active = models.BooleanField(default=False, verbose_name='Κατάσταση')
     category = models.CharField(max_length=1, choices=BANNER_TYPE, default='a')

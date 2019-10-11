@@ -151,8 +151,8 @@ class BrandDetailView(ListView):
     def get_context_data(self, **kwargs):
         context = super(BrandDetailView, self).get_context_data(**kwargs)
         seo_title = f'{self.brand.title}'
-        page_title, description = f'{self.category.name}', f'Καλώς ήρθατε στο κατάστημά μας, optika kotsalis. Όλα τα προϊόντα του brand {self.brand.title} είναι εδώ.'
-        context.update({'seo_title': seo_title})
+        page_title, description = f'{self.brand}', f'Καλώς ήρθατε στο κατάστημά μας, optika kotsalis. Όλα τα προϊόντα του brand {self.brand.title} είναι εδώ.'
+        context.update(locals())
         return context
 
 
