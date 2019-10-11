@@ -1,0 +1,91 @@
+{% extends 'frontend/user_views/dashboard.html' %} {% load static %}
+
+{% block content %}
+
+    <!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>Check-out</h2></div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'homepage' %}">Αρχικη Σελιδα</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Check-out</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+<!-- section start -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="checkout-page">
+            <div class="checkout-form">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-xs-12">
+                            <div class="checkout-title">
+                                <h3>Πληροοφορίες Πελάτη</h3>
+                                <form class="form" method="post">
+                                    {% csrf_token %}
+                                    {{ form }}
+                                    <button type="submit" class="btn btn-success">Παραγγελια</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-xs-12">
+                            <div class="checkout-details">
+                                <div class="order-box">
+                                    <div class="title-box">
+                                        <div>Προϊόν <span>Συνολική Αξία</span></div>
+                                    </div>
+                                    <ul class="qty">
+                                        {% for cart_item in cart.order_items.all %}
+                                            <li>{{ cart_item.product.title }} × {{ cart_item.qty }} <span>{{ cart_item.tag_total_value }}</span></li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul class="sub-total">
+                                        <li>Αξία Προϊόντων <span class="count">{{ cart.tag_final_value }}</span></li>
+                                        <li>Κόστος Μεταφορικών <span class="count">{{ cart.tag_final_value }}</span></li>
+                                        <li>Κόστος Αντικαταβολής <span class="count">{{ cart.tag_final_value }}</span></li>
+                                        <li>Έκπτωση <span class="count">{{ cart.tag_final_value }}</span></li>
+                                        <li>Κούπονια
+                                            <div class="shipping">
+                                                {% for voucher in cart.vouchers.all %}
+                                                    <div class="shopping-option">
+                                                        <input type="checkbox" name="free-shipping" id="free-shipping">
+                                                        <label for="free-shipping">{{ voucher }}</label>
+                                                    </div>
+                                                    {% empty %}
+                                                    <div class="shopping-option">
+                                                        <label for="local-pickup">Δε έχετε προσθέσει κουπόνια</label>
+                                                    </div>
+                                                {% endfor %}
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="total">
+                                        <li>Συνολική Αξία <span class="count">{{ cart.tag_final_value }}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section end -->
+
+
+{% endblock %}

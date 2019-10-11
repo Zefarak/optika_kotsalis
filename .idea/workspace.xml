@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ajax_views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/ajax_views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-206">
+              <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="51" column="71" selection-start-line="51" selection-start-column="71" selection-end-line="51" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1360">
+              <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product_detail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>update</find>
+      <find>φδφδ</find>
+      <find>παραγγελια-λεπτομέρειες</find>
+      <find>print</find>
+      <find>pdf</find>
+      <find>λεπτομέρειες</find>
+      <find>20</find>
+      <find>23.Theme-setting</find>
+      <find>Theme-setting</find>
+      <find>class=&quot;dark-light&quot;</find>
+      <find>dark-light</find>
+      <find>ins</find>
+      <find>search</find>
+      <find>30%</find>
+      <find>visa</find>
+      <find>payment</find>
+      <find>payment_cart</find>
+      <find>user</find>
+      <find>logout</find>
+      <find>add-multiply-images</find>
+      <find>tap-top</find>
+      <find>wish</find>
+      <find>modal</find>
+      <find>wishlist</find>
+      <find>modal_area</find>
+      <find>product/related/</find>
+      <find>χαρα</find>
+      <find>search_name</find>
+      <find>εξέλιξη-παραγγελίας/</find>
+      <find>login</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/point_of_sale/ajax_views.py" />
+        <option value="$PROJECT_DIR$/point_of_sale/models.py" />
+        <option value="$PROJECT_DIR$/frontend/ajax_views.py" />
+        <option value="$PROJECT_DIR$/contact/views.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/parts/add_product_modal.html" />
+        <option value="$PROJECT_DIR$/contact/urls.py" />
+        <option value="$PROJECT_DIR$/site_settings/abstract_models.py" />
+        <option value="$PROJECT_DIR$/site_settings/templates/filters/brand_filter.html" />
+        <option value="$PROJECT_DIR$/dashboard/templates/index.html" />
+        <option value="$PROJECT_DIR$/site_settings/templates/filters/featured_filter.html" />
+        <option value="$PROJECT_DIR$/dashboard/views.py" />
+        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/product_manager_view.html" />
+        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/ajax_calls/result_container.html" />
+        <option value="$PROJECT_DIR$/frontend/cart_checkout_views.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/ajax_views/cart_items_container.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/product_view.html" />
+        <option value="$PROJECT_DIR$/catalogue/models.py" />
+        <option value="$PROJECT_DIR$/frontend/views.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/list_view.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/parts/product_card.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/brand_view.html" />
+        <option value="$PROJECT_DIR$/frontend/sitemaps.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/frontend/urls.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/user_views/login_or_register.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/user_views/register.html" />
+        <option value="$PROJECT_DIR$/frontend/user_views.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/user_views/order_list.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/user_views/personal_data.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/user_views/dashboard.html" />
+        <option value="$PROJECT_DIR$/newsletter/views.py" />
+        <option value="$PROJECT_DIR$/newsletter/urls.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/include/footer.html" />
+        <option value="$PROJECT_DIR$/frontend/footer_views.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/footer_views/shipping_policy_view.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/footer_views/payment_policy_view.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/footer_views/return_policy_view.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/footer_views/personal_data.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/footer_views/contant_view.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/footer_views/rules_view.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/footer_views/order_status_form.html" />
+        <option value="$PROJECT_DIR$/optika_kotsalis/urls.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/checkout.html" />
+        <option value="$PROJECT_DIR$/dashboard/tables.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/include/third-party-code.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/include/head.html" />
+        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/index.html" />
+        <option value="$PROJECT_DIR$/dashboard/ajax_views.py" />
+        <option value="$PROJECT_DIR$/dashboard/urls.py" />
+        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/dashboard/static/dashboard/jQuery-File-Upload/package.json" />
+      <path value="$PROJECT_DIR$/static/dashboard/jQuery-File-Upload/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="250" />
+    <option name="y" value="167" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\dashboard\static\dashboard" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\frontend\static\frontend\assets" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\frontend" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\frontend\static\frontend" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Zefarak\Desktop\projects\optika_kotsalis\frontend\static\frontend\demo_images" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\optika_kotsalis\frontend\static\frontend" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\frontend\static\frontend\demo_images" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\dashboard\static\dashboard" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.optika_kotsalis">
+    <configuration name="tools" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="simply_you" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/voucher" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/voucher/tools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="optika_kotsalis" type="Python.DjangoServer" factoryName="Django server">
+      <module name="optika_kotsalis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <configuration name="simply_you" type="Python.DjangoServer" factoryName="Django server">
+      <module name="simply_you" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.simply_you" />
+      <item itemvalue="Django server.optika_kotsalis" />
+      <item itemvalue="Python.tools" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tools" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="" />
+      <created>1562843660434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562843660434</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.2984375" side_tool="true" visible="true" weight="0.30074388" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.7015625" visible="true" weight="0.30074388" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18333334" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="5" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="3" side_tool="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49895832" weight="0.32943678" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="16" weight="0.32943678" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/frontend/templates/frontend/list_view.html</url>
+          <line>249</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/point_of_sale/templates/point_of_sale/eshop_views/list-view.html</url>
+          <line>21</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/point_of_sale/templates/point_of_sale/eshop_views/product_body.html</url>
+          <line>12</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/frontend/templates/frontend/user_views/dashboard.html</url>
+          <line>14</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/frontend/templates/frontend/parts/product_card.html</url>
+          <line>21</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/point_of_sale/models.py</url>
+          <line>349</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/point_of_sale/views.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/point_of_sale/views_actions.py</url>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/site_settings/models.py</url>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/frontend/views.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/point_of_sale/models.py</url>
+          <line>328</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/frontend/cart_checkout_views.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/voucher/models.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/site_settings/tools.py</url>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/frontend/tools.py</url>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dashboard/models.py</url>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/frontend/user_views.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="21" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/ajax_calls/result_container.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="82" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/ajax_views/cart_items_container.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/cart_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/product_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="272" column="54" selection-start-line="272" selection-start-column="28" selection-end-line="272" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/product_details.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="168" column="12" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="70" column="33" lean-forward="true" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/parts/product_card.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/brand_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/sitemaps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/user_views/order_detail.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/list_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" selection-start-line="19" selection-end-line="38" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/company_view.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../multicart/theme/front-end/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="630" selection-start-line="578" selection-end-line="630" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../multicart/theme/front-end/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/user_views/login_or_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/user_views/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="46" column="134" selection-start-line="46" selection-start-column="134" selection-end-line="46" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/user_views/order_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="97" selection-start-line="12" selection-start-column="97" selection-end-line="12" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1071" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/user_views/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="90" column="58" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/user_views/personal_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/user_views/wishlist_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/user_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="235" column="55" selection-start-line="235" selection-start-column="55" selection-end-line="235" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="59" column="68" selection-start-line="59" selection-start-column="68" selection-end-line="59" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/shipping_policy_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/payment_policy_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/return_policy_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/personal_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/contant_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/rules_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="32" selection-start-line="32" selection-end-line="56" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/footer_views/order_status_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="31" column="81" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/footer_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="57" lean-forward="true" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optika_kotsalis/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/forms.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/cart_checkout_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/tables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="121" selection-start-line="26" selection-start-column="121" selection-end-line="26" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/third-party-code.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="40" column="132" lean-forward="true" selection-start-line="40" selection-start-column="132" selection-end-line="40" selection-end-column="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/point_of_sale/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="332" column="139" selection-start-line="332" selection-start-column="139" selection-end-line="332" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/ajax_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="51" column="71" selection-start-line="51" selection-start-column="71" selection-end-line="51" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1360">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
