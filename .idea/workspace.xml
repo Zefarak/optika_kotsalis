@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="" />
+    <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/angularjs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/basic-plus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/bower-version-update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/cors/postmessage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/cors/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/css/demo-ie8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/css/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/css/jquery.fileupload-noscript.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/css/jquery.fileupload-ui-noscript.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/css/jquery.fileupload-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/css/jquery.fileupload.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/img/progressbar.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/jquery-ui.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/cors/jquery.postmessage-transport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/cors/jquery.xdr-transport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-angular.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-audio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-process.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload-video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.fileupload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/jquery.iframe-transport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/vendor/jquery.ui.widget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-go/app.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-go/app/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-go/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-go/static/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-python/app.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-python/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-python/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/gae-python/static/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/php/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/php/UploadHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/php/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/php/files/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/php/files/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/server/php/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/test/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/photo_manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/photo_manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,44 +74,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ajax_views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/ajax_views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-206">
-              <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="51" column="71" selection-start-line="51" selection-start-column="71" selection-end-line="51" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1360">
-              <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+            <state relative-caret-position="194">
+              <caret line="236" column="42" selection-start-line="236" selection-end-line="237" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_detail.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html">
+      <file leaf-file-name="photo_manager.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/photo_manager.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="-87">
+              <caret line="65" column="38" lean-forward="true" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -69,7 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
       <find>φδφδ</find>
       <find>παραγγελια-λεπτομέρειες</find>
       <find>print</find>
@@ -99,6 +134,7 @@
       <find>search_name</find>
       <find>εξέλιξη-παραγγελίας/</find>
       <find>login</find>
+      <find>photo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/point_of_sale/ajax_views.py" />
         <option value="$PROJECT_DIR$/point_of_sale/models.py" />
         <option value="$PROJECT_DIR$/frontend/ajax_views.py" />
         <option value="$PROJECT_DIR$/contact/views.py" />
@@ -115,9 +150,7 @@
         <option value="$PROJECT_DIR$/contact/urls.py" />
         <option value="$PROJECT_DIR$/site_settings/abstract_models.py" />
         <option value="$PROJECT_DIR$/site_settings/templates/filters/brand_filter.html" />
-        <option value="$PROJECT_DIR$/dashboard/templates/index.html" />
         <option value="$PROJECT_DIR$/site_settings/templates/filters/featured_filter.html" />
-        <option value="$PROJECT_DIR$/dashboard/views.py" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/product_manager_view.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/ajax_calls/result_container.html" />
         <option value="$PROJECT_DIR$/frontend/cart_checkout_views.py" />
@@ -153,11 +186,14 @@
         <option value="$PROJECT_DIR$/dashboard/tables.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/include/third-party-code.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/include/head.html" />
-        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/index.html" />
         <option value="$PROJECT_DIR$/dashboard/ajax_views.py" />
         <option value="$PROJECT_DIR$/dashboard/urls.py" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html" />
+        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
+        <option value="$PROJECT_DIR$/dashboard/templates/index.html" />
+        <option value="$PROJECT_DIR$/dashboard/views.py" />
+        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/photo_manager.html" />
       </list>
     </option>
   </component>
@@ -170,6 +206,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/dashboard/static/dashboard/jQuery-File-Upload/package.json" />
+      <path value="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/package.json" />
       <path value="$PROJECT_DIR$/static/dashboard/jQuery-File-Upload/package.json" />
     </packageJsonPaths>
   </component>
@@ -191,6 +228,30 @@
             <path>
               <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
               <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,8 +393,8 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.7015625" visible="true" weight="0.30074388" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18333334" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.7015625" visible="true" weight="0.30074388" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18333334" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="5" />
@@ -450,27 +511,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/ajax_calls/result_container.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="82" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/ajax_views/cart_items_container.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/cart_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/product_view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -748,16 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -775,13 +805,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/ajax_views.py">
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-206">
-          <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1326">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
     </entry>
@@ -795,17 +822,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+    <entry file="file://$PROJECT_DIR$/dashboard/ajax_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1360">
-          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        <state relative-caret-position="-206">
+          <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html">
+    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="-187">
+          <caret line="19" column="64" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="55" column="60" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/js/cors/jquery.xdr-transport.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="236" column="42" selection-start-line="236" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/photo_manager.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="65" column="38" lean-forward="true" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="56" />
         </state>
       </provider>
     </entry>

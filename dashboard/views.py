@@ -198,7 +198,6 @@ def copy_product_view(request, pk):
 
 @staff_member_required
 def delete_product(request, pk):
-    print('here!')
     instance = get_object_or_404(Product, id=pk)
     try:
         instance.delete()
