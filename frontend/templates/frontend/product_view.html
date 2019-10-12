@@ -24,7 +24,7 @@
             <div class="col-sm-6">
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url 'homepage' %}">Αρχική Σελίδα</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'homepage' %}">Αρχικη Σελιδα</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
                     </ol>
                 </nav>
@@ -150,43 +150,45 @@
                                 <br /> <br />
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-                                 Επικοινωνηστε για να συζητησουμε <br>μια καλυτερη τιμη
+                                 Μαθετε την νεα εκπληκτικη τιμη
                                 </button>
                             </div>
                         </form>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                             <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Ερωτηση</h5>
-                                
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <h5>Τρόποι επικοινωνίας</h5>
-                                <ul class="list-group">
-                                    <li class="list-group-item" >Τηλεφωνήστε μας στο 2732 022566</li>
-                                    <li class="list-group-item" >Μεσω Facebook Messenger <a class="btn btn-primary" href="https://m.me/optikakotsalis" target="_blank"><i class="fa fa-facebook"></i> </a>
-                                    </li>
-                                    <li class="list-group-item" > H χρησιμοποιήστε την φόρμα επικοινωνίας
-                                        <br> <br>
-                                        <form method="post" class="form" action="{% url 'contact:validate_frontend_form' %}">
-                                            {% csrf_token %}
-                                            {{ contact_form }}
-                                            <br>
-                                            <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> </button>
-                                        </form>
-                                    </li>
-                                </ul>
 
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Κλεισιμο</button>
+                            <div class="modal-body modal1">
+                                <div class="row">
+                                     <div class="col-lg-12">
+                                         <div class="modal-bg">
+                                             <div class="row">
+                                                 <div class="col-lg-12 col-md-12">
+                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                     <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                                 <h5>Τρόποι επικοινωνίας</h5>
+                                                 <ul class="list-group">
+                                                     <li class="list-group-item" >Τηλεφωνήστε μας στο 2732 022566</li>
+                                                     <li class="list-group-item" >Μεσω Facebook Messenger <a class="btn btn-primary" href="https://m.me/optikakotsalis" target="_blank"><i class="fa fa-facebook"></i> </a>
+                                                     </li>
+                                                     <li class="list-group-item" > H χρησιμοποιήστε την φόρμα επικοινωνίας
+                                                         <br> <br>
+                                                         <form method="post" class="form" action="{% url 'contact:validate_frontend_form' %}">
+                                                             {% csrf_token %}
+                                                             {{ contact_form }}
+                                                             <br>
+                                                             <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> </button>
+                                                         </form>
+                                                     </li>
+                                                 </ul>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                </div>
                             </div>
                             </div>
                         </div>

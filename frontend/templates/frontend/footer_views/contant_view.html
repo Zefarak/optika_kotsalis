@@ -1,4 +1,4 @@
-{% extends 'frontend/index.html' %}
+{% extends 'frontend/index.html' %} {% load static %}
 
  {% block seo_data %}
         <title>Οπτικα - Κοτσαλης | Τρόποι Επικοινώνιας</title>
@@ -31,21 +31,21 @@
 
 
 <!--section start-->
-<section class="contact-page section-b-space">
+<section  class="contact-page section-b-space">
     <div class="container">
         <div class="row section-b-space">
-            <div class="col-lg-7 map">
-                <div class="mapouter"><div class="gmap_canvas"><iframe width="700" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=optika%20kotsalis&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:700px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:700px;}</style></div>
+            <div style="background-color: white" class="col-lg-7 map">
+                <img src="{% static 'frontend/my_assets/our store.jpg' %}" />
             </div>
-            <div class="col-lg-5">
+            <div style="background-color: white" class="col-lg-5">
                 <div class="contact-right">
                     <ul>
                         <li>
                             <div class="contact-icon"><img src="/static/frontend/assets/images/icon/phone.png" alt="Generic placeholder image">
-                                <h6>Τηλέφωνα</h6></div>
+                                <h6>Τηλεφωνα</h6></div>
                             <div class="media-body">
                                 <p>2732 022566</p>
-
+                                <p>6974415199</p>
                             </div>
                         </li>
                         <li>
@@ -59,9 +59,9 @@
                         <li>
                             <div class="contact-icon">
                                 <img src="/static/frontend/assets/images/icon/email.png" alt="Generic placeholder image">
-                                <h6>Address</h6></div>
+                                <h6>Email</h6></div>
                             <div class="media-body">
-                                <p>info.opticadiko@gmail.com</p>
+                                <p>kots_d@hotmail.com</p>
 
                             </div>
                         </li>
@@ -72,6 +72,8 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
+                <h4>Για οποιαδηποτε απορία παρακαλώ ρωτήστε μας ότι θέλετε</h4>
+                <br />
                 <form class="theme-form" method="post">
                     {% csrf_token %}
                     {{ form }}

@@ -69,7 +69,7 @@ class ListViewMixin(MultipleObjectMixin):
 
         qs_attributes = Attribute.objects.filter(class_related__product_related__in=self.object_list)
         attributes = qs_attributes.values_list('title', 'title__name').distinct().order_by('class_related')
-        low, max = 0, self.object_list.order_by('-final_price')[0].final_price if self.object_list else 200
+        low, max = 0, self.initial_queryset.order_by('-final_price')[0].final_price if self.initial_queryset else 200
         price_name = self.request.GET.get('price_name', None)
         low_selected, max_selected = low, max
         if price_name:
