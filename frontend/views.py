@@ -156,7 +156,7 @@ class BrandDetailView(ListView):
         return context
 
 
-class ProductView(SearchMixin, DetailView, FormView):
+class ProductView(DetailView, FormView):
     template_name = 'frontend/product_view.html'
     model = Product
     form_class = ProductCartForm

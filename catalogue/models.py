@@ -252,7 +252,10 @@ class Product(DefaultBasicModel):
 
         queryset = queryset.filter(is_offer=True) if offer_name == '1' else queryset
         queryset = queryset.filter(color__title__in=color_name) if color_name else queryset
-        queryset = queryset.filter(final_price__range=price_name) if price_name else queryset
+        try:
+            queryset = queryset.filter(final_price__range=price_name) if price_name else queryset
+        except:
+            queryset = queryset
         queryset = queryset.filter(category_site__slug__in=cate_name) if cate_name else queryset
         queryset = queryset.filter(category_site__id__in=category_name) if category_name else queryset
         queryset = queryset.filter(category_site__slug=cat) if cat else queryset

@@ -4,7 +4,9 @@ from django.shortcuts import reverse
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from django.core.mail import send_mail
+from django.conf import settings
 
+SITE_EMAIL = settings.SITE_EMAIL
 
 class Contact(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
@@ -37,4 +39,4 @@ class Contact(models.Model):
 @receiver(post_save, sender=Contact)
 def send_info_to_site_user(sender, instance, created, **kwargs):
     if created:
-        send_mail('Νέο Μηνυμα', 'Go to site', f'{instance.email}', ['test_email@gmail.com'])
+        send_mail('Νέο Μηνυμα από πελάτη', f'{instance.email}', f'{instance.email}', [SITE_EMAIL])

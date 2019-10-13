@@ -146,11 +146,18 @@ class CheckoutView(FormView):
         self.new_eshop_order = Order.create_eshop_order(self.request, cart)
         OrderProfile.create_order_profile(self.request, self.new_eshop_order, cart)
         email = form.cleaned_data.get('email')
-        send_mail('Καταχώρηση Παραγγελίας no celery',
-                  f'Η παραγγελία με κωδικο {self.new_eshop_order.number} καταχωρήθηκε',
+        send_mail('Καταχώρηση Παραγγελίας',
+                  f'Σας ευχαριστούμε που μας προτιμήσατε! Η παραγγελία σας με κωδικο'
+                  f' {self.new_eshop_order.number} καταχωρήθηκε',
                   BUSSNESS_EMAIL,
                   [email, ],
 
+                  )
+        send_mail('Έχετε νέα Παραγγελία',
+                  f'Ημερομηνια.. {self.new_eshop_order.date_expired} |'
+                  f' {self.new_eshop_order.guest_email} | Ποσο {self.new_eshop_order.tag_final_value}',
+                  BUSSNESS_EMAIL,
+                  [BUSSNESS_EMAIL, ]
                   )
 
         return super(CheckoutView, self).form_valid(form)

@@ -4,7 +4,7 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.utils.crypto import get_random_string
 from django.db.models import Sum, Q
-
+from django.core.mail import send_mail
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 from django.conf import settings
@@ -34,7 +34,7 @@ RETAIL_TRANSCATIONS, PRODUCT_ATTRIBUTE_TRANSCATIONS, WAREHOUSE_TRANSCATIONS = [s
 MANUAL_RETAIL_TRANSCATIONS = settings.MANUAL_RETAIL_TRANSCATIONS
 
 POSITIVE_ORDER_TYPES, NEGATIVE_ORDERS_TYPES = ['r', 'e', 'wr'], ['b', 'c', 'wa']
-
+SITE_EMAIL = settings.SITE_EMAIL
 User = get_user_model()
 
 
@@ -332,6 +332,14 @@ def create_unique_number(sender, instance, **kwargs):
         instance.save()
     if instance.profile:
         instance.profile.save()
+
+
+@receiver(post_save, sender=Order)
+def inform_onwer(sender, instance, created, **kwargs):
+    print('order signal')
+    if created and instance.order_type == 'e':
+        print('created')
+
 
 
 class OrderItem(DefaultOrderItemModel):
