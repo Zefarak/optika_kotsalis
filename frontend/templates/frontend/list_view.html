@@ -148,6 +148,27 @@
                                                                 </div>
                                                                 <br>
                                                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> </button>
+                                                                <br>
+                                                                {% for characteristic in product_characteristics %}
+                                                                    <div class="collection-collapse-block">
+                                                                        <h3 class="collapse-block-title">{{ characteristic }}</h3>
+                                                                        <div class="collection-collapse-block-content">
+                                                                            <div class="collection-brand-filter">
+                                                                                {% for char in characteristic.title.my_values.all %}
+                                                                                    <div class="custom-control custom-checkbox collection-filter-checkbox">
+                                                                                        <input name="char_name" value="{{ char.id }}"  type="checkbox" class="custom-control-input" id="char_{{ char.id}}"
+                                                                                        {% if char.id|stringformat:"s" in request.GET|get_item:'char_name' %} checked {% endif %}
+                                                                                        >
+                                                                                        <label class="custom-control-label" for="char_{{ char.id }}">{{ char }}</label>
+                                                                                    </div>
+                                                                                    {% empty %}
+                                                                                    <p>Δε υπάρχουν διαθεσιμες {{ characteristic }} αξίες</p>
+                                                                                {% endfor %}
+                                                                               <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endfor %}
                                                             </div>
                                                             <!-- silde-bar colleps block end here -->
                                                         </div>

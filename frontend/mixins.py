@@ -41,13 +41,16 @@ class ListViewMixin(MultipleObjectMixin):
         return self.paginate_by
 
     def get_queryset(self):
+
         qs = self.model.my_query.active_for_site()
         self.initial_queryset = qs
         qs = self.model.filters_data(self.request, qs)
-        print(self.request)
         if self.request.GET.getlist('attr_name', None):
-
             qs = Attribute.product_filter_data(self.request, qs)
+        print('does works?')
+        print('my get',self.request.GET.getlist('char_name'))
+        if self.request.GET.getlist('char_name', None):
+            qs = ProductCharacteristics.filters_data(self.request, qs)
         return qs
 
     def get_context_data(self, **kwargs):

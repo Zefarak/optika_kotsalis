@@ -61,12 +61,14 @@ class ProductCharacteristics(models.Model):
     @staticmethod
     def filters_data(request, qs):
         char_name = request.GET.getlist('char_name', None)
-        qs = CharacteristicsValue.objects.filter(id__in=char_name).distinct()
-        prod_char = ProductCharacteristics.objects.filter(value__id__in=char_name) \
-            if char_name else ProductCharacteristics.objects.none()
-        print(prod_char)
-        products_ids = qs.values_list('class_related__product_related__id')
-        return Product.objects.filter(id__in=products_ids)
+        try:
+            chars_selected = CharacteristicsValue.objects.filter(id__in=char_name).distinct()
+            prod_char = ProductCharacteristics.objects.filter(value__in=chars_selected)
+            products_ids = prod_char.values_list('product_related__id')
+            qs = qs.filter(id__in=products_ids)
+        except:
+            qs = qs
+        return qs
 
 
 class AttributeClass(models.Model):
@@ -81,7 +83,6 @@ class AttributeClass(models.Model):
 
     def get_edit_url(self):
         return reverse('dashboard:attribute_class_edit_view', kwargs={'pk': self.id})
-
 
 
 class AttributeTitle(MPTTModel):

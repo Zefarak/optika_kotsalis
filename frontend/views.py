@@ -8,7 +8,7 @@ from catalogue.product_attritubes import Attribute, Characteristics, ProductChar
 from catalogue.models import Product
 
 from site_settings.models import Banner
-from .mixins import SearchMixin, ListViewMixin
+from .mixins import ListViewMixin
 from .tools import category_and_brands_filter_data
 from cart.forms import ProductCartForm
 from cart.tools import check_or_create_cart
@@ -42,12 +42,17 @@ class NewProductsListView(ListViewMixin, ListView):
     paginate_by = 16
 
     def get_queryset(self):
+        print('new products')
         self.initial_queryset = Product.my_query.active_for_site().filter(
             timestamp__gt=datetime.datetime.today() - datetime.timedelta(days=60)
         )
         qs = Product.filters_data(self.request, self.initial_queryset)
         if self.request.GET.getlist('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)
+        print('does works?')
+        print('my get', self.request.GET.getlist('char_name'))
+        if self.request.GET.getlist('char_name', None):
+            qs = ProductCharacteristics.filters_data(self.request, qs)
         return qs
 
     def get_context_data(self, **kwargs):
@@ -56,6 +61,8 @@ class NewProductsListView(ListViewMixin, ListView):
                                    'Ανακαλύψτε την τελευταία λέξη της μόδας στα γυαλιά οράσεως και ηλίου, στα Οπτικά Κότσαλης.']
         
         new_products = True
+        characteristics = Characteristics.objects.filter(is_filter=True)
+        product_characteristics = ProductCharacteristics.objects.filter(product_related__in=self.object_list, title__in=characteristics).distinct()
         context.update(locals())
         return context
 
