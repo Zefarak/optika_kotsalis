@@ -101,7 +101,7 @@
       <find>white</find>
       <find>favi</find>
       <find>profile/παραγγελια-λεπτομέρειες/</find>
-      <find>modal-body modal1</find>
+      <find />
       <find>modal1</find>
       <find>modal</find>
       <find>τιμ</find>
@@ -184,7 +184,7 @@
       <path value="$PROJECT_DIR$/static/dashboard/my_static/jquery-file-upload/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-126" />
     <option name="width" value="1936" />
     <option name="height" value="1047" />
