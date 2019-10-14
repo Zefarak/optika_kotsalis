@@ -36,7 +36,7 @@ class TableProduct(tables.Table):
         model = Product
         template_name = 'django_tables2/bootstrap.html'
         attrs = {'class': 'table  table-hover'}
-        fields = ['id', 'title', 'vendor',  'tag_price_buy', 'tag_final_price', 'category', 'action', 'active']
+        fields = ['id', 'sku', 'title', 'vendor',  'tag_price_buy', 'tag_final_price', 'category', 'action', 'active']
 
 
 class ProductClassTable(tables.Table):

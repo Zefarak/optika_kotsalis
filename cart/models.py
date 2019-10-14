@@ -214,18 +214,18 @@ class CartItem(models.Model):
             cart_item.save()
             result, message = True,  f'To προϊόν {product} προστέθηκε με επιτυχία'
         else:
-            product_qty = product.qty
+            if qty > 1:
+                return False, 'Δυστυχώς δε υπάρχει αρκετή πόσοτητα.'
             if product.have_attr:
                 return CartItemAttribute.create_cart_item(cart, product, qty, attribute)
             else:
                 cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
-                check_qty_again = product_qty - cart_item.qty
-                if qty > check_qty_again:
+                if not created:
                     result, message = False, 'Δυστυχώς δε υπάρχει αρκετή πόσοτητα.'
                 else:
                     cart_item.value = product.price
                     cart_item.price_discount = product.price_discount
-                    cart_item.qty = qty if created else cart_item.qty + qty
+                    cart_item.qty = 1
                     cart_item.save()
                     result, message = True, f'To προϊόν {cart_item} με ποσοτητα {qty} προστέθηκε με επιτυχία'
         return result, message

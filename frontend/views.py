@@ -39,7 +39,7 @@ class HomepageView(TemplateView):
 class NewProductsListView(ListViewMixin, ListView):
     template_name = 'frontend/list_view.html'
     model = Product
-    paginate_by = 4
+    paginate_by = 16
 
     def get_queryset(self):
         self.initial_queryset = Product.my_query.active_for_site().filter(
@@ -54,7 +54,7 @@ class NewProductsListView(ListViewMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(NewProductsListView, self).get_context_data(**kwargs)
-        page_title, description = ['Νέα Προϊόντα',
+        page_title, description = ['Νεα Προϊοντα',
                                    'Ανακαλύψτε την τελευταία λέξη της μόδας στα γυαλιά οράσεως και ηλίου, στα Οπτικά Κότσαλης.']
         
         new_products = True

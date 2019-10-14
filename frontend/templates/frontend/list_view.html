@@ -119,10 +119,12 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                    <div class="custom-control custom-checkbox collection-filter-checkbox">
+                                                                <div class="custom-control custom-checkbox collection-filter-checkbox">
                                                                     <input onclick="this.form.submit()" name="offer_name" value="1"  type="checkbox" class="custom-control-input" id="offer_name"
-                                                                        {% if request.GET.offer_name == '1'  %} checked {% endif %}><label class="custom-control-label" for="offer_name">Σε προσφορα</label>
+                                                                        {% if request.GET.offer_name == '1'  %} checked {% endif %}>
+                                                                        <label class="custom-control-label" for="offer_name">Σε προσφορα</label>
                                                                 </div>
+                                                                <br>
                                                                 <div class="custom-control">
                                                                     <input id="demo_2" type="text" name="price_name" value="" class="irs-hidden-input" tabindex="-1" readonly="" hidden>
                                                                 </div>
@@ -262,35 +264,3 @@
 
 
 
-{% block extra_js_ %}
-
-    <!--Plugin JavaScript file-->
-    <script src="{% static 'frontend/ion.rangeSlider.min.js' %}"></script>
-    <script>
-       $("#demo_2").ionRangeSlider({
-        type: "double",
-        grid: true,
-        min: {{ low }},
-        max: {{ max }},
-        from: {{ low_selected }},
-        to: {{ max_selected }},
-        prefix: "€"
-    });
-    </script>
-
-
-
-    <script>
-        window.history.pushState('hello', 'World', '/new-url')
-    </script>
-    <script>
-        $('.ajax_click').click(function (evt) {
-            evt.preventDefault();
-            const my_click = $(this);
-            const form = my_click.nearest('form');
-        })
-    </script>
-
-
-
-{% endblock %}

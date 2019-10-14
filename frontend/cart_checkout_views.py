@@ -45,7 +45,7 @@ def add_product_to_cart(request, slug):
         if created:
             cart_item.qty = 1
         else:
-            cart_item.qty += 1
+            messages.warning(request, 'Λυπούμαστε δε υπάρχει επαρκή ποσότητα')
         cart_item.save()
         messages.success(request, f'To Προϊόν {product.title} προστέθηκε επιτιχώς στο καλάθι!')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
@@ -64,9 +64,7 @@ def add_product_with_attr_to_cart(request, slug):
 def delete_product_from_cart(request, pk):
     cart_item = get_object_or_404(CartItem, id=pk)
     session_id = request.session.get('cart_id')
-    print('herefg')
     if session_id == cart_item.cart.cart_id:
-        print('here')
         cart_item.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 

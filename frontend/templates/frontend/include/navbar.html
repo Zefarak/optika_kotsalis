@@ -28,7 +28,7 @@
                             </ul>
                         </li>
                         {% else  %}
-                             <li class="mobile-wishlist"><a data-toggle="modal" data-target="#login_modal">Σύνδεση</a> </li>
+                             <li class="mobile-wishlist"><a data-toggle="modal" data-target="#login_modal">Συνδεση</a> </li>
                         {% endif %}
                     </ul>
                 </div>
@@ -76,8 +76,8 @@
                                     </li>
                                     {% endfor %}
                                     <li> <a href="{% url 'brands_view' %}">Brands</a></li>
-                                    <li> <a href="{% url 'offer_view' %}">Προσφορές</a></li>
-                                    <li > <a href="{% url 'new_products_view' %}">Νέα Προϊόντα</a></li>
+                                    <li> <a href="{% url 'offer_view' %}">Προσφορες</a></li>
+                                    <li > <a href="{% url 'new_products_view' %}">Νεα Προϊοντα</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -139,7 +139,7 @@
                                                             <h4><span>{{ cart_item.qty }} x {{ cart_item.tag_value }}</span></h4>
                                                         </div>
                                                     </div>
-                                                    <div class="close-circle"><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+                                                    <div class="close-circle"><a href="{% url 'delete_from_cart' cart_item.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></div>
                                                 </li>
                                                 {% endfor %}
 
