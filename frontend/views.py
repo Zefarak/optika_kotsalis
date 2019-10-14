@@ -39,18 +39,15 @@ class HomepageView(TemplateView):
 class NewProductsListView(ListViewMixin, ListView):
     template_name = 'frontend/list_view.html'
     model = Product
-    paginate_by = 16
+    paginate_by = 4
 
     def get_queryset(self):
-        print('new products')
         self.initial_queryset = Product.my_query.active_for_site().filter(
             timestamp__gt=datetime.datetime.today() - datetime.timedelta(days=60)
         )
         qs = Product.filters_data(self.request, self.initial_queryset)
         if self.request.GET.getlist('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)
-        print('does works?')
-        print('my get', self.request.GET.getlist('char_name'))
         if self.request.GET.getlist('char_name', None):
             qs = ProductCharacteristics.filters_data(self.request, qs)
         return qs

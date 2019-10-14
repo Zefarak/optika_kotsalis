@@ -47,8 +47,6 @@ class ListViewMixin(MultipleObjectMixin):
         qs = self.model.filters_data(self.request, qs)
         if self.request.GET.getlist('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)
-        print('does works?')
-        print('my get',self.request.GET.getlist('char_name'))
         if self.request.GET.getlist('char_name', None):
             qs = ProductCharacteristics.filters_data(self.request, qs)
         return qs
