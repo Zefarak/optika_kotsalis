@@ -1,4 +1,4 @@
-{% extends 'frontend/user_views/dashboard.html' %} {% load static %}
+{% extends 'frontend/index.html' %} {% load static %}
 {% block seo_data %}
     <title>Οπτικα - Κοτσαλης | {{ object }}</title>
     <meta name="description" content="Καλώς ήρθατε στο κατάστημά μας, Οπτικά Κότσαλης .Όλες οι λεπτομέριες για το προϊόν {{ object }} βρίσκονται εδώ.">
@@ -157,6 +157,20 @@
                             </div>
                         </form>
 
+                        <div class="modal hide" id="imageModal">
+                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body modal1" >
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12" id="image_container">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Modal -->
                         <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -286,4 +300,19 @@
 </section>
 
 
+
+
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        $('.lazyload').click(function(evt){
+            const my_img = $(this);
+            const url = my_img.attr('src');
+            $('#image_container').empty();
+            $('#image_container').html("<img src='" + url + "' width=800 height=800 class='img-fluid' />")
+            console.log('here')
+            $('#imageModal').modal('show');
+        })
+    </script>
 {% endblock %}
