@@ -57,7 +57,8 @@ def ajax_change_cart_item_qty(request, pk):
         qty = int(qty)
     except:
         qty = cart_item.qty
-    cart_item.qty = qty
+    if qty == 1:
+        cart_item.qty = qty
     cart_item.save() if cart_item.qty > 0 else cart_item.delete()
     cart = cart_item.cart
     cart.refresh_from_db()

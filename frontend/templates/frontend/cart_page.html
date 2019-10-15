@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="row cart-buttons">
-                <div class="col-6"><a href="{% url 'homepage' %}" class="btn btn-solid">Συνεχιστε τα ψωνια σας</a></div>
+                <div class="col-6"><a href="{% url 'homepage' %}" class="btn btn-solid">Επιστροφη</a></div>
                 <div class="col-6"><a href="{% url 'checkout_view' %}" class="btn btn-solid">Παραγγελια</a></div>
             </div>
         </div>
@@ -57,14 +57,17 @@
     <!--section end-->
 
     <section class="authentication-page">
-    <div class="container">
+    <div style="background-color: white" class="container">
         <section class="search-block">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
+                        <br>
+                        <h4>Προσθεστε το κουπόνι σας!</h4>
                         <form class="form-header" action="{% url 'add_voucher_cart_view' %}">
                             <div class="input-group">
                                 <input name="voucher_code"
+                                       id="exampleFormControlInput3"
                                        type="text" class="form-control"
                                        aria-label="Amount (to the nearest dollar)" placeholder="Κωδικός Κουπονιού">
                                 <div class="input-group-append">

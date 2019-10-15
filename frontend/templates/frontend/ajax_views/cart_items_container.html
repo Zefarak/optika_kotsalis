@@ -33,10 +33,10 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-3">
-                                    <h2 class="td-color">{{ cart_item.tag_value }}</h2></div>
+                                    <h2 class="td-color">{{ cart_item.tag_total_value }}</h2></div>
                                 <div class="col-xs-3">
                                     <h2 class="td-color">
-                                        <a href="" class="icon"><i class="ti-close"></i>df</a>
+                                        <a href="{% url 'delete_from_cart' cart_item.id %}" class="icon"><i class="ti-close"></i></a>
                                     </h2>
                                 </div>
                             </div>
