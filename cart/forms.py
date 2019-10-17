@@ -41,7 +41,7 @@ class CheckOutForm(BaseForm):
     shipping_method = forms.ModelChoiceField(required=True, queryset=Shipping.objects.filter(active=True),
                                              label='Τρόπος Μεταφοράς *')
     payment_method = forms.ModelChoiceField(required=True, queryset=PaymentMethod.my_query.active_for_site(),
-                                            label='Τρόπος Πληρωμής', )
+                                            label='Τρόπος Πληρωμής *', )
 
     agree = forms.BooleanField(label='Συμφωνώ με τους όρους χρήσης *', widget=forms.CheckboxInput())
 

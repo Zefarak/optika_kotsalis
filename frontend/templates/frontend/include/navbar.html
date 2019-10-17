@@ -1,7 +1,8 @@
 <!-- header start --> {% load static %}
+<!-- header start -->
 <header>
     <div class="mobile-fix-option"></div>
-    <div class="top-header top-header-dark2">
+    <div class="top-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -14,7 +15,7 @@
                 </div>
                 <div class="col-lg-6 text-right">
                     <ul class="header-dropdown">
-                        <li class="mobile-wishlist"><a href="{% url 'wishlist' %}"><i class="fa fa-heart" aria-hidden="true"></i> wishlist</a></li>
+                        <li class="mobile-wishlist" style="text-decoration:none"><a style="text-decoration:none;color:#999" href="{% url 'wishlist' %}"><i class="fa fa-heart" aria-hidden="true"></i> wishlist</a></li>
                         {% if request.user.is_authenticated %}
                         <li class="onhover-dropdown mobile-account"> <i class="fa fa-user" aria-hidden="true"></i>
                             {% if request.user.email  %}{{ request.user.email }} {% else %} {{ request.user }} {% endif %}
@@ -35,23 +36,40 @@
             </div>
         </div>
     </div>
-    <div class="container layout3-menu">
+    <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="main-menu">
-                    <div class="menu-left around-border">
+                    <div class="menu-left">
                         <div class="navbar">
-
+                            <a href="javascript:void(0)" onclick="openNav()">
+                                <div class="bar-style"><i class="fa fa-bars sidebar-bar" aria-hidden="true"></i></div>
+                            </a>
+                            <div id="mySidenav" class="sidenav">
+                                <a href="javascript:void(0)" class="sidebar-overlay" onclick="closeNav()"></a>
+                                <nav>
+                                    <div onclick="closeNav()">
+                                        <div class="sidebar-back text-left"><i class="fa fa-angle-left pr-2" aria-hidden="true"></i> Επιστροφη</div>
+                                    </div>
+                                    <ul id="sub-menu" class="sm pixelstrap sm-vertical">
+                                        <li><a target="_blank" href="https://www.facebook.com/optikakotsalis/">Βρειτε μας στο Facebook</a></li>
+                                        <li><a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">Βρειτε μας στο Instagram</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
-                        <div class="main-menu-right">
+                        <div class="brand-logo">
+                            <a href="{% url 'homepage' %}"><img src="{% static 'frontend/my_assets/logo.png' %}" class="img-fluid blur-up lazyload" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="menu-right pull-right">
+                        <div>
                             <nav id="main-nav">
                                 <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
-                                <ul id="main-menu" class="sm pixelstrap sm-horizontal light-font-menu">
-                                    <li>
+                                <ul id="main-menu" class="sm pixelstrap sm-horizontal">
+                                     <li>
                                         <div class="mobile-back text-right">Back<i class="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
                                     </li>
-
-
                                     {% for category in parent_categories %}
                                     <li class="mega" id="hover-cls">
                                         <a href="{{ category.get_absolute_url }}">{{ category }}</a>
@@ -81,18 +99,8 @@
                                 </ul>
                             </nav>
                         </div>
-                    </div>
-                    <div class="absolute-logo">
-                        <div class="brand-logo">
-                            <a href="{% url 'homepage' %}">
-                                <img alt="" src="{% static 'frontend/my_assets/logo_2.jpg' %}">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="menu-right pull-right">
-                            <div>
-                                <div class="icon-nav">
+                        <div>
+                            <div class="icon-nav">
                                     <ul>
                                         <li class="onhover-div mobile-search">
                                             <div><img alt="" src="{% static 'frontend/assets/images/icon/layout4/search.png' %}" onclick="openSearch()" class="img-fluid blur-up lazyload">
@@ -157,7 +165,6 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -165,4 +172,5 @@
         </div>
     </div>
 </header>
+<!-- header end -->
 <!-- header end -->

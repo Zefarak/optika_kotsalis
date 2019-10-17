@@ -183,4 +183,19 @@ def ajax_quick_modal_view(request, slug):
     return JsonResponse(data)
 
 
-
+def ajax_update_cate_shipping_method_view(request):
+    cart = check_or_create_cart(request)
+    new_shipping_method = request.GET.get('shipping_method', 1)
+    shiping_method = get_object_or_404(Shipping, id=new_shipping_method)
+    cart.shipping_method = shiping_method
+    cart.save()
+    data = dict()
+    cart.refresh_from_db()
+    data['result'] = render_to_string(template_name='frontend/ajax_views/checkout_price_container.html',
+                                      request=request,
+                                      context={
+                                          'cart': cart,
+                                          'vouchers': cart.vouchers.all()
+                                      }
+                                      )
+    return JsonResponse(data)
