@@ -46,7 +46,7 @@
                             <div class="slider-right-nav">
                                 {% if object.image %}
                                     <div>
-                                        <img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload"></div>
+                                        <img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload expand_image"></div>
                                     {% else %}
                                     <div>
                                         <img src="{% static 'frontend/demo_images/no_image.png' %}" alt="" class="img-fluid blur-up lazyload">
@@ -315,7 +315,7 @@
 
 {% block extra_js %}
     <script>
-        $('.lazyload').click(function(evt){
+        $('.expand_image').click(function(evt){
             const my_img = $(this);
             const url = my_img.attr('src');
             $('#image_container').empty();
