@@ -210,13 +210,15 @@
                                                 {% include 'frontend/parts/product_card.html' %}
                                             </div>
                                             {% endfor %}
-                                            <div class="loading" style="display: none;">Loading...</div>
+                                        </div>
 
+                                    </div>
+                                    <div style='display: none' class="loading" style="display: none;">Loading...
                                         {% if page_obj.has_next %}
                                             <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">More</a>
                                         {% endif %}
-                                        </div>
                                     </div>
+
 
                                 </div>
                             </div>
