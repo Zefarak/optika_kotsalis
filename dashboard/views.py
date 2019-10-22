@@ -405,11 +405,13 @@ class RelatedProductsView(ListView):
     def get_context_data(self, **kwargs):
         context = super(RelatedProductsView, self).get_context_data(**kwargs)
         instance = get_object_or_404(Product, id=self.kwargs['pk'])
-        related_products = instance.related_products.all()
+        selected_data = instance.related_products.all()
         search_name = self.request.GET.get('search_name', None)
         title = f'Προσθήκη Παρόμοιων Προϊόντων στο {instance.title}'
         table_title, related_product, back_url = 'Παρόμοια Προϊόντα', True, instance.get_edit_url()
+        related_product = True
         context.update(locals())
+        print('sele', selected_data)
         return context
 
 
@@ -429,13 +431,14 @@ class ProductWithDifferentColorListView(ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
-
+        color = True
         context = super(ProductWithDifferentColorListView, self).get_context_data(**kwargs)
         instance = self.product
-        related_products = instance.different_color_products.all().exclude(id=instance.id)
+        selected_data = instance.different_color_products.all().exclude(id=instance.id)
         search_name = self.request.GET.get('search_name', None)
         title = f'Προσθήκη Διαφορετικών Χρωματων στο {instance.title}'
         table_title, colors, back_url = 'Παρόμοια Προϊόντα', True, instance.get_edit_url()
+        print('here')
         context.update(locals())
         return context
 

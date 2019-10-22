@@ -54,7 +54,7 @@
                                 {% endif %}
                                 {% for image in object.get_extra_images.all %}
                                     <div>
-                                        <img src="{{ image.image.url }}" alt="" class="img-fluid blur-up lazyload">
+                                        <img src="{{ image.image.url }}" alt="" class="img-fluid blur-up lazyload expand_image">
                                     </div>
                                 {%  endfor %}
                             </div>
@@ -64,7 +64,7 @@
                 <div class="col-lg-3 col-sm-10 col-xs-12 order-up">
                     <div class="product-right-slick">
                         {% if object.image %}
-                            <div><img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload"></div>
+                            <div><img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload "></div>
                         {% else %}
                             <div><img src="{% static 'frontend/demo_images/no_image.png' %}" alt="" class="img-fluid blur-up lazyload image_zoom_cls-{{ image.id}}"></div>
                         {% endif %}
@@ -235,19 +235,40 @@
                 </ul>
                 <div class="tab-content nav-material" id="top-tabContent">
                     <div class="tab-pane fade" id="top-home" role="tabpanel" aria-labelledby="top-home-tab">
-                    <section class="section-b-space ratio_asos">
-                        <div class="container">
-                            <div class="row search-product">
-                                {% for product in different_color_products %}
-                                    <div class="col-xl-2 col-md-4 col-sm-6">
-                                        {% include "frontend/parts/product_card.html" %}
+                        <section class="ratio_square section-b-space">
+                            <div class="collection-wrapper">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="collection-content col">
+                                            <div class="page-main-content">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="collection-product-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="col-12 product-related">
+                                                                        <h4>Επιπλέον Χρωματα</h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-wrapper-grid">
+                                                                <div class="row infinite-container">
+                                                                    {% for product in different_color_products %}
+                                                                    <div class="col-xl-3 col-md-6 col-grid-box infinite-item">
+                                                                        {% include 'frontend/parts/product_card.html' %}
+                                                                    </div>
+                                                                    {% endfor %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                {% empty %}
-                                    <p>Δυστυχώς δε υπάρχουν επιπλέον χρώματα</p>
-                                {% endfor %}
+                                </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
 
                     </div>
                     <div class="tab-pane fade show active" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
@@ -288,25 +309,44 @@
 <!-- product-tab ends -->
 
 
-<!-- product section start -->
-<section class="section-b-space ratio_asos">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 product-related">
-                <h2>Επισης σας προτεινουμε</h2></div>
-        </div>
-        <div class="row search-product">
-            {% for product in related_products %}
-                <div class="col-xl-2 col-md-4 col-sm-6">
-                    {% include "frontend/parts/product_card.html" %}
+<!-- section start -->
+<section class="ratio_square section-b-space">
+    <div class="collection-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="collection-content col">
+                    <div class="page-main-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="collection-product-wrapper">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="col-12 product-related">
+                                                <h2>Επισης σας προτεινουμε</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-wrapper-grid">
+                                        <div class="row infinite-container">
+                                            {% for product in related_products %}
+                                            <div class="col-xl-3 col-md-6 col-grid-box infinite-item">
+                                                {% include 'frontend/parts/product_card.html' %}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {% empty %}
-                <p>Δυστυχώς δε υπάρχουν επιπλέον προτάσεις</p>
-
-            {% endfor %}
+            </div>
         </div>
     </div>
 </section>
+<!-- section End -->
+
+
 
 
 
