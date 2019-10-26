@@ -15,7 +15,14 @@
                 </div>
                 <div class="col-lg-6 text-right">
                     <ul class="header-dropdown">
-                        <li class="mobile-wishlist" style="text-decoration:none"><a style="text-decoration:none;color:#999" href="{% url 'wishlist' %}"><i class="fa fa-heart" aria-hidden="true"></i> wishlist</a></li>
+                        <li class="mobile-wishlist" style="text-decoration:none">
+                            <a style="text-decoration:none;color:#999" href="{% url 'wishlist' %}">
+                                <i class="fa fa-heart" aria-hidden="true"></i> wishlist
+                            </a>
+                        </li>
+                         <li class="mobile-account" style="text-decoration:none">
+                            <a style="text-decoration:none;color:#999" href="{% url 'wishlist' %}"><i class="fa fa-heart" aria-hidden="true"></i> wishlist</a>
+                        </li>
                         {% if request.user.is_authenticated %}
                         <li class="onhover-dropdown mobile-account"> <i class="fa fa-user" aria-hidden="true"></i>
                             {% if request.user.email  %}{{ request.user.email }} {% else %} {{ request.user }} {% endif %}
@@ -29,7 +36,7 @@
                             </ul>
                         </li>
                         {% else  %}
-                             <li class="mobile-wishlist"><a data-toggle="modal" data-target="#login_modal">Συνδεση</a> </li>
+                             <li class="mobile-account"><a data-toggle="modal" data-target="#login_modal">Συνδεση</a> </li>
                         {% endif %}
                     </ul>
                 </div>

@@ -35,16 +35,20 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3>Συμπληρωστε την φορμα</h3>
+                <h3>Συμπληρωστε την φορμα gfdgfdg</h3>
                 <div class="theme-card">
                     <form class="theme-form" method="post">{% csrf_token %}
                        {{ form }}
                         <br> <br>
-                        <button type="submit" class="btn btn-solid">Δημιουργια λογαριασμου</button>
+                        <button type="submit" class="btn btn-solid">Δημιουργία λογαριασμού</button>
+
                         <br>
 
                     </form>
-                    <a style="margin-top: 3%" href="{% url 'login' %}" class="btn btn-primary pull-right">Για συνδεση πατηστε εδω.</a>
+                    <br><br>
+                    <p>Για να συνδεθείτε πατήστε <a href="{% url 'login' %}" > εδω.</a></p>
+                    <br>
+                    <a style="display: inline;margin-top: 300px;" href="{% url 'social:begin' 'facebook' %}" class="btn btn-solid btn-info right">Σύνδεση μεσω facebοοκ</a>
                 </div>
             </div>
         </div>
