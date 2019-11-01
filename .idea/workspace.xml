@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/user_views/login_or_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/user_views/login_or_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/user_views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/user_views/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/dashboard_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dashboard_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/optika_kotsalis/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/optika_kotsalis/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,22 +18,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="272">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#header#0;n#!!top" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dashboard/ajax_views.py" />
         <option value="$PROJECT_DIR$/dashboard/urls.py" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/product_detail.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/index.html" />
@@ -141,9 +128,10 @@
         <option value="$PROJECT_DIR$/frontend/templates/frontend/product_view.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/ajax_calls/result_container.html" />
         <option value="$PROJECT_DIR$/dashboard/views.py" />
-        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/user_views/register.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html" />
+        <option value="$PROJECT_DIR$/dashboard/dashboard_actions.py" />
+        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
       </list>
     </option>
   </component>
@@ -156,7 +144,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/dashboard/static/dashboard/jQuery-File-Upload/package.json" />
-      <path value="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jQuery-File-Upload/package.json" />
+      <path value="$PROJECT_DIR$/dashboard/static/dashboard/my_static/jquery-file-upload/package.json" />
       <path value="$PROJECT_DIR$/static/dashboard/jQuery-File-Upload/package.json" />
       <path value="$PROJECT_DIR$/static/dashboard/my_static/jquery-file-upload/package.json" />
     </packageJsonPaths>
@@ -177,26 +165,18 @@
         <subPane>
           <expand>
             <path>
-              <item name="optika_kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="optika_kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="optika_kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
               <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optika_kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -329,29 +309,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.30729166" side_tool="true" visible="true" weight="0.2813793" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.4796875" side_tool="true" visible="true" weight="0.2805526" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32913387" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.6927083" visible="true" weight="0.2813793" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19335938" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.5203125" visible="true" weight="0.2805526" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19322917" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
+      <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="3" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="manage.py@optika_kotsalis" order="11" weight="0.32913387" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -363,28 +342,28 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18333334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32943678" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49895832" weight="0.32943678" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="3" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.7015625" visible="true" weight="0.30074388" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.2984375" side_tool="true" visible="true" weight="0.30074388" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
       <window_info anchor="right" id="SciView" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="15" weight="0.32943678" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,13 +474,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/catalogue/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="277" selection-start-line="277" selection-end-line="277" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/product_attritubes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -775,16 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/ajax_calls/result_container.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -841,8 +803,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="50" column="171" selection-start-line="50" selection-start-column="171" selection-end-line="50" selection-end-column="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding>
-            <element signature="e#1848#1890#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#header#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -850,16 +819,26 @@
     <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html">
+    <entry file="file://$PROJECT_DIR$/dashboard/dashboard_actions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state relative-caret-position="595">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#header#0;n#!!top" expanded="true" />
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
