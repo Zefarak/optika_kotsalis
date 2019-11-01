@@ -30,4 +30,8 @@ def copy_product_view(request, pk):
             title.class_related = attr_class
             title.qty = 0
             title.save()
+    for char_ in old_object.characteristics.all():
+        char_.id = None
+        char_.product_related = object
+        char_.save()
     return redirect(object.get_edit_url())
