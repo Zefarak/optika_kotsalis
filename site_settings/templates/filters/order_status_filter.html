@@ -4,12 +4,12 @@
         <div class="card-header" role="tab" id="headingVendor">
             <h6 class="mb-0">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                   href="#collapseOrderType" aria-expanded="false" aria-controls="collapseOrderType">
+                   href="#collapseOrderStatus" aria-expanded="false" aria-controls="collapseOrderStatus">
                     Κατάσταση
                 </a>
             </h6>
         </div>
-        <div id="collapseOrderType" class="collapse" role="tabpanel" aria-labelledby="headingOrderType">
+        <div id="collapseOrderStatus" class="collapse" role="tabpanel" aria-labelledby="headingOrderType">
             <div class="card-block filter_scrollbar" style="height: 300px;max-height: 300px;overflow-y: scroll;">
                 {% for type_ in order_status %}
                     {% if type_.0|stringformat:"s" in request.GET|get_item:'order_status_name'%}

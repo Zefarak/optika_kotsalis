@@ -16,6 +16,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 PRODUCTION = True
 
+
 if PRODUCTION:
     ALLOWED_HOSTS = ['optikakotsalis.herokuapp.com', '127.0.0.1', 'www.optikakotsalis.gr']
 else:
