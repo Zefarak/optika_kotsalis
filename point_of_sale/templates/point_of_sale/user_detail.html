@@ -1,0 +1,103 @@
+{% extends 'point_of_sale/dashboard.html' %}
+
+{% block content %}
+     <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Στοιχεια</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Email</th>
+                                                    <td>{{ object.email }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Ονοματεπωνυμο</th>
+                                                    <td>{{ object.profile.tag_last_name }} {{ object.profile.tag_first_name }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Διευθυνση</th>
+                                                    <td>{{ object.profile.tag_full_address }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Τηλεφωνο</th>
+                                                    <td>{{ object.profile.tag_phones }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Παραγγελιες</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ημερομηνια</th>
+                                                    <th>Ποσο</th>
+                                                    <th>Κατασταση</th>
+                                                    <th>#</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for order in user.orders.all %}
+                                                    <tr>
+                                                        <td>{{ order.date_expired }}</td>
+                                                        <td>{{ order.tag_final_value }}</td>
+                                                        <td>{{ order.get_status_display }}</td>
+                                                        <td><a href="{{ order.get_edit_url }}" class="btn btn-info"><i class="fa fa-edit"></i> </a> </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a href="{% url 'point_of_sale:user_list' %}" class="btn btn-warning">Επιστροφη</a>
+                                        <br>
+                                        <h4>Καλαθια</h4>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ημερομηνια</th>
+                                                    <th>Ποσο</th>
+                                                    <th>Κατασταση</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for cart in object.carts.all %}
+                                                    <tr>
+                                                        <td>{{ cart.timestamp }}</td>
+                                                        <td>{{ cart.tag_final_value }}</td>
+                                                        <td>{{ cart.get_status_display }}</td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+{% endblock %}

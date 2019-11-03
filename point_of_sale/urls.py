@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (OrderListView, CreateOrderView, OrderUpdateView, delete_order,
                     check_product, add_to_order_with_attr, order_item_edit_with_attr, OrderItemListView,
                     CostumerCreateView, CostumerListView, CostumerUpdateView, delete_costumer_view,
-                    CostumerAccountCardView, create_return_order_view
+                    CostumerAccountCardView, UserListView, UserDetailView
                     )
 from .ajax_views import (ajax_order_item, ajax_search_products, ajax_add_product, ajax_costumers_report,
                          ajax_search_costumers, ajax_costumer_order_pay_view, ajax_search_products_for_cart,
@@ -30,6 +30,9 @@ urlpatterns = [
     path('copy-order/<int:pk>/', create_copy_order, name='copy_order'),
     path('order/print/<int:pk>/', OrderPrintView.as_view(), name='print_order'),
     path('order/create/costumer/<int:pk>/', CreateCostumerFromOrder.as_view(), name='order_create_costumer'),
+
+    path('user/list/', UserListView.as_view(), name='user_list'),
+    path('user/detail/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
 
     #  ajax calls
     path('order/ajax/edit-order-item/<slug:action>/<int:pk>/', ajax_order_item, name='ajax_order_item_edit'),

@@ -1,25 +1,31 @@
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView
 from django.shortcuts import reverse, get_object_or_404, redirect, render, HttpResponseRedirect
 from django.db.models import Sum
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
+
+from dateutil.relativedelta import relativedelta
+import datetime
+from django_tables2 import RequestConfig
+
 from catalogue.models import Product
 from catalogue.product_attritubes import Attribute
 from .models import Order, OrderItem, OrderItemAttribute, OrderProfile
 from .address_models import ShippingAddress
 from .forms import OrderCreateForm, OrderCreateCopyForm, OrderUpdateForm, forms, OrderAttributeCreateForm
 from site_settings.models import PaymentMethod
-from accounts.models import Profile
+from accounts.models import Profile, User
 from accounts.forms import ProfileForm
+from accounts.tables import UserTable
 from cart.models import Cart, CartItem
 from .tools import generate_or_remove_queryset
-from dateutil.relativedelta import relativedelta
+
 from .tables import ProfileTable, OrderTable, OrderItemListTable
 from site_settings.constants import CURRENCY, ORDER_TYPES, ORDER_STATUS
-from django_tables2 import RequestConfig
-import datetime
+
+
 
 
 @method_decorator(staff_member_required, name='dispatch')
@@ -326,7 +332,24 @@ class CostumerAccountCardView(ListView):
         return response
 
 
-
 @method_decorator(staff_member_required, name='dispatch')
 class UserListView(ListView):
-    pass
+    model = User
+    template_name = 'point_of_sale/order-list.html'
+    paginate_by = 50
+
+    def get_context_data(self, **kwargs):
+        context = super(UserListView, self).get_context_data(**kwargs)
+        context['create_button'] = reverse('point_of_sale:user_list')
+        context['queryset_table'] = UserTable(self.object_list)
+        context['page_title'] = 'Χρηστες'
+        return context
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class UserDetailView(DetailView):
+    model = User
+    template_name = 'point_of_sale/user_detail.html'
+
+
+
