@@ -61,6 +61,7 @@ class ProductForm(BaseForm, forms.ModelForm):
         model = Product
         fields = ['active',
                   'featured_product',
+                  'ordering_by_letter',
                   'title', 'sku',
                   'color', 'brand',
                   'measure_unit',

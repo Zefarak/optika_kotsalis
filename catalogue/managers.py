@@ -54,7 +54,7 @@ class ProductManager(models.Manager):
         return self.active_warehouse().filter(size=True)
 
     def new_products(self):
-        return self.active_for_site().filter(timestamp_gte=one_month_earlier)
+        return self.active_for_site().exclude(is_offer=True)
 
 
 class CategoryManager(models.Manager):

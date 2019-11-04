@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from django_tables2 import RequestConfig
-from catalogue.models import ProductClass
+from catalogue.models import ProductClass, Product
 from catalogue.categories import Category
 from catalogue.product_details import Brand, Color
 from catalogue.forms import (CreateProductClassForm, CategorySiteForm,
@@ -468,4 +468,21 @@ def color_delete_view(request, pk):
     return redirect(reverse('dashboard:color_list_view'))
 
 
+@method_decorator(staff_member_required, name='dispatch')
+class ProductOrderByView(ListView):
+    template_name = 'dashboard/settings/product_order_by_view.html'
+    model = Product
+    paginate_by = 50
+
+    def get_queryset(self):
+        qs = self.model.my_query.active()
+        qs = Product.filters_data(self.request, qs)
+        return qs
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductOrderByView, self).get_context_data(**kwargs)
+        search_filter, featured_filter, brand_filter = [True] * 3
+        brands = Brand.objects.filter(active=True)
+        context.update(locals())
+        return context
 

@@ -29,7 +29,7 @@ class HomepageView(TemplateView):
         banners = Banner.browser.active()
         big_banners, small_banners = [banners.filter(category='a'), banners.filter(category='c')[:4]]
         featured_products = Product.my_query.featured_products()[:8]
-        new_products = Product.my_query.active()[:4]
+        new_products = Product.my_query.new_products()[:4]
         offers = Product.my_query.products_with_offer()[:4]
         brands = Brand.objects.filter(active=True)
         context.update(locals())
@@ -44,7 +44,7 @@ class NewProductsListView(ListViewMixin, ListView):
     def get_queryset(self):
         self.initial_queryset = Product.my_query.active_for_site().filter(
             timestamp__gt=datetime.datetime.today() - datetime.timedelta(days=60)
-        )
+        ).exclude(is_offer=True)
         qs = Product.filters_data(self.request, self.initial_queryset)
         if self.request.GET.getlist('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)

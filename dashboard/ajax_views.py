@@ -255,3 +255,12 @@ def ajax_product_discount_delete(request, pk, dk):
                                       request=request,
                                       context={'object': instance})
     return JsonResponse(data)
+
+
+@staff_member_required
+def ajax_order_by_view(request, pk):
+    instance = get_object_or_404(Product, id=pk)
+    new_value = request.GET.get('new_val', 'c')
+    instance.ordering_by_letter = new_value
+    instance.save()
+    return JsonResponse({'success': True})

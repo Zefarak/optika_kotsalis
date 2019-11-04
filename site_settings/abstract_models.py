@@ -10,7 +10,8 @@ class DefaultBasicModel(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     edited = models.DateTimeField(auto_now=True)
     user_account = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    custom_ordering = models.IntegerField(default=1)
+    custom_ordering = models.IntegerField(default=1)  # will be deprecated
+    ordering_by_letter = models.CharField(default='c', max_length=15, verbose_name='Ταξινομηση με γραμμα')
 
     class Meta:
         abstract = True

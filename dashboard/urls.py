@@ -19,13 +19,13 @@ from .settings_view import (ProductClassView, ProductClassCreateView,
                             characteristic_delete_view, CharValueEditView, delete_char_value_view,
                             AttributeClassListView, attribute_class_edit_view, attribute_class_delete_view,
                             AttributeClassCreateView, attribute_title_delete_view, AttributeTitleEditView,
-                            ColorCreateView, ColorListView, ColorUpdateView, color_delete_view
+                            ColorCreateView, ColorListView, ColorUpdateView, color_delete_view, ProductOrderByView
                             )
 from .dashboard_actions import copy_product_view
 from .ajax_views import (ajax_category_site, ajax_product_images, ajax_add_or_delete_attribute,
                          ajax_change_qty_on_attribute, ajax_products_discount_add, ajax_product_discount_delete,
                          popup_category, popup_brand, popup_vendor, popup_color,ajax_different_color_product_view,
-                         ajax_product_calculate_view, ajax_related_products_view
+                         ajax_product_calculate_view, ajax_related_products_view, ajax_order_by_view
                          )
 app_name = 'dashboard'
 
@@ -76,6 +76,7 @@ urlpatterns = [
     path('ajax/add-qty/<int:pk>/', ajax_change_qty_on_attribute, name='ajax_manage_qty_attribute'),
     path('ajax/discount/add-products/<int:pk>/', ajax_products_discount_add, name='ajax_products_discount_add'),
     path('ajax/discount/delete-product/<int:pk>/<int:dk>/', ajax_product_discount_delete, name='ajax_products_discount_delete'),
+    path('ajax-order-by-view/<int:pk>/', ajax_order_by_view, name='ajax_order_by_view'),
 
 
     path('product/characteristic-manager/<int:pk>/', CharacteristicsManagerView.as_view(), name='char_manager_view'),
@@ -118,6 +119,9 @@ urlpatterns = [
     path('warehouse-category/create/', WarehouseCategoryCreateView.as_view(), name='ware_cate_create_view'),
     path('warehouse-category/delete//<int:pk>/', warehouse_category_delete, name='ware_cate_delete_view'),
     path('warehouse-category/edit/<int:pk>/', WarehouseCategoryUpdateView.as_view(), name='ware_cate_edit_view'),
+
+    path('product-order-by-view/', ProductOrderByView.as_view(), name='product_order_by_view'),
+
 
 
 

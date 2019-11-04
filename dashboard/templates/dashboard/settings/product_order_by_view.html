@@ -1,0 +1,77 @@
+{% extends 'catalogue_index.html' %}
+
+{% block content %}
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="row">
+                            <div class="col-10">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Ταξινομηση</h4>
+                                        <a href="{{ reqyuest.path }}" class="btn btn-success">Ανανεωση</a>
+                                        <p>Order by ==> a>w</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table-bordered table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Προϊόν</th>
+                                                    <th>Brand</th>
+                                                    <th>#</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for product in object_list %}
+                                                    <tr>
+                                                        <td>{{ forloop.counter }}</td>
+                                                        <td>{{ product }}</td>
+                                                        <td>{{ product.brand }}</td>
+                                                        <td>
+                                                            <input
+                                                                    class="form-control input_data"
+                                                                    type="text"
+                                                                    value="{{ product.ordering_by_letter }}"
+                                                                    data-href="{% url 'dashboard:ajax_order_by_view' product.id %}"
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="col-2">
+                            <div class="card">
+                                <div class="card-header">
+                                    <a href="{% url 'dashboard:home' %}" class="btn btn-warning">Επιστροφη</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        $('.input_data').change(function (evt) {
+            evt.preventDefault();
+            const thisInput = $(this);
+            const url = thisInput.attr('data-href');
+            const data = thisInput.val();
+            $.ajax({
+                url: url + '?new_val='+data,
+                dataType: 'json',
+                method: 'get'
+            })
+        })
+    </script>
+{% endblock %}
