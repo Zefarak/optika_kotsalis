@@ -179,7 +179,7 @@ class ProductView(DetailView, FormView):
         contact_form = ContactFrontEndForm()
         categories_p = self.object.category_site.all()
         same_cate_products = Product.my_query.active_for_site().filter(category_site__in=categories_p).exclude(id=self.object.id)[:4]
-        related_products = Product.my_query.active_for_site().filter(related_products=product)
+        related_products = Product.my_query.active_for_site().filter(related_products=product)[:8]
         different_color_products = Product.my_query.active_for_site().filter(different_color_products=product)
 
         ask_form = AskForm()

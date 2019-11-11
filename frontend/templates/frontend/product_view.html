@@ -151,9 +151,11 @@
                                 <button type="submit" data-target="#addtocart" class="btn btn-solid">Προσθηκη στο Καλαθι</button>
                                 <br /> <br />
                                 <!-- Button trigger modal -->
+                                {% if not object.is_offer %}
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
                                  Μαθετε την νεα εκπληκτικη τιμη
                                 </button>
+                                {% endif %}
                             </div>
                         </form>
 

@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 PRODUCTION = True
-
+REAl_DB = True
 
 if PRODUCTION:
     ALLOWED_HOSTS = ['optikakotsalis.herokuapp.com', 'www.optikakotsalis.gr']
@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'optika_kotsalis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if PRODUCTION:
+if REAl_DB:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -170,7 +170,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-if PRODUCTION:
+if REAl_DB:
     AWS_REGION = 'eu-central-1'
     S3_USE_SIGV4 = True
     AWS_S3_HOST = "s3.eu-central-1.amazonaws"
