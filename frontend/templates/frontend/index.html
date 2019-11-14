@@ -82,20 +82,20 @@
         <div class="row partition3">
             {% for banner in small_banners %}
                 {% if forloop.counter < 3 %}
-                <div class="col-md-6">
-                    <a href="#">
-                    <div class="collection-banner p-left text-left">
-                        <div class="img-part">
-                            <img src="{{ banner.image.url }}" alt="" class="img-fluid blur-up lazyload bg-img">
-                        </div>
-                        <div class="contain-banner">
-                            <div>
-                                {{ forloop.counter }}
+                    <div class="col-md-6">
+                        <a {% if banner.url %} href="{{ banner.url }}" {% else %} href="kolos" {% endif %}>
+                            <div class="collection-banner p-left text-left">
+                                <div class="img-part">
+                                    <img src="{{ banner.image.url }}" alt="" class="img-fluid blur-up lazyload bg-img">
+                                </div>
+                                <div class="contain-banner">
+                                    <div>
+                                        {{ forloop.counter }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                </a>
-            </div>
                 {% endif %}
             {% endfor %}
         </div>
@@ -113,14 +113,15 @@
             {% for banner in small_banners %}
                 {% if forloop.counter > 2 %}
                     <div class="col-md-6">
-                    <a {% if banner.url %} href="{{ banner.url }}" {% else %}href="" {% endif %}>
+                    <a {% if banner.url %} href="{{ banner.url }}" {% else %} href="" {% endif %}>
                     <div class="collection-banner p-left text-left">
                         <div class="img-part">
                             <img src="{{ banner.image.url }}" alt="" class="img-fluid blur-up lazyload bg-img">
+
                         </div>
                         <div class="contain-banner">
                             <div>
-
+                                <p> kolos</p>
                             </div>
                         </div>
                     </div>
@@ -148,6 +149,9 @@
                     <ul class="tabs tab-title">
                         <li class="current"><a href="tab-4">Νεα Προϊοντα</a></li>
                         <li class=""><a href="tab-6">Οι προσφορες μας</a></li>
+                        {% for small_na in small_banners %}
+                            <p>{{ small_na.url }}</p>
+                        {% endfor %}
                     </ul>
                     <div class="tab-content-cls">
 
