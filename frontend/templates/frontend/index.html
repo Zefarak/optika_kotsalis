@@ -83,7 +83,7 @@
             {% for banner in small_banners %}
                 {% if forloop.counter < 3 %}
                     <div class="col-md-6">
-                        <a {% if banner.url %} href="{{ banner.url }}" {% else %} href="kolos" {% endif %}>
+                        <a {% if banner.url %} href="{{ banner.url }}" {% else %} href="" {% endif %}>
                             <div class="collection-banner p-left text-left">
                                 <div class="img-part">
                                     <img src="{{ banner.image.url }}" alt="" class="img-fluid blur-up lazyload bg-img">
@@ -121,7 +121,7 @@
                         </div>
                         <div class="contain-banner">
                             <div>
-                                <p> kolos</p>
+
                             </div>
                         </div>
                     </div>
