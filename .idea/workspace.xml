@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/demo_images/new_product_view.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/optika_kotsalis/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/optika_kotsalis/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +26,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,8 +156,8 @@
         <option value="$PROJECT_DIR$/frontend/templates/frontend/product_view.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/parts/add_product_modal.html" />
         <option value="$PROJECT_DIR$/frontend/views.py" />
-        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/index.html" />
+        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
       </list>
     </option>
   </component>
@@ -189,37 +197,6 @@
             <path>
               <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
               <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="newsletter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optika-kotsalis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="optika-kotsalis" type="462c0819:PsiDirectoryNode" />
               <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -237,19 +214,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\frontend\static\frontend\my_assets" />
-      <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\frontend\static\frontend\waypoints" />
-      <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\dashboard\static\dashboard\my_static" />
-      <recent name="C:\Users\Zefarak\Desktop\projects\optika_kotsalis\frontend\static\frontend\demo_images" />
-      <recent name="C:\Users\Zefarak\Desktop\projects\optika_kotsalis\frontend\static\frontend" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\frontend\static\frontend\my_assets" />
       <recent name="C:\Users\Zefarak\Desktop\projects\simply_you" />
       <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\dashboard\static\dashboard" />
       <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\frontend\static\frontend\assets" />
       <recent name="C:\Users\Zefarak\Desktop\projects\simply_you\frontend" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\frontend\static\frontend\demo_images" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\frontend\static\frontend\my_assets" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\frontend\static\frontend\waypoints" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\optika-kotsalis\dashboard\static\dashboard\my_static" />
+      <recent name="C:\Users\Zefarak\Desktop\projects\optika_kotsalis\frontend\static\frontend\demo_images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -353,7 +330,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.48372397" side_tool="true" weight="0.2786207" />
@@ -361,9 +338,9 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32913387" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="manage.py@optika_kotsalis" order="11" visible="true" weight="0.32837406" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51627606" weight="0.27724138" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1703125" />
+      <window_info anchor="bottom" id="manage.py@optika_kotsalis" order="11" weight="0.32837406" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.51627606" visible="true" weight="0.2763018" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1703125" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="5" />
@@ -838,16 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/product_view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -869,6 +836,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
