@@ -167,7 +167,7 @@
       <path value="$PROJECT_DIR$/static/dashboard/my_static/jquery-file-upload/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />

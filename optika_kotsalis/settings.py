@@ -13,8 +13,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-PRODUCTION = False
+DEBUG = False
+PRODUCTION = True
 REAl_DB = True
 
 if PRODUCTION:
