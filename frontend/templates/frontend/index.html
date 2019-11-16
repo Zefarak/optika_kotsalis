@@ -34,7 +34,7 @@
                 <div class="home text-center">
                     <img src="{{ banner.image.url }}" alt="" class="bg-img blur-up lazyload">
                     <div class="container">
-                        <a href="{{ banner.url }}">
+                        <a {% if banner.url %} href="{{ banner.url }}" {% else %} href="" {% endif %}>
                         <div class="row">
                             <div class="col">
                                 <div class="slider-contain">
@@ -52,7 +52,7 @@
 </section>
 <!-- Home slider end -->
 
-        <!-- Product slider -->
+    <!-- Product slider -->
     <section style="margin-top: 3%" class="ratio_square section-b-space">
     <div class="container">
         <div class="title3">
