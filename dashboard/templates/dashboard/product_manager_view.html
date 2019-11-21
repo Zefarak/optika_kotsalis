@@ -28,7 +28,11 @@
                                                      <tbody>
                                                      {% for ele in object_list %}
                                                          <tr>
+                                                             {% if related_product %}
+                                                                 <td><img src="{{ ele.image.url }}" width="200" height="200" />  </td>
+                                                             {% else %}
                                                              <td>{{ ele.id }}</td>
+                                                             {% endif %}
                                                              <td>{{ ele }}</td>
                                                              {% if chars %}
                                                                  <td><a href="{% url 'dashboard:product_char_create_view' instance.id ele.id %}" class="btn btn-primary">Add</a></td>

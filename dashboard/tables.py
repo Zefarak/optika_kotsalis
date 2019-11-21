@@ -19,10 +19,11 @@ class TruncatedTextColumn(tables.Column):
 class ImageColumn(tables.Column):
 
     def render(self, value):
-        return format_html('<img class="img img-thumbnail" style="width:50px;height:50px" src="/media/{}" />', value)
+        return format_html('<img class="img img-thumbnail" style="width:50px;height:50px" src="https://optika-kotsalis.s3.amazonaws.com/media/{}" />', value)
 
 
 class TableProduct(tables.Table):
+    image = ImageColumn()
     action = tables.TemplateColumn("<a href='{{ record.get_edit_url }}' class='btn btn-primary btn-round'>"
                                    "<i class='fa fa-edit'> </i></a>",
                                    orderable=False
@@ -36,7 +37,7 @@ class TableProduct(tables.Table):
         model = Product
         template_name = 'django_tables2/bootstrap.html'
         attrs = {'class': 'table  table-hover'}
-        fields = ['id', 'sku', 'title', 'vendor',  'tag_price_buy', 'tag_final_price', 'category', 'action', 'active']
+        fields = ['id','image', 'sku', 'title',  'tag_final_price', 'category', 'action', 'active']
 
 
 class ProductClassTable(tables.Table):

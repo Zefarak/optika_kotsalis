@@ -66,7 +66,7 @@ class ProductsListView(ListView):
         back_url, create_url = reverse('dashboard:home'), reverse('dashboard:product_create')
         page_title = 'Προϊόντα'
         queryset_table = TableProduct(self.object_list)
-        RequestConfig(self.request).configure(queryset_table)
+        RequestConfig(self.request, paginate={"per_page": self.paginate_by}).configure(queryset_table)
         # filters
         search_filter, vendor_filter, category_filter, active_filter, qty_filter, brand_filter, feature_filter = [True] * 7
         categories, vendors, brands = WarehouseCategory.objects.filter(
