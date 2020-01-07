@@ -166,6 +166,7 @@ class ProductView(DetailView, FormView):
     template_name = 'frontend/product_view.html'
     model = Product
     form_class = ProductCartForm
+    queryset = Product.my_query.active_for_site()
 
     def get_success_url(self):
         return self.request.path
