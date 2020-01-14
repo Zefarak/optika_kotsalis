@@ -150,7 +150,7 @@ class BrandDetailView(ListView):
 
     def get_queryset(self):
         brand = self.brand = get_object_or_404(Brand, slug=self.kwargs['slug'])
-        qs = Product.my_query.active().filter(brand=brand)
+        qs = Product.my_query.active_for_site().filter(brand=brand)
         qs = Product.filters_data(self.request, qs)
         return qs
 

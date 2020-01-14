@@ -17,8 +17,10 @@ def ajax_search_brands(request):
     data = dict()
     search_name = request.GET.get('search_name', None)
     brands = Brand.objects.filter(active=True)
-    object_list = brands.filter(title__startswith=search_name.capitalize()) if search_name else Brand.objects.none()
-    print(brands, object_list)
+    if len(search_name) > 2:
+        object_list = Brand.filters_data(brands, request)
+    else:
+        object_list = brands
     data['result'] = render_to_string(template_name='frontend/ajax_views/brand_container.html',
                                       request=request,
                                       context={'object_list': object_list[:16]})

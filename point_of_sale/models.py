@@ -341,7 +341,6 @@ def inform_onwer(sender, instance, created, **kwargs):
         print('created')
 
 
-
 class OrderItem(DefaultOrderItemModel):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order_items', verbose_name='Παραστατικό')
     cost = models.DecimalField(max_digits=6, decimal_places=2, default=0)
