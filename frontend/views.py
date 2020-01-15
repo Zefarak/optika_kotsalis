@@ -93,7 +93,7 @@ class CategoryView(ListView):
 
     def get_queryset(self):
         self.category = get_object_or_404(Category, slug=self.kwargs['slug'])
-        qs = Product.objects.filter(category_site=self.category)
+        qs = Product.my_query.active_for_site().filter(category_site=self.category)
         self.initial_queryset = qs
 
         qs = self.initial_queryset
