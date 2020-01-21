@@ -271,11 +271,11 @@ class Product(DefaultBasicModel):
         queryset = queryset.filter(brand__slug__in=brand_name) if brand_name else queryset
         queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
                                    Q(sku__contains=search_name) |
-                                   Q(brand__title__contains=search_name)
+                                   Q(brand__title__contains=search_name) |
+                                   Q(title__search=search_name)
                                    ).distinct() if search_name else queryset
         if attr_name:
             queryset = queryset.filter(product_class__have_attribute=True)
-
 
         order_by = request.GET.get('order_by', None)
         queryset = queryset.order_by(order_by) if order_by in ['title', '-title', 'final_price', '-final_price'] else queryset

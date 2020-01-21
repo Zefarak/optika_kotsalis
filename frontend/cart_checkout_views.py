@@ -154,8 +154,8 @@ class CheckoutView(FormView):
         send_mail('Έχετε νέα Παραγγελία',
                   f'Ημερομηνια.. {self.new_eshop_order.date_expired} |'
                   f' {self.new_eshop_order.guest_email} | Ποσο {self.new_eshop_order.tag_final_value}',
-                  BUSSNESS_EMAIL,
-                  [BUSSNESS_EMAIL, ]
+                  'christosstath10@gmail.com',
+                  [BUSSNESS_EMAIL, 'lirageika@hotmail.gr']
                   )
 
         return super(CheckoutView, self).form_valid(form)

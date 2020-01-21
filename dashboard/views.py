@@ -210,6 +210,7 @@ def delete_product(request, pk):
     except models.ProtectedError:
         messages.warning(request, 'You cant delete it because its already used.')
         return redirect(instance.get_edit_url())
+    messages.success(request, f'Tο Προϊόν {instance.title} διαγραφηκε.')
     return HttpResponseRedirect(reverse('dashboard:products'))
 
 
