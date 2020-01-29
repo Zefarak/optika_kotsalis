@@ -1,6 +1,7 @@
 from django.shortcuts import HttpResponseRedirect, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView
+from django.db.models import Sum
 from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
@@ -107,3 +108,15 @@ def clear_cart_view(request):
     qs.delete()
     messages.success(request, 'Τα Καλαθια Καθαριστικαν.')
     return redirect(reverse('cart:cart_list'))
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class CartItemAnalysisView(ListView):
+    template_name = 'cart/analysis.html'
+    model = CartItem
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['product_analysis'] = self.object_list.values('product__title').annotate(total=Sum('qty'))\
+            .values('product__title', 'total', 'product__id').order_by('-total')
+        return context
