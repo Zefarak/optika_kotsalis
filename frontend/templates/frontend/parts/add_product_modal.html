@@ -23,14 +23,20 @@
                     </div>
                     <div class="col-lg-6 rtl-text">
                         <div class="product-right">
+                            {% if product.have_transcations %}
                             <h3>{{ product.tag_final_price }} {% if product.is_offer %}<span style="text-decoration: line-through; color: red">{{ product.tag_price }}</span>  {% endif %}</h3>
+                            {% endif %}
                             <br>
                             {% if product.is_offer %}
                                 <br> <br> <br>
                             {% else %}
                             <p>
                                 <a class="btn btn-info btn-small" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                   <i class="fa fa-phone"></i>  Επικοινωνηστε για να συζητησουμε <br>μια καλυτερη τιμη
+                                  {% if product.have_transcations %}
+                                      <i class="fa fa-phone"></i>  Επικοινωνηστε για να συζητησουμε <br>μια καλυτερη τιμη
+                                  {% else %}
+                                      <i class="fa fa-phone"></i> Ρωτηστε μας για την τιμη.
+                                  {% endif %}
                                 </a>
                             </p>
                             <br>
@@ -65,7 +71,9 @@
 
                             <div class="product-buttons">
                                 <a href="{{ product.get_absolute_url }}" class="btn btn-solid">Λεπτομεριες</a>
+                                {% if product.have_transcations %}
                                 <a href="{% url 'add_to_cart' product.slug %}"  class="btn btn-success btn-solid"> <i class="fa fa-cart-plus"></i> Προσθηκη</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

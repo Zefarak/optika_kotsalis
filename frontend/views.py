@@ -29,7 +29,8 @@ class HomepageView(TemplateView):
         banners = Banner.browser.active()
         big_banners, small_banners = [banners.filter(category='a'), banners.filter(category='c')[:4]]
         featured_products = Product.my_query.featured_products()[:8]
-        new_products = Product.my_query.new_products()[:4]
+        only_info_products = Product.my_query.only_info_products()
+        new_products = Product.my_query.index_new_products()
         offers = Product.my_query.products_with_offer()[:4]
         brands = Brand.objects.filter(active=True)
         context.update(locals())
@@ -146,7 +147,7 @@ class BrandListView(ListView):
 class BrandDetailView(ListView):
     template_name = 'frontend/list_view.html'
     model = Product
-    paginate_by = 8
+    paginate_by = 4
 
     def get_queryset(self):
         brand = self.brand = get_object_or_404(Brand, slug=self.kwargs['slug'])

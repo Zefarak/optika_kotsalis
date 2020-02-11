@@ -326,7 +326,6 @@ class ProductCharacteristicCreateView(CreateView):
 
 @staff_member_required
 def product_characteristic_delete_view(request, pk):
-    print('here!')
     instance = get_object_or_404(ProductCharacteristics, id=pk)
     instance.delete()
     return HttpResponseRedirect(reverse('dashboard:char_manager_view', kwargs={'pk': instance.product_related.id}))

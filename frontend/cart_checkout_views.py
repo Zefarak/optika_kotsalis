@@ -38,6 +38,10 @@ def add_product_to_cart(request, slug):
     product = get_object_or_404(Product, slug=slug)
     if product.have_attr:
         messages.warning(request, 'Κάτι πήγε λάθος!')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    if not product.product_class.have_transcations:
+        messages.warning(request, f'Το προϊόν {product.title} δε υποστηρίζει συναλλαγές.')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     session_id = request.session.get('cart_id')
     check_cart_owner = cart.cart_id == session_id
     if check_cart_owner:

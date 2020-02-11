@@ -33,7 +33,7 @@ class ProductManager(models.Manager):
         return super(ProductManager, self).filter(active=True)
 
     def featured_products(self):
-        return self.active().filter(featured_product=True)
+        return self.active().filter(featured_product=True, product_class__have_transcations=True)
 
     def active_warehouse(self):
         return self.active()
@@ -43,6 +43,9 @@ class ProductManager(models.Manager):
 
     def active_for_site(self):
         return self.active()
+
+    def only_info_products(self):
+        return self.active().filter(product_class__have_transcations=False, featured_product=True)
 
     def active_with_qty(self):
         return self.active_for_site().filter(qty__gte=0)
@@ -55,6 +58,9 @@ class ProductManager(models.Manager):
 
     def new_products(self):
         return self.active_for_site().exclude(is_offer=True)
+
+    def index_new_products(self):
+        return self.new_products().filter(product_class__have_transcations=True)[:4]
 
 
 class CategoryManager(models.Manager):

@@ -32,7 +32,7 @@ class CategorySiteAdmin(DraggableMPTTAdmin):
 
 @admin.register(ProductClass)
 class ProductClassAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title', 'have_transcations']
 
 
 @admin.register(Product)

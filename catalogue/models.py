@@ -271,8 +271,8 @@ class Product(DefaultBasicModel):
         queryset = queryset.filter(brand__slug__in=brand_name) if brand_name else queryset
         queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
                                    Q(sku__contains=search_name) |
-                                   Q(brand__title__contains=search_name) |
-                                   Q(title__search=search_name)
+                                   # Q(title__search=search_name) |
+                                   Q(brand__title__contains=search_name)
                                    ).distinct() if search_name else queryset
         if attr_name:
             queryset = queryset.filter(product_class__have_attribute=True)

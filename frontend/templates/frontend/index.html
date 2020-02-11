@@ -278,6 +278,34 @@ Parallax banner end -->
 </section>
 <!-- instagram section end -->
 
+    <!-- Product slider -->
+    <section style="margin-top: 3%" class="ratio_square section-b-space">
+    <div class="container">
+        <div class="title3">
+            <h4>Επιπλέον οι</h4>
+            <h2 class="title-inner3">Φακοι Επαφης μας</h2>
+            <div class="owl-buttons"><div class="fa fa-arrow-left">/</div><div class="fa fa-arrow-right"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="product-4 product-m no-arrow">
+                    {% for product in only_info_products %}
+                        {% include 'frontend/parts/product_card.html' %}
+                    {% empty %}
+                        <div style="margin-top: 5%;" class="row">
+                                <div class="col-12 text-center">
+                                    <p class="text-center">Δε υπάρχουν προτάσεις αυτή την στιγμή</p>
+                                </div>
+                            </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- Product slider end -->
+
 {% endblock %}
 
 {% include 'frontend/include/footer.html' %}

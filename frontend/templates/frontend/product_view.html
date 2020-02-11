@@ -137,25 +137,35 @@
                             </table>
                         </div>
                         <form method="post">{% csrf_token %}
-                            <div class="product-description border-product">
-                                <h6 class="product-title">Ποσότητα</h6>
-                                <div class="qty-box">
-                                    <div class="input-group">
-                                        <span class="input-group-prepend">
-                                            <button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
-                                        <input type="text" name="qty" class="form-control input-number" value="1"> <span class="input-group-prepend">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span>
+                            {% if product.have_transcations %}
+                                <div class="product-description border-product">
+                                    <h6 class="product-title">Ποσότητα</h6>
+                                    <div class="qty-box">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
+                                            <input type="text" name="qty" class="form-control input-number" value="1"> <span class="input-group-prepend">
+                                            <button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            {% endif %}
                             <div class="product-buttons">
+                                {% if product.have_transcations %}
                                 <button type="submit" data-target="#addtocart" class="btn btn-solid">Προσθηκη στο Καλαθι</button>
+                                {% endif %}
                                 <br /> <br />
                                 <!-- Button trigger modal -->
-                                {% if not object.is_offer %}
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-                                 Μαθετε την νεα εκπληκτικη τιμη
-                                </button>
+                                {% if product.have_transcations %}
+                                    {% if not object.is_offer %}
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                                         Μαθετε την νεα εκπληκτικη τιμη
+                                        </button>
+                                    {% endif %}
+                                {% else %}
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                                         Ρωτηστε μας για την τιμη!
+                                    </button>
                                 {% endif %}
                             </div>
                         </form>
