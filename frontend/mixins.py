@@ -63,10 +63,13 @@ class ListViewMixin(MultipleObjectMixin):
         characteristics_filters = Characteristics.browser.filter_access()
         get_chars = ProductCharacteristics.objects.filter(product_related__in=self.object_list)
         chars_filters = []
+        chars_filters_eng = []
         for char in characteristics_filters:
             new_qs = get_chars.filter(title=char)
             new_qs_values = new_qs.values_list('value', 'value__title').distinct()
             chars_filters.append((char.title, new_qs_values))
+            new_qs_values_eng = new_qs.values_list('value', 'value__eng_title').distinct()
+            chars_filters_eng.append((char.eng_title, new_qs_values_eng))
 
         qs_attributes = Attribute.objects.filter(class_related__product_related__in=self.object_list)
         attributes = qs_attributes.values_list('title', 'title__name').distinct().order_by('class_related')

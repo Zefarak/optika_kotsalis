@@ -87,7 +87,7 @@ class OfferView(ListViewMixin, ListView):
         return context
 
 
-class CategoryView(ListView):
+class CategoryView(ListViewMixin, ListView):
     template_name = 'frontend_eng/list_view.html'
     model = Product
     paginate_by = 8
@@ -145,7 +145,7 @@ class BrandListView(ListView):
         return context
 
 
-class BrandDetailView(ListView):
+class BrandDetailView(ListViewMixin, ListView):
     template_name = 'frontend_eng/list_view.html'
     model = Product
     paginate_by = 4
