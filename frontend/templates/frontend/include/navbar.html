@@ -129,17 +129,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                    <li class="onhover-div mobile-setting">
-                                        <div><img src="{% static 'frontend/assets/images/icon/setting.png' %}" class="img-fluid blur-up lazyloaded" alt=""> <i class="ti-settings"></i></div>
-                                        <div class="show-div setting">
-                                            <h6>language</h6>
-                                            <ul>
-                                                <li><a href="{% url 'eng:homepage' %}"><img src="{% static 'frontend/flags/en-gb.png'  %}" /> English</a></li>
-                                                <li><a href="#">Greek</a></li>
-                                            </ul>
 
-                                        </div>
-                                    </li>
                                         <li class="onhover-div mobile-cart">
                                             <div><img alt="" src="{% static 'frontend/assets/images/icon/layout4/cart.png' %}" class="img-fluid blur-up lazyload"><i class="ti-shopping-cart"></i></div>
                                             <ul class="show-div shopping-cart">
@@ -178,6 +168,20 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        {% comment flag %}
+                                        <li class="onhover-div mobile-setting">
+                                            <div>
+                                                <img src="{% static 'frontend/flags/el-gr.png' %}" class="img-fluid blur-up lazyloaded" alt=""> <i class="ti-flag-alt"></i>
+                                            </div>
+                                            <div class="show-div setting">
+                                                <h6>language</h6>
+                                                <ul>
+                                                    <li><a href="{% url 'eng:homepage' %}"><img src="{% static 'frontend/flags/en-gb.png'  %}" /> English</a></li>
+                                                    <li><a href="{% url 'homepage' %}"><img src="{% static 'frontend/flags/el-gr.png' %}" /> Greek</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        {% endcomment %}
                                     </ul>
                                 </div>
                         </div>

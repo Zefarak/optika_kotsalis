@@ -20,6 +20,14 @@ from .models import ProductClass
 WAREHOUSE_ORDERS_TRANSCATIONS = settings.WAREHOUSE_ORDERS_TRANSCATIONS
 
 
+def update_products_action(modeladmin, request, queryset):
+    for ele in queryset:
+        ele.save()
+
+
+update_products_action.short_description = 'Ανανεωση Προϊoντων'
+
+
 @admin.register(Category)
 class CategorySiteAdmin(DraggableMPTTAdmin):
     list_display = ['tree_actions', 'indented_title', 'active', ]
@@ -37,6 +45,7 @@ class ProductClassAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(ImportExportModelAdmin):
+    actions = [update_products_action, ]
     list_display = ['title', 'product_class', 'tag_final_price', 'qty', 'active']
     list_editable = ['qty']
     list_filter = ['active', 'is_offer', 'category']
@@ -80,6 +89,12 @@ class ProductAdmin(ImportExportModelAdmin):
             obj.slug = None
             return super(ProductAdmin, self).save_model(request, obj, form, change)
         return super(ProductAdmin, self).save_model(request, obj, form, change)
+
+
+@admin.register(Brand)
+class BrandAdmin(admin.ModelAdmin):
+    search_fields = ['title', ]
+    actions = [update_products_action, ]
 
 '''
 @admin.register(Characteristics)
@@ -140,9 +155,7 @@ class CategoryAdmin(DraggableMPTTAdmin):
     readonly_fields = ['parent', ]
 
 
-@admin.register(Brand)
-class BrandAdmin(admin.ModelAdmin):
-    search_fields = ['title', ]
+
 
 
 @admin.register(Product)

@@ -320,8 +320,9 @@ def create_slug(sender, instance, **kwargs):
         new_slug = slugify(instance.title, allow_unicode=True)
         qs_exists = Product.objects.filter(slug=new_slug).exists()
         instance.slug = f'{new_slug}-{instance.id}' if qs_exists else new_slug
-        if not instance.eng_title:
-            instance.eng_title = instance.title
+        instance.save()
+    if not instance.eng_title:
+        instance.eng_title = instance.title
         instance.save()
 
 
