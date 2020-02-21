@@ -132,6 +132,8 @@ class CheckoutView(FormView):
         shipping_method = form.cleaned_data['shipping_method']
         payment_method = form.cleaned_data['payment_method']
         cart = check_or_create_cart(self.request)
+        if not cart.order_items.exists():
+            messages.warning(self.request, 'Δε έχετε προσθεσει προϊόντα στο καλαθι σας.')
         cart.shipping_method = shipping_method
         cart.payment_method = payment_method
         cart.save()

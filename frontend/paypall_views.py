@@ -56,6 +56,5 @@ def payment_done(request):
 
 @csrf_exempt
 def payment_canceled(request):
-
     return render(request, 'paypal_/canceled.html')
 

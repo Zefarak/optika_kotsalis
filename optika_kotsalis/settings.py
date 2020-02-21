@@ -13,9 +13,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-PRODUCTION = True
-REAl_DB = True
+DEBUG = True
+PRODUCTION = False
+REAl_DB = False
 
 if PRODUCTION:
     ALLOWED_HOSTS = ['optikakotsalis.herokuapp.com', 'www.optikakotsalis.gr']
@@ -236,7 +236,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_statusbar_location': "bottom",
     'theme_advanced_resizing': True,
     'element_format': "html",
-    'plugins': "contextmenu,directionality,fullscreen,paste,preview,searchreplace,spellchecker,visualchars,wordcount,table",
+    'plugins': "contextmenu, directionality, fullscreen, paste, preview, searchreplace, spellchecker, visualchars, wordcount, table",
     'theme_advanced_buttons3_add' : "tablecontrols",
     'table_styles' : "Header 1=header1;Header 2=header2;Header 3=header3",
     'table_cell_styles' : "Header 1=header1;Header 2=header2;Header 3=header3;Table Cell=tableCel1",
@@ -246,3 +246,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'table_col_limit' : 5,
     'table_inline_editing': True,
 }
+
+PAYPAL_RECEIVER_EMAIL = 'kots_d@hotmail.com' if PRODUCTION else ''
+PAYPAL_TEST = False if PRODUCTION else True

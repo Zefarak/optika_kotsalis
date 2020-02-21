@@ -187,6 +187,7 @@ def product_report_view(request, pk):
 
 @staff_member_required
 def copy_product_view(request, pk):
+    # is deprecicated!
     product = get_object_or_404(Product, id=pk)
     new_product = Product.objects.get(id=pk)
     new_product.pk = None

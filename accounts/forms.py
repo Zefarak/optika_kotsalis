@@ -15,6 +15,7 @@ class BaseForm(forms.Form):
 class ForgotPasswordForm(BaseForm):
     email = forms.EmailField(required=True)
 
+
 class LoginForm(BaseForm):
     username = forms.CharField(required=True, max_length=100)
     password = forms.CharField(required=True, widget=forms.PasswordInput)
@@ -49,6 +50,14 @@ class SignUpForm(BaseForm, UserCreationForm):
         return cleaned_data
 
 
+class SignUpFormEng(SignUpForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['first_name'].label = 'First Name'
+        self.fields['last_name'].label = 'Last Name'
+
+
 class ProfileForm(BaseForm, forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.filter(is_staff=False), widget=forms.HiddenInput(), required=False)
 
@@ -71,6 +80,19 @@ class ProfileFrontEndForm(BaseForm, forms.ModelForm):
                   'shipping_zip_code', 'cellphone',
                   'phone', 'user'
                   ]
+
+
+class ProfileFrontEndEngForm(ProfileFrontEndForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['first_name'].label = 'First Name'
+        self.fields['last_name'].label = 'Last Name'
+        self.fields['shipping_address'].label = 'Shipping Address'
+        self.fields['shipping_city'].label = 'Shipping City'
+        self.fields['shipping_zip_code'].label = 'Zip Code'
+        self.fields['phone'].label = 'Phone'
+        self.fields['cellphone'].label = 'CellPhone'
 
 
 class UpdatePasswordForm(BaseForm, PasswordChangeForm):

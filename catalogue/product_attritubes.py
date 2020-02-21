@@ -13,7 +13,8 @@ from site_settings.constants import WAREHOUSE_ORDERS_TRANSCATIONS
 
 
 class Characteristics(DefaultBasicModel):
-    title = models.CharField(max_length=120, unique=True, verbose_name='Τίτλος')
+    title = models.CharField(max_length=120, unique=True, verbose_name='Τίτλος στην Ελληνικη')
+    eng_title = models.CharField(max_length=120, verbose_name='Τιτλος στη Αγγλικη Εκδοση', blank=True, null=True)
     is_filter = models.BooleanField(default=False, verbose_name='Εμφάνιση στα Φίλτρα')
 
     browser = CharacteristicManager()
@@ -31,6 +32,7 @@ class Characteristics(DefaultBasicModel):
 
 class CharacteristicsValue(DefaultBasicModel):
     title = models.CharField(max_length=120, unique=True)
+    eng_title = models.CharField(max_length=120, verbose_name='Τιτλος στη Αγγλικη Εκδοση', blank=True, null=True)
     char_related = models.ForeignKey(Characteristics, on_delete=models.SET_NULL, null=True, related_name='my_values')
     custom_ordering = models.IntegerField(default=0, verbose_name='Ordering', help_text='Bigger is better')
 

@@ -204,6 +204,8 @@ class CartItem(models.Model):
     def tag_attr(self):
         return self.attribute_item
 
+    def eng_title(self):
+        return self.product.eng_title
     @staticmethod
     def create_cart_item(cart, product, qty, attribute=None):
         result, message = False, ''

@@ -50,6 +50,7 @@ class Shipping(models.Model):
                              max_length=100,
                              verbose_name='Τίτλος'
                              )
+    eng_title = models.CharField(max_length=150, blank=True, null=True, verbose_name='Τιτλος στη Αγγλικη Εκδοση')
     additional_cost = models.DecimalField(max_digits=6,
                                           default=0,
                                           decimal_places=2,
@@ -106,6 +107,7 @@ class PaymentMethod(models.Model):
         ('c', 'Credit Card'),
         ('d', 'Internet Service')
     )
+    eng_title = models.CharField(max_length=150, blank=True, null=True, verbose_name='Τιτλος στη Αγγλικη Εκδοση')
     active = models.BooleanField(default=True, verbose_name='Status')
     title = models.CharField(unique=True, max_length=100, verbose_name='Ονομασία')
     payment_type = models.CharField(choices=PAYMENT_TYPE, default='a', max_length=1, verbose_name='Είδος')
@@ -181,9 +183,10 @@ class Banner(models.Model):
     active = models.BooleanField(default=False, verbose_name='Κατάσταση')
     category = models.CharField(max_length=1, choices=BANNER_TYPE, default='a')
     title = models.CharField(unique=True, max_length=100, verbose_name='Τίτλος')
-    text = HTMLField(verbose_name='Σχόλiα', blank=True)
+    text = HTMLField(verbose_name='Σχόλια', blank=True)
     image = models.ImageField(upload_to=upload_banner, validators=[validate_size, ])
-    url = models.URLField(blank=True, null=True)
+    url = models.URLField(blank=True, null=True, verbose_name="Παραπομπή για την Ελληνική Εκδοση.")
+    eng_url = models.URLField(blank=True, null=True, verbose_name='Παραμπομή για την Αγγλική Εκδοση.')
     bootstrap_class = models.CharField(default='home-slide', max_length=200, help_text='home-slide text-center')
     browser = BannerManager()
     objects = models.Manager()
@@ -204,6 +207,7 @@ class Banner(models.Model):
         qs = qs.filter(active=True) if active_name == '1' else qs.filter(active=False) if active_name =='2' else qs
         qs = qs.filter(title__contains=search_name) if search_name else qs
         return qs
+
 
 class SeoDataModel(models.Model):
     CHOICES = (

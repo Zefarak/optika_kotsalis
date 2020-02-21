@@ -1,8 +1,15 @@
 from django import forms
 from django.forms import formset_factory
+from django.forms import ModelChoiceField
+
 from .models import Attribute, Cart
 from site_settings.models import Shipping, PaymentMethod
 from catalogue.models import Product
+
+
+class EngModelChoiceField(ModelChoiceField):
+    def label_from_instance(self, obj):
+        return f'{obj.eng_title}'
 
 
 class BaseForm(forms.Form):
@@ -49,6 +56,29 @@ class CheckOutForm(BaseForm):
         cellphone = self.cleaned_data.get('cellphone')
         if not str(cellphone).startswith('69'):
             raise forms.ValidationError('Ο αριθμος πρεπει να ξεκινάει από 69')
+        return cellphone
+
+
+class CheckOutEngForm(CheckOutForm):
+    shipping_method = EngModelChoiceField(required=True, queryset=Shipping.objects.filter(active=True))
+    payment_method = EngModelChoiceField(required=True, queryset=PaymentMethod.my_query.active_for_site())
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['first_name'].label = 'First Name'
+        self.fields['last_name'].label = 'Last Name'
+        self.fields['address'].label = 'Address'
+        self.fields['city'].label = 'City'
+        self.fields['zip_code'].label = 'ZipCode'
+        self.fields['cellphone'].label = 'Cellphone'
+        self.fields['phone'].label = 'Phone'
+        self.fields['notes'].label = 'notes'
+        self.fields['shipping_method'].label = 'Shipping Method'
+        self.fields['payment_method'].label = 'Payment Method'
+        self.fields['agree'].label = 'Agree to Rules'
+
+    def clean_phone(self):
+        cellphone = self.cleaned_data.get('cellphone')
         return cellphone
 
 

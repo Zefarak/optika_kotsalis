@@ -26,18 +26,17 @@ class TableProduct(tables.Table):
     image = ImageColumn()
     action = tables.TemplateColumn("<a href='{{ record.get_edit_url }}' class='btn btn-primary btn-round'>"
                                    "<i class='fa fa-edit'> </i></a>",
-                                   orderable=False
+                                   orderable=False, verbose_name='Επεξεργασια'
                                    )
-   #  qty = tables.TemplateColumn('<span class="label label-{{ record.color_qty }}">{{ record.tag_qty }}</span>')
+    #  qty = tables.TemplateColumn('<span class="label label-{{ record.color_qty }}">{{ record.tag_qty }}</span>')
     tag_final_price = tables.Column(orderable=False, verbose_name='Τιμή Πώλησης')
-    tag_price_buy = tables.Column(orderable=False, verbose_name='Τιμή Αγοράς')
     #  title = TruncatedTextColumn()
 
     class Meta:
         model = Product
         template_name = 'django_tables2/bootstrap.html'
         attrs = {'class': 'table  table-hover'}
-        fields = ['id','image', 'sku', 'title',  'tag_final_price', 'category', 'action', 'active']
+        fields = ['id', 'image', 'sku', 'title', 'eng_title', 'brand', 'tag_final_price', 'active', 'action']
 
 
 class ProductClassTable(tables.Table):
@@ -68,7 +67,7 @@ class CategorySiteTable(tables.Table):
     class Meta:
         model = Category
         template_name = 'django_tables2/bootstrap.html'
-        fields = ['id', 'name', 'parent', 'active']
+        fields = ['id', 'name', 'eng_title', 'parent', 'active']
 
 
 class BrandTable(tables.Table):
@@ -78,7 +77,7 @@ class BrandTable(tables.Table):
     class Meta:
         model = Brand
         template_name = 'django_tables2/bootstrap.html'
-        fields = ['id', 'title', 'active']
+        fields = ['id', 'title', 'eng_title', 'active']
 
 
 class CharacteristicsTable(tables.Table):
@@ -88,7 +87,7 @@ class CharacteristicsTable(tables.Table):
     class Meta:
         model = Characteristics
         template_name = 'django_tables2/bootstrap.html'
-        fields = ['title', 'active']
+        fields = ['title', 'eng_title', 'active']
 
 
 class AttributeTable(tables.Table):
@@ -147,5 +146,5 @@ class ColorTable(tables.Table):
 
     class Meta:
         model = Color
-        fields = ['title', 'active', 'action']
+        fields = ['title', 'eng_title', 'active', 'action']
         template_name = 'django_tables2/bootstrap.html'

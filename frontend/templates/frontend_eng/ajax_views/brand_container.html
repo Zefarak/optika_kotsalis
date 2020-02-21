@@ -1,0 +1,24 @@
+ {% load static %}
+
+    {% for brand in object_list %}
+        <div class="col-xl-3 col-md-6 col-grid-box">
+            <div class="product-box product-wrap">
+                <div class="img-wrapper">
+                    <div class="front">
+                        <a href="{{ brand.get_absolute_url }}">
+                            <img {% if brand.image %} src="{{ brand.image.url }}" class="img-fluid blur-up lazyload bg-img" alt="">
+                            {% else %}
+                                src="{% static 'frontend/demo_images/no_image.png' %}" class="img-fluid blur-up lazyload bg-img" alt="">
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div class="product-detail text-center">
+                    <a href="{{ brand.get_absolute_url }}">
+                        <h6>{{ brand.title }}</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}

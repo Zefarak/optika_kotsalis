@@ -21,14 +21,14 @@ class PaymentMethodForm(BaseForm, forms.ModelForm):
 
     class Meta:
         model = PaymentMethod
-        fields = ['title', 'payment_type', 'active', 'site_active', 'additional_cost', 'limit_value', 'first_choice']
+        fields = ['title', 'eng_title', 'payment_type', 'active', 'site_active', 'additional_cost', 'limit_value', 'first_choice']
 
 
 class ShippingForm(BaseForm, forms.ModelForm):
 
     class Meta:
         model = Shipping
-        fields = ['title', 'active', 'additional_cost', 'limit_value', 'text', 'ordering_by']
+        fields = ['title', 'eng_title', 'active', 'additional_cost', 'limit_value', 'text', 'ordering_by']
 
 
 class BannerForm(BaseForm, forms.ModelForm):

@@ -9,7 +9,7 @@ from cart.models import CartItem, CartItemAttribute
 from cart.tools import check_or_create_cart
 from voucher.models import Voucher
 from site_settings.models import Shipping, PaymentMethod
-from contact.forms import ContactFrontEndForm
+from contact.forms import ContactFrontEndEngForm
 from .forms import AskForm
 
 
@@ -159,9 +159,9 @@ def ajax_check_voucher(request):
 def ajax_add_product_modal(request, slug):
     product = get_object_or_404(Product, slug=slug)
     attributes = Attribute.my_query.product_attributes_with_qty(product)
-    contact_form = ContactFrontEndForm()
+    contact_form = ContactFrontEndEngForm()
     data = dict()
-    data['add_modal'] = render_to_string(template_name='frontend/parts/add_product_modal.html',
+    data['add_modal'] = render_to_string(template_name='frontend_eng/parts/add_product_modal.html',
                                          request=request,
                                          context={'product': product,
                                                   'attributes': attributes,

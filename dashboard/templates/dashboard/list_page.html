@@ -15,7 +15,7 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-11">
                                 <!-- Zero config.table start -->
                                 <div class="card">
                                     <div class="card-header">
@@ -31,10 +31,12 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-2">
+                             <div class="col-md-1">
                                  <div class="card">
                                      <div class="card-header">
-                                         <a href="{{ back_url }}" class="btn btn-warning btn-round" style="float: right;">Επιστροφή</a>
+                                         <a href="{{ back_url }}" class="btn btn-warning btn-round" style="float: right;">
+                                             <i class="fa fa-backward"></i>
+                                         </a>
                                      </div>
                                      <div class="card-block">
                                          {% if print_button %}
@@ -47,9 +49,13 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h4>Reports</h4>
-                                            <button data-href="{{ report_url }}" class="btn btn-success btn-round report_button">Υπολογισμός</button>
+                                            <button data-href="{{ report_url }}" class="btn btn-success btn-round report_button">
+                                                <i class="fa fa-calculator"></i>
+                                            </button>
                                             <br> <br>
-                                            <button data-href='{{ report_url }}' type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#report_modal">Δες τα</button>
+                                            <button data-href='{{ report_url }}' type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#report_modal">
+                                                <i class="fa fa-print"></i>
+                                            </button>
                                             <!-- Modal -->
                                             <div class="modal fade bd-example-modal-lg" id="report_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">

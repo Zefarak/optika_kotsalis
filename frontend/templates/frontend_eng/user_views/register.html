@@ -1,0 +1,58 @@
+{% extends 'frontend_eng/index.html' %} {% load static %}
+
+{% block seo_data %}
+    <title>{{ eng_title }} | Create Account</title>
+    <meta name="description" content="Καλώς ήρθατε στο κατάστημά μας, optika kotsalis. Εδώ θα βρείτε μεγάλη ποικιλία απο γυαλιά ηλιού και οράσεως.">
+{% endblock %}
+
+
+{% block content %}
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>Create account</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'eng:homepage' %}">Homepage</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Create Account</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+<!--section start-->
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Fill the form</h3>
+                <p>{{ text }}</p>
+                <div class="theme-card">
+                    <form class="theme-form" method="post">{% csrf_token %}
+                       {{ form }}
+                        <br> <br>
+                        <button type="submit" class="btn btn-solid">Create Account</button>
+                        <br>
+                    </form>
+                    <br><br>
+                    <p>If you have already account you can  <a href="{% url 'eng:login' %}" > login here.</a></p>
+                    <br>
+                    <a style="display: inline;margin-top: 300px;" href="{% url 'social:begin' 'facebook' %}" class="btn btn-solid btn-info right">Register via Facebook</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section ends-->
+
+{% endblock %}

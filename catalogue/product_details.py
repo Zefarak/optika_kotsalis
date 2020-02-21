@@ -114,6 +114,7 @@ class Vendor(models.Model):
 class Brand(models.Model):
     active = models.BooleanField(default=True, verbose_name='Ενεργοποίηση')
     title = models.CharField(max_length=120, verbose_name='Ονομασία Brand')
+    eng_title = models.CharField(max_length=250, verbose_name='Τιτλος για την Αγγλικη Εκδοση', null=True, blank=True)
     image = models.ImageField(blank=True, upload_to='brands/', verbose_name='Εικόνα', validators=[validate_file, ])
     order_by = models.IntegerField(default=1,verbose_name='Σειρά Προτεριότητας')
     meta_description = models.CharField(max_length=255, blank=True)
@@ -141,8 +142,11 @@ class Brand(models.Model):
     def get_absolute_url(self):
         return reverse('brand_detail_view', kwargs={'slug': self.slug})
 
+    def get_absolute_eng_url(self):
+        return reverse('eng:brand_detail_view', kwargs={'slug': self.slug})
+
     def get_edit_url(self):
-        return reverse('dashboard:brand_edit_view', kwargs={'pk':self.id})
+        return reverse('dashboard:brand_edit_view', kwargs={'pk': self.id})
 
     @staticmethod
     def filters_data(queryset, request):
@@ -161,13 +165,16 @@ def create_slug(sender, instance, **kwargs):
         new_slug = slugify(instance.title, allow_unicode=True)
         qs_exists = Brand.objects.filter(slug=new_slug).exists()
         instance.slug = f'{new_slug}-{instance.id}' if qs_exists else new_slug
+        if not instance.eng_title:
+            instance.eng_title = instance.title
         instance.save()
 
 
 class Color(models.Model):
     active = models.BooleanField(default=True, verbose_name='Κατασταση')
     hex_code = models.CharField(max_length=150, blank=True)
-    title = models.CharField(max_length=250, unique=True, verbose_name='Τιτλος')
+    title = models.CharField(max_length=250, verbose_name='Τιτλος')
+    eng_title = models.CharField(max_length=250, verbose_name='Τιτλος για την Αγγλικη Εκδοση', null=True)
 
     class Meta:
         ordering = ['title']

@@ -1,0 +1,97 @@
+{% extends 'frontend_eng/index.html' %}
+
+{% block content %}
+
+
+    <!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>Shipping Methods</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'eng:homepage' %}">Homepage</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Shipping Methods</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb end -->
+
+
+<!-- about section start -->
+<section class="about-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>Details</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about section end -->
+
+    <!--Testimonial start-->
+<section class="testimonial small-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="slide-2 testimonial-slider no-arrow">
+                    <div>
+                        <div class="media">
+                            <div class="text-center">
+                                <h5>Pickup from our store</h5>
+                                <h6>No Cost</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>You can pickup the products you order, from our store.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="media">
+                            <div class="text-center">
+                                <h5>Courier</h5>
+                                <h6>Cost 6 euros</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>We use the acs courrier to send the products anywhere you want </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="media">
+                            <div class="text-center">
+                                <h5>Pick up from the store of Courier</h5>
+                                <h6>Cost 6 euros</h6>
+                            </div>
+
+                            <div class="media-body">
+                                <p>With the help of ACS Courier, you can pickup the order you did from their nearest shop.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Testimonial ends-->
+
+
+
+
+
+
+
+
+
+{% endblock %}

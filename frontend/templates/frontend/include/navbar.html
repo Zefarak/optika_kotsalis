@@ -8,6 +8,7 @@
                 <div class="col-lg-6">
                     <div class="header-contact">
                         <ul>
+                            {% comment %}<li><a style="text-decoration:none;color:#999" href="{% url 'eng:homepage' %}"><img src="{% static 'frontend/flags/en-gb.png' %}" /> English</a> </li> {% endcomment %}
                             <li>Καλώς ήρθατε στα Οπτικά- Κότσαλης</li>
                             <li><i class="fa fa-phone" aria-hidden="true"></i>Καλέστε μας :2732022566</li>
                         </ul>
@@ -15,7 +16,6 @@
                 </div>
                 <div class="col-lg-6 text-right">
                     <ul class="header-dropdown">
-
                          <li class="mobile-account" style="text-decoration:none">
                             <a style="text-decoration:none;color:#999" href="{% url 'wishlist' %}"><i class="fa fa-heart" aria-hidden="true"></i> wishlist</a>
                         </li>
@@ -34,6 +34,7 @@
                         {% else  %}
                              <li class="mobile-account"><a data-toggle="modal" data-target="#login_modal">Σύνδεση</a> </li>
                         {% endif %}
+
                     </ul>
                 </div>
             </div>
@@ -128,6 +129,17 @@
                                                 </div>
                                             </div>
                                         </li>
+                                    <li class="onhover-div mobile-setting">
+                                        <div><img src="{% static 'frontend/assets/images/icon/setting.png' %}" class="img-fluid blur-up lazyloaded" alt=""> <i class="ti-settings"></i></div>
+                                        <div class="show-div setting">
+                                            <h6>language</h6>
+                                            <ul>
+                                                <li><a href="{% url 'eng:homepage' %}"><img src="{% static 'frontend/flags/en-gb.png'  %}" /> English</a></li>
+                                                <li><a href="#">Greek</a></li>
+                                            </ul>
+
+                                        </div>
+                                    </li>
                                         <li class="onhover-div mobile-cart">
                                             <div><img alt="" src="{% static 'frontend/assets/images/icon/layout4/cart.png' %}" class="img-fluid blur-up lazyload"><i class="ti-shopping-cart"></i></div>
                                             <ul class="show-div shopping-cart">

@@ -1,5 +1,5 @@
 import django_tables2 as tables
-from .models import PaymentMethod, Store, Shipping, Banner, SeoDataModel
+from .models import PaymentMethod, Shipping, SeoDataModel
 
 
 class PaymentMethodTable(tables.Table):
@@ -11,7 +11,7 @@ class PaymentMethodTable(tables.Table):
     class Meta:
         model = PaymentMethod
         template_name = 'django_tables2/bootstrap.html'
-        fields = ['title', 'payment_type', 'active' ]
+        fields = ['title', 'eng_title', 'payment_type', 'active']
 
 
 class StoreTable(tables.Table):
@@ -37,7 +37,7 @@ class ShippingTable(tables.Table):
     class Meta:
         model = Shipping
         template_name = 'django_tables2/bootstrap.html'
-        fields = ['ordering_by', 'title', 'tag_additional_cost', 'tag_limit_value', 'active']
+        fields = ['ordering_by', 'title', 'eng_title', 'tag_additional_cost', 'tag_limit_value', 'active']
 
 
 class BannerTable(tables.Table):

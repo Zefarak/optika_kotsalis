@@ -16,3 +16,16 @@ class ContactFrontEndForm(BaseForm, forms.ModelForm):
     class Meta:
         model = Contact
         fields = ['name', 'email', 'phone_number', 'message']
+
+
+class ContactFrontEndEngForm(BaseForm, forms.ModelForm):
+
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'phone_number', 'message']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['name'].label = 'Full Name'
+        self.fields['phone_number'].label = 'Phone Number'
+        self.fields['message'].label = 'Message'

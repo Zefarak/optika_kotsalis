@@ -1,0 +1,111 @@
+<!-- footer --> {% load static %}
+<footer>
+    <div class="dark-layout">
+        <div class="container">
+            <section class="section-b-space border-b">
+                <div class="row footer-theme2">
+                    <div class="col-lg-3">
+                        <div class="footer-title footer-mobile-title">
+                            <h4>about</h4>
+                        </div>
+                        <div class="footer-contant">
+                            <div class="footer-logo"><img src="{% static 'frontend/my_assets/logo.png' %}" alt=""></div>
+                            <p>Visit our store and we will help you to buy new glass or
+                                repair your existing glass the same day with our modern machinery. Our contact lenses (monthly, daily, silicone hydrogel) cover the most demanding user.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 subscribe-wrapper">
+                        <div class="subscribe-block">
+                            <h2>newsletter</h2>
+                            <form method="post" action="{% url 'newsletter:validate_newsletter_eng' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput3" placeholder="Enter your email" required>
+                                    <button type="submit" class="btn btn-solid">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-title">
+                            <h4>How you can find us</h4>
+                        </div>
+                        <div class="footer-contant">
+                            <ul class="contact-details">
+                                <li>Epidaurou Limiras 36 Molaoi, Monemvasias Laconia 23052</li>
+                                <li>Call us: 2732022566</li>
+                                <li>Cellphone: 6974415199</li>
+                                <li>Email : kots_d@hotmail.com</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="dark-layout">
+        <div class="container">
+            <section class="small-section">
+                <div class="row footer-theme2">
+                    <div class="col p-set">
+                        <div class="footer-link">
+                            <div class="footer-title">
+                                <h4>Information</h4>
+                            </div>
+                            <div class="footer-contant">
+                                <ul>
+                                    <li><a href="{% url 'eng:shipping_list_view' %}">Shipping Method</a></li>
+                                    <li><a href="{% url 'eng:payment_list_view' %}">Payment Method</a></li>
+                                    <li><a href="{% url 'eng:return_policy_view' %}">Return Policy</a></li>
+                                    <li><a href="{% url 'eng:terms_rules_view' %}">Terms of Use</a></li>
+                                    <li><a href="{% url 'eng:personal_data_view' %}">Privacy and Cookies Policy</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-link-b">
+                            <div class="footer-title">
+                                <h4>Orders</h4>
+                            </div>
+                            <div class="footer-contant">
+                                <ul>
+                                    <li><a href="{% url 'eng:contact_view' %}">Who we are</a></li>
+                                    <li><a href="{% url 'eng:order_status_form' %}">Order Status</a></li>
+                                    <li><a href="{% url 'eng:user_profile' %}">My info</a></li>
+                                    <li><a href="{% url 'eng:user_profile_order_list' %}">My orders</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="sub-footer darker-subfooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-md-6 col-sm-12">
+                    <div class="footer-end">
+
+                        <p> 2020 Created by <a style="color: #fe816d" href="https://www.simply-chris.com/" target="_blank">Simply-Chris.com</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6 col-sm-12">
+                    <div class="payment-card-bottom">
+                        <ul>
+                            <li>
+                                <a style="color: #fe816d" href="https://www.facebook.com/optikakotsalis/" target="_blank"><i class="fa fa-facebook"></i> </a>
+                            </li>
+                             <li>
+                                <a style="color: #fe816d" href="https://www.instagram.com/optikakotsalis/?hl=el" target="_blank"><i class="fa fa-instagram"></i> </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->

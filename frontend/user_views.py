@@ -43,7 +43,7 @@ def register_view(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request, user)
-            send_mail('Ευχαριστουμε που εγγραφήκατε στο simply-you.',
+            send_mail('Ευχαριστουμε που εγγραφήκατε στο optika-kotsalis.',
                       f'To username σας είναι {username}',
                       SITE_EMAIL,
                       [username, ],
@@ -57,7 +57,7 @@ def register_view(request):
 
 
 def login_view(request):
-
+    page_title = 'login'
     user = request.user
     if user.is_authenticated:
         return HttpResponseRedirect('/')

@@ -1,0 +1,54 @@
+<div class="order-box">
+    <div class="title-box">
+        <div>Product <span>Total Value</span></div>
+    </div>
+    <ul class="qty">
+        {% for cart_item in cart.order_items.all %}
+            <li>{{ cart_item.product.title }} × {{ cart_item.qty }} <span>{{ cart_item.tag_total_value }}</span></li>
+        {% endfor %}
+    </ul>
+    <ul class="sub-total">
+        <li>Product Value <span class="count">{{ cart.tag_value }}</span></li>
+        <li>Shipping Cost <span class="count">{{ cart.tag_shipping_method_cost }}</span></li>
+        <li>Extra Cost <span class="count">{{ cart.tag_payment_method_cost }}</span></li>
+        <li>Discount <span class="count">{{ cart.tag_voucher_discount }}</span></li>
+        <li>Vouchers
+            <div class="shipping">
+                {% for voucher in cart.vouchers.all %}
+                    <div class="shopping-option">
+                        <input type="checkbox" name="free-shipping" id="free-shipping">
+                        <label for="free-shipping">{{ voucher }}</label>
+                    </div>
+                {% empty %}
+                    <div class="shopping-option">
+                        <label for="local-pickup">No Voucher added</label>
+                    </div>
+                {% endfor %}
+            </div>
+        </li>
+    </ul>
+    <ul class="total">
+        <li>Total Value <span class="count">{{ cart.tag_final_value }}</span></li>
+    </ul>
+</div>
+
+
+
+ <script>
+     $('#id_shipping_method').change(function () {
+            const my_input = $(this);
+            const data = my_input.val();
+            const url = {% url 'ajax_checkout_update_cart' %} + '?shipping_method=' + data;
+            $.ajax({
+                method: "GET",
+                url: url,
+                dataType: 'json',
+
+                success: function (data) {
+                    $('#price_container').html(data.result)
+                }
+
+            });
+            console.log('new data', data)
+        })
+ </script>

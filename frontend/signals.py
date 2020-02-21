@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.dispatch import receiver
 from paypal.standard.models import ST_PP_COMPLETED
 from paypal.standard.ipn.signals import valid_ipn_received
 from point_of_sale.models import Order
@@ -13,3 +14,5 @@ def payment_notification(sender, **kwargs):
 
 
 valid_ipn_received.connect(payment_notification)
+
+

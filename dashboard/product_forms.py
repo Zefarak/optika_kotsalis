@@ -15,14 +15,16 @@ class ProductFormWarehouseTranscations(BaseForm, forms.ModelForm):
         fields = ['active',
                   'warehouse_active',
                   'featured_product',
-                  'title', 'sku',
+                  'title', 'eng_title', 'sku',
                   'vendor', 'order_code',
                   'price_buy', 'order_discount',
                   'brand', 'category',
                   'price', 'price_discount',
                   'qty_measure',
                   'measure_unit',
-                  'site_text', 'slug'
+                  'site_text',
+                  'eng_site_text',
+                  'slug'
 
                   ]
         widgets = {
@@ -62,13 +64,12 @@ class ProductForm(BaseForm, forms.ModelForm):
         fields = ['active',
                   'featured_product',
                   'ordering_by_letter',
-                  'title', 'sku',
+                  'title', 'eng_title', 'sku',
                   'color', 'brand',
                   'measure_unit',
                   'price', 'price_discount',
-                  'site_text', 'slug',
-                  'category',
-                  'vendor', 'price_buy',
+                  'site_text', 'eng_site_text', 'slug',
+
                 ]
 
 

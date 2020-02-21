@@ -97,3 +97,12 @@ def validate_frontend_newsletter_view(request):
         messages.success(request, f"Το {form.cleaned_data['email']} "
                                   f"προστέθηκε στην λίστα με τα newsletter, Σας ευχαριστούμε.")
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+
+def validate_frontend_newsletter_eng_view(request):
+    form = NewsLetterForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        messages.success(request, f"The {form.cleaned_data['email']} "
+                                  f"added in our list. Thank you!")
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

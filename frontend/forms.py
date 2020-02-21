@@ -8,6 +8,9 @@ class OrderStatusForm(BaseForm):
     order_code = forms.CharField(label='Κωδικός Παραγγελίας')
 
 
+class OrderStatusEngForm(BaseForm):
+    order_code = forms.CharField(label='Order Code')
+
 class AskForm(BaseForm):
     email = forms.EmailField(required=True)
     phone = forms.CharField(max_length=15, required=False)

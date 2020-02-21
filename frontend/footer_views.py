@@ -21,7 +21,7 @@ def order_status_form_view(request):
         else:
             messages.warning(request, 'Δε υπάρχει παραγγελία με αυτόν τον κωδικό')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    return render(request, 'frontend/footer_views/order_status_form.html', context={'form': form, })
+    return render(request, 'frontend_eng/footer_views/order_status_form.html', context={'form': form, })
 
 
 class PaymentMethodListView(ListView):
@@ -37,6 +37,7 @@ class PaymentMethodListView(ListView):
         seo_title, keywords, seo_description = 'Τρόποι Πληρωμής', '', ''
         page_title = seo_title
         context.update(locals())
+        return context
 
 
 class ShippingListView(ListView):

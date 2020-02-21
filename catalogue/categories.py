@@ -42,6 +42,7 @@ class WarehouseCategory(models.Model):
 class Category(MPTTModel):
     active = models.BooleanField(default=True)
     name = models.CharField(max_length=120, verbose_name='Τίτλος')
+    eng_title = models.CharField(max_length=120, verbose_name='Τιτλος στα Αγγλικα', null=True)
     image = models.ImageField(blank=True,
                               null=True,
                               upload_to=category_site_directory_path,
@@ -108,6 +109,9 @@ class Category(MPTTModel):
 
     def get_absolute_url(self):
         return reverse('category_page', kwargs={'slug': self.slug})
+
+    def get_absolute_eng_url(self):
+        return reverse('eng:category_page', kwargs={'slug': self.slug})
 
     def absolute_url_site(self):
         pass

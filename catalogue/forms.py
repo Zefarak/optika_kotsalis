@@ -19,7 +19,7 @@ class CreateProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        fields = ['title', 'product_class']
+        fields = ['title', 'eng_title', 'product_class']
 
     def __init__(self, *args, **kwargs):
         super(CreateProductForm, self).__init__(*args, **kwargs)
@@ -43,7 +43,7 @@ class CategorySiteForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ['active', 'name', 'parent', 'image', 'content', 'meta_description', 'slug', ]
+        fields = ['active', 'name', 'eng_title', 'parent', 'image', 'content', 'meta_description', 'slug', ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -62,7 +62,7 @@ class BrandForm(forms.ModelForm):
 
     class Meta:
         model = Brand
-        fields = '__all__'
+        fields = ['active', 'title', 'eng_title', 'image']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -75,14 +75,14 @@ class CharacteristicsValueForm(BaseForm, forms.ModelForm):
 
     class Meta:
         model = CharacteristicsValue
-        fields = ['title', 'char_related', 'custom_ordering']
+        fields = ['title', 'eng_title', 'char_related', 'custom_ordering']
 
 
 class CharacteristicsForm(BaseForm, forms.ModelForm):
 
     class Meta:
         model = Characteristics
-        fields = ['active', 'title', 'custom_ordering', 'is_filter']
+        fields = ['active', 'title', 'eng_title', 'custom_ordering', 'is_filter']
 
 
 class AttributeClassForm(BaseForm, forms.ModelForm):
@@ -146,4 +146,4 @@ class ColorForm(BaseForm, forms.ModelForm):
 
     class Meta:
         model = Color
-        fields = ['active', 'title']
+        fields = ['active', 'title', 'eng_title']

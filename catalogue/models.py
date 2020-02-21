@@ -22,7 +22,7 @@ from .validators import upload_product_photo, validate_file
 
 WAREHOUSE_ORDERS_TRANSCATIONS = settings.WAREHOUSE_ORDERS_TRANSCATIONS
 RETAIL_TRANSCATIONS = settings.RETAIL_TRANSCATIONS
-
+PRODUCTION = settings.PRODUCTION
 
 class ProductClass(models.Model):
     title = models.CharField(unique=True, max_length=150)
@@ -78,6 +78,10 @@ class Product(DefaultBasicModel):
 
     related_products = models.ManyToManyField('self', blank=True, verbose_name='Related Products')
     different_color_products = models.ManyToManyField('self', blank='True', related_name='similar_color')
+
+    # english version
+    eng_title = models.CharField(max_length=150, blank=True, null=True, verbose_name='Τιτλος για την Αγγλικη Εκδοση')
+    eng_site_text = HTMLField(blank=True, null=True, verbose_name='Κειμενο για την Αγγλικη Εκδοση')
 
     class Meta:
         verbose_name_plural = "1. Products"
@@ -160,6 +164,9 @@ class Product(DefaultBasicModel):
 
     def get_absolute_url(self):
         return reverse('product_view', kwargs={'slug': self.slug})
+
+    def get_absolute_eng_url(self):
+        return reverse('eng:product_view', kwargs={'slug': self.slug})
 
     def tag_qty(self):
         return f'{self.qty}  {self.get_measure_unit_display()}'
@@ -257,11 +264,14 @@ class Product(DefaultBasicModel):
             queryset = queryset.filter(final_price__range=price_name) if price_name else queryset
         except:
             queryset = queryset
-        queryset = queryset.filter(category_site__slug__in=cate_name) if cate_name else queryset
-        queryset = queryset.filter(category_site__id__in=category_name) if category_name else queryset
+        try:
+            queryset = queryset.filter(category_site__slug__in=cate_name) if cate_name else queryset
+            queryset = queryset.filter(category_site__id__in=category_name) if category_name else queryset
+            queryset = queryset.filter(vendor__id__in=vendor_name) if vendor_name else queryset
+            queryset = queryset.filter(category__id__in=ware_cate) if ware_cate else queryset
+        except:
+            queryset = queryset
         queryset = queryset.filter(category_site__slug=cat) if cat else queryset
-        queryset = queryset.filter(vendor__id__in=vendor_name) if vendor_name else queryset
-        queryset = queryset.filter(category__id__in=ware_cate) if ware_cate else queryset
         queryset = queryset.filter(active=True) if active_name == '1' else queryset.filter(
             active=False) if active_name == '2' else queryset
         queryset = queryset.filter(featured_product=True) if feature_name == '1' else queryset
@@ -269,16 +279,27 @@ class Product(DefaultBasicModel):
         queryset = queryset.filter(qty__gt=0) if qty_name else queryset
 
         queryset = queryset.filter(brand__slug__in=brand_name) if brand_name else queryset
-        queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
-                                   Q(sku__contains=search_name) |
-                                   # Q(title__search=search_name) |
-                                   Q(brand__title__contains=search_name)
-                                   ).distinct() if search_name else queryset
+        if PRODUCTION:
+            queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
+                                       Q(sku__contains=search_name) |
+                                       Q(title__search=search_name) |
+                                       Q(brand__title__contains=search_name)
+                                       ).distinct() if search_name else queryset
+
+        else:
+            queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
+                                       Q(sku__contains=search_name) |
+                                       # Q(title__search=search_name) |
+                                       Q(brand__title__contains=search_name)
+                                       ).distinct() if search_name else queryset
         if attr_name:
             queryset = queryset.filter(product_class__have_attribute=True)
 
-        order_by = request.GET.get('order_by', None)
-        queryset = queryset.order_by(order_by) if order_by in ['title', '-title', 'final_price', '-final_price'] else queryset
+        try:
+            order_by = request.GET.get('order_by', None)
+            queryset = queryset.order_by(order_by) if order_by in ['title', '-title', 'final_price', '-final_price'] else queryset
+        except:
+            queryset=queryset
         return queryset
 
     #   django table
@@ -299,6 +320,8 @@ def create_slug(sender, instance, **kwargs):
         new_slug = slugify(instance.title, allow_unicode=True)
         qs_exists = Product.objects.filter(slug=new_slug).exists()
         instance.slug = f'{new_slug}-{instance.id}' if qs_exists else new_slug
+        if not instance.eng_title:
+            instance.eng_title = instance.title
         instance.save()
 
 
