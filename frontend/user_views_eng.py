@@ -234,7 +234,7 @@ def remove_from_wishlist_view(request, slug):
 @login_required
 def user_personal_data_view(request):
 
-    return render(request, 'frontend/user_views/personal_data.html')
+    return render(request, 'frontend_eng/user_views/personal_data.html')
 
 
 @login_required

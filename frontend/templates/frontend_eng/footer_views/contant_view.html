@@ -1,9 +1,6 @@
-{% extends 'frontend/index.html' %} {% load static %}
+{% extends 'frontend_eng/index.html' %} {% load static %}
 
- {% block seo_data %}
-        <title>Οπτικα - Κοτσαλης | Τρόποι Επικοινώνιας</title>
-        <meta name="description" content="Καλώς ήρθατε στο κατάστημά μας, optika kotsalis. Εδώ θα βρείτε μεγάλη ποικιλία απο γυαλιά ηλιού και οράσεως.">
-    {% endblock %}
+
 
 {% block content %}
 
@@ -13,14 +10,14 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="page-title">
-                    <h2>Τρόποι Επικοινώνιας</h2>
+                    <h2>How to find us</h2>
                 </div>
             </div>
             <div class="col-sm-6">
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Αρχικη Σελιδα</a></li>
-                        <li class="breadcrumb-item active">Τρόποι Επικοινώνιας</li>
+                        <li class="breadcrumb-item"><a href="{% url 'eng:homepage' %}">Homepage</a></li>
+                        <li class="breadcrumb-item active">Find us!</li>
                     </ol>
                 </nav>
             </div>
@@ -42,7 +39,7 @@
                     <ul>
                         <li>
                             <div class="contact-icon"><img src="/static/frontend/assets/images/icon/phone.png" alt="Generic placeholder image">
-                                <h6>Τηλεφωνα</h6></div>
+                                <h6>Phones</h6></div>
                             <div class="media-body">
                                 <p>2732 022566</p>
                                 <p>6974415199</p>
@@ -50,10 +47,10 @@
                         </li>
                         <li>
                             <div class="contact-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <h6>Διευθυνση</h6></div>
+                                <h6>Address</h6></div>
                             <div class="media-body">
-                                <p>Επιδαύρου Λιμηράς 36</p>
-                                <p>Μολάοι Λακωνίας 23052</p>
+                                <p>Epidaurou Limiras 36</p>
+                                <p>Molaoi Lakonias 23052</p>
                             </div>
                         </li>
                         <li>
@@ -72,7 +69,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h4>Για οποιαδηποτε απορία παρακαλώ ρωτήστε μας ότι θέλετε</h4>
+                <h4>Feel free to ask anything you want.</h4>
                 <br />
                 <form class="theme-form" method="post">
                     {% csrf_token %}

@@ -1,5 +1,5 @@
 {% load static %}
-    <table class="table cart-table table-responsive-xs">
+<table class="table cart-table table-responsive-xs">
         <thead>
             <tr class="table-head">
                 <th scope="col">#</th>
@@ -27,7 +27,7 @@
                                 <div class="col-xs-3">
                                     <div class="qty-box">
                                         <div class="input-group">
-                                            <input type="text"data-href="{% url 'ajax_modify_qty' cart_item.id %}"
+                                            <input type="text"data-href="{% url 'eng:ajax_modify_qty' cart_item.id %}"
                                             value="{{ cart_item.qty }}" class="form-control input-number change_qty" value="{{ cart_item.qty }}">
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@
                                     <h2 class="td-color">{{ cart_item.tag_total_value }}</h2></div>
                                 <div class="col-xs-3">
                                     <h2 class="td-color">
-                                        <a href="{% url 'delete_from_cart' cart_item.id %}" class="icon"><i class="ti-close"></i></a>
+                                        <a href="{% url 'eng:delete_from_cart' cart_item.id %}" class="icon"><i class="ti-close"></i></a>
                                     </h2>
                                 </div>
                             </div>
@@ -47,14 +47,14 @@
                             <div class="qty-box">
                                 <div class="input-group">
                                     <input
-                                            data-href="{% url 'ajax_modify_qty' cart_item.id %}"
+                                            data-href="{% url 'eng:ajax_modify_qty' cart_item.id %}"
                                             value="{{ cart_item.qty }}"
                                             class="form-control input-number change_qty" type="number"
                                     >
                                 </div>
                             </div>
                         </td>
-                        <td><a href="{% url 'delete_from_cart' cart_item.id %}" class="icon"><i class="ti-close"></i></a></td>
+                        <td><a href="{% url 'eng:delete_from_cart' cart_item.id %}" class="icon"><i class="ti-close"></i></a></td>
                         <td>
                             <h2 class="td-color">{{ cart_item.tag_total_value }}</h2></td>
                 </tr>
@@ -63,16 +63,15 @@
                             <td colspan="6">Δε έχετε επιλέξει Προϊόντα</td>
                         </tr>
                     {% endfor %}
-                </table>
+</table>
 <table class="table cart-table table-responsive-md">
-                    <tfoot>
-                    <tr>
-                        <td>Total Value :</td>
-                        <td>
-                            <h2>{{ cart.tag_value }}</h2></td>
-                    </tr>
-                    </tfoot>
-                </table>
+    <tfoot>
+        <tr>
+            <td>Total Value :</td>
+            <td><h2>{{ cart.tag_value }}</h2></td>
+        </tr>
+    </tfoot>
+</table>
 
 {% include 'frontend/include/cart_js.html' %}
 

@@ -18,11 +18,7 @@ class ContactFrontEndForm(BaseForm, forms.ModelForm):
         fields = ['name', 'email', 'phone_number', 'message']
 
 
-class ContactFrontEndEngForm(BaseForm, forms.ModelForm):
-
-    class Meta:
-        model = Contact
-        fields = ['name', 'email', 'phone_number', 'message']
+class ContactFrontEndEngForm(ContactFrontEndForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

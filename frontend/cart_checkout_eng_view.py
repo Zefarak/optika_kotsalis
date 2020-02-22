@@ -206,7 +206,7 @@ def order_success_url(request):
 
 class OrderDetailView(DetailView):
     model = Order
-    template_name = 'frontend/checkout_success.html'
+    template_name = 'frontend_eng/checkout_success.html'
     slug_field = 'number'
 
     def get_context_data(self, **kwargs):
@@ -223,14 +223,14 @@ class OrderDetailView(DetailView):
 def add_voucher_to_cart_view(request):
     code = request.GET.get('voucher_code', None)
     if not code:
-        messages.warning(request, 'Πληκτρολογήστε κωδικό κουπονιού')
+        messages.warning(request, 'You need to add a code.')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     if isinstance(code, str):
         code = str(code).upper()
     voucher_exists = Voucher.objects.filter(code=code.upper())
     voucher = voucher_exists.first() if voucher_exists.exists() else None
     if not voucher:
-        messages.warning(request, 'Δε υπάρχει κουπόνι με αυτόν τον κωδικό')
+        messages.warning(request, 'Sorry, there is no a voucher with this code')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     cart = check_or_create_cart(request)
     is_available, message = voucher.check_if_its_available(cart, request.user, voucher)
@@ -246,6 +246,6 @@ def delete_voucher_from_cart_view(request, pk):
     voucher = get_object_or_404(Voucher, id=pk)
     cart.vouchers.remove(voucher)
     cart.save()
-    messages.warning(request, 'Το Κουπόνι αφαιρέθηκε από το καλάθι σας')
+    messages.warning(request, 'The voucher has deleted from the cart')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 

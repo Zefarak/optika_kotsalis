@@ -282,6 +282,8 @@ class Product(DefaultBasicModel):
         if PRODUCTION:
             queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
                                        Q(sku__contains=search_name) |
+                                       Q(eng_title__icontains=search_name) |
+                                       Q(eng__title__search=search_name) |
                                        Q(title__search=search_name) |
                                        Q(brand__title__contains=search_name)
                                        ).distinct() if search_name else queryset

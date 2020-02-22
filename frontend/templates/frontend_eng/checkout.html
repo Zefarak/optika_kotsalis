@@ -69,7 +69,7 @@
             console.log('its a start!');
             const my_input = $(this);
             const data = my_input.val();
-            const url = '{% url "ajax_checkout_update_cart" %}' + '?shipping_method=' + data;
+            const url = '{% url "eng:ajax_checkout_update_cart" %}' + '?shipping_method=' + data;
             $.ajax({
                 method: "GET",
                 url: url,

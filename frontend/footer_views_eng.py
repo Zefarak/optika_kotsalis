@@ -6,7 +6,7 @@ from site_settings.models import PaymentMethod, Shipping
 from .forms import OrderStatusEngForm
 from point_of_sale.models import Order
 from contact.models import Contact
-from contact.forms import ContactFrontEndForm
+from contact.forms import ContactFrontEndEngForm
 
 
 def order_status_form_view(request):
@@ -97,7 +97,7 @@ class PersonalDataView(TemplateView):
 
 class ContactView(CreateView):
     model = Contact
-    form_class = ContactFrontEndForm
+    form_class = ContactFrontEndEngForm
     template_name = 'frontend_eng/footer_views/contant_view.html'
     success_url = reverse_lazy('contact_view')
 
@@ -108,5 +108,5 @@ class ContactView(CreateView):
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request, 'Το μήνυμα σας αποθηκεύτηκε, θα σας απαντήσουμε όσο πιο γρήγορα μπορούμε.')
+        messages.success(self.request, 'Your message is saved. We will try to communicate as soon as possible.')
         return super(ContactView, self).form_valid(form)

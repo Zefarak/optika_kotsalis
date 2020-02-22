@@ -13,7 +13,7 @@ from .user_views_eng import (UserDashboardView, login_view, register_view, fast_
                              )
 from .cart_checkout_eng_view import CartPageView, add_product_to_cart, delete_product_from_cart, CheckoutView, order_success_url, OrderDetailView, add_product_with_attr_to_cart, add_voucher_to_cart_view, delete_voucher_from_cart_view, decide_what_to_do_with_order_payment
 
-from .ajax_views import ajax_search_brands, ajax_change_cart_item_qty, ajax_check_voucher, ajax_change_cart_attribute_qty, ajax_add_product_modal, ajax_quick_modal_view, ajax_delete_cart_item, ajax_estimate_costs, ajax_update_cate_shipping_method_view
+from .ajax_views_eng import ajax_search_brands, ajax_change_cart_item_qty, ajax_check_voucher, ajax_change_cart_attribute_qty, ajax_add_product_modal, ajax_quick_modal_view, ajax_delete_cart_item, ajax_estimate_costs, ajax_update_cate_shipping_method_view
 from .footer_views_eng import ShippingListView, PaymentMethodListView, order_status_form_view, TermsView, ReturnProductPolicyView, CompanyView, ContactView, PersonalDataView
 
 from .paypall_views import payment_canceled, payment_done, payment_process

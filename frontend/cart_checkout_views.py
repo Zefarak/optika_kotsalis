@@ -99,6 +99,11 @@ class CheckoutView(FormView):
     template_name = 'frontend/checkout.html'
     success_url = reverse_lazy('decide_payment_process')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = 'Checkout'
+        return context
+
     def get_initial(self):
         initial = super(CheckoutView, self).get_initial()
         cart = self.cart = check_or_create_cart(self.request)
