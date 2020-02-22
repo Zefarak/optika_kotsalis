@@ -6,7 +6,7 @@
 <!-- thank-you section start -->
 <section class="section-b-space light-layout">
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-12">
                 <div class="success-text"><i class="fa fa-check-circle" aria-hidden="true"></i>
                     <h2>Thank you</h2>
@@ -14,9 +14,11 @@
                         Your order have complete succesfully. We will sent you the products afte
                         Η παραγγελία σας ολοκληρώθηκε επιτυχώς. Θα σας αποστείλουμε τα προϊόντα μετά απο contact via phone.
                         Thank you for your preference</p>
-                    <p>Transaction ID: {{ order.number }}</p>
-
                 </div>
+
+            </div>
+            <div class="col-md-12 text-center">
+                <p style="font-size: 24px">Transaction ID: {{ order.number }}</p>
             </div>
         </div>
     </div>

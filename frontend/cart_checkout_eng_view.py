@@ -19,7 +19,7 @@ from voucher.models import Voucher
 
 
 BUSSNESS_EMAIL = settings.SITE_EMAIL
-
+PRODUCTION = settings.PRODUCTION
 
 class CartPageView(TemplateView):
     template_name = 'frontend_eng/cart_page.html'
@@ -97,7 +97,7 @@ def ajax_change_cart_item_qty(request, pk, action):
 class CheckoutView(FormView):
     form_class = CheckOutEngForm
     template_name = 'frontend_eng/checkout.html'
-    success_url = reverse_lazy('decide_payment_process')
+    success_url = reverse_lazy('eng:decide_payment_process')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -157,18 +157,21 @@ class CheckoutView(FormView):
         OrderProfile.create_order_profile(self.request, self.new_eshop_order, cart)
         email = form.cleaned_data.get('email')
         send_mail('You have a new order.',
-                  f'Thank you!, You order code is '
-                  f' {self.new_eshop_order.number}',
+                  f'Date.. {self.new_eshop_order.date_expired} |'
+                  f' {self.new_eshop_order.guest_email} | Value {self.new_eshop_order.tag_final_value}.'
+                  f'Thank you!, You order code is {self.new_eshop_order.number}. ',
+
                   BUSSNESS_EMAIL,
                   [email, ],
 
                   )
-        send_mail('You have a new order.',
-                  f'Date.. {self.new_eshop_order.date_expired} |'
-                  f' {self.new_eshop_order.guest_email} | Value {self.new_eshop_order.tag_final_value}',
-                  'kotsaldim@gmail.com',
-                  [BUSSNESS_EMAIL, 'lirageika@hotmail.gr']
-                  )
+        if PRODUCTION:
+            send_mail('You have a new order.',
+                      f'Date.. {self.new_eshop_order.date_expired} |'
+                      f' {self.new_eshop_order.guest_email} | Value {self.new_eshop_order.tag_final_value}',
+                      'kotsaldim@gmail.com',
+                      [BUSSNESS_EMAIL, 'lirageika@hotmail.gr']
+                      )
 
         return super(CheckoutView, self).form_valid(form)
 
@@ -181,22 +184,21 @@ def decide_what_to_do_with_order_payment(request):
     cart = check_or_create_cart(request)
     payment_method = cart.payment_method
     if payment_method.payment_type in ['a', 'b']:
-        return redirect(reverse('order_success_url'))
+        return redirect(reverse('eng:order_success_url'))
     if payment_method.payment_type in ['c', 'd']:
-        print('payment title', payment_method.title)
         if payment_method.title == 'Paypal':
             return redirect(reverse('paypall_process'))
-    return redirect(reverse('order_success_url'))
+    return redirect(reverse('eng:order_success_url'))
 
 
 def order_success_url(request):
     cart = check_or_create_cart(request)
     order = get_object_or_404(Order, cart_related=cart)
     show_bank_div = True if order.payment_method.payment_type == 'b' else False
-    title = 'Πραγματοποίηση Παραγγελίας'
+    title = 'Order complete with success'
     profile = order.order_profiles.first() if order.order_profiles.exists() else None
     del request.session['cart_id']
-    return render(request, 'frontend/checkout_success.html', {'order': order,
+    return render(request, 'frontend_eng/checkout_success.html', {'order': order,
                                                               'profile': profile,
                                                               'title': title,
                                                               'show_bank_div': show_bank_div
