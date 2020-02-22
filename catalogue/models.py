@@ -22,7 +22,7 @@ from .validators import upload_product_photo, validate_file
 
 WAREHOUSE_ORDERS_TRANSCATIONS = settings.WAREHOUSE_ORDERS_TRANSCATIONS
 RETAIL_TRANSCATIONS = settings.RETAIL_TRANSCATIONS
-PRODUCTION = True
+PRODUCTION = settings.PRODUCTION
 
 
 class ProductClass(models.Model):

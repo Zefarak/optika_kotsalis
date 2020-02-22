@@ -74,6 +74,7 @@ class OfferView(ListViewMixin, ListView):
         qs = Product.filters_data(self.request, self.initial_queryset)
         if self.request.GET.get('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)
+
         return qs
 
     def get_context_data(self, **kwargs):
@@ -98,6 +99,7 @@ class CategoryView(ListViewMixin, ListView):
 
         qs = self.initial_queryset
         qs = Product.filters_data(self.request, qs)
+        print('items', qs.count(), 'request', self.request.GET)
         return qs
 
     def get_context_data(self, **kwargs):
@@ -125,6 +127,7 @@ class SearchView(ListViewMixin, ListView):
         search_name = self.request.GET.get('search_name', None)
         page_title = 'Απότελέσμα της αναζήτησης %s' % search_name
         context.update(locals())
+
         return context
 
 

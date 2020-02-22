@@ -29,7 +29,8 @@
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{% url 'homepage' %}">Αρχικη Σελιδα</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ page_title }}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ page_title }} <br>
+                        </li>
                     </ol>
                 </nav>
             </div>
@@ -215,7 +216,7 @@
                                     </div>
                                     <div style='display: none' class="loading" style="display: none;">Loading...
                                         {% if page_obj.has_next %}
-                                            <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">More</a>
+                                            <a class="infinite-more-link" href="{{ infinite_next_point }}&page={{ page_obj.next_page_number }}">More</a>
                                         {% endif %}
                                     </div>
 

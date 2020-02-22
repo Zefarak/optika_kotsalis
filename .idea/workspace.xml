@@ -7,7 +7,13 @@
     <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/mixins.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/mixins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/include/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/include/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/list_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/list_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/optika_kotsalis/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/optika_kotsalis/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/point_of_sale/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/point_of_sale/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +27,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="list_view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/list_view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="310" column="33" selection-start-line="310" selection-start-column="33" selection-end-line="310" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="97" column="41" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
+              <folding>
+                <element signature="n#div#0;n#section#0;n#div#0;n#div#1;n#footer#0;n#!!top" />
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#footer#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="51" column="70" selection-start-line="51" selection-start-column="70" selection-end-line="51" selection-end-column="70" />
+              <folding>
+                <element signature="e#0#77#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mixins.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/mixins.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="82" column="48" lean-forward="true" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order-list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/point_of_sale/templates/point_of_sale/order-list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-187">
+              <caret line="23" column="108" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="221">
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -33,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="68">
               <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -58,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mobile-fix-option</find>
       <find>login</find>
       <find>photo</find>
       <find>product/related</find>
@@ -88,6 +157,7 @@
       <find>ξέλιξη-παραγγελίας/</find>
       <find>cart</find>
       <find>langu</find>
+      <find>payment-card-bottom</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,29 +166,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dashboard/dashboard_actions.py" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/settings/characteristic_detail_view.html" />
         <option value="$PROJECT_DIR$/dashboard/tables.py" />
         <option value="$PROJECT_DIR$/catalogue/forms.py" />
         <option value="$PROJECT_DIR$/newsletter/views.py" />
         <option value="$PROJECT_DIR$/newsletter/urls.py" />
         <option value="$PROJECT_DIR$/frontend/signals.py" />
-        <option value="$PROJECT_DIR$/frontend/templates/frontend/list_view.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/checkout_success.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/footer_views/order_status_form.html" />
         <option value="$PROJECT_DIR$/frontend/forms.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/footer_views/payment_policy_view.html" />
         <option value="$PROJECT_DIR$/frontend/footer_views.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/index.html" />
-        <option value="$PROJECT_DIR$/frontend/templates/frontend/include/footer.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/footer_views/rules_view.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/parts/product_card.html" />
         <option value="$PROJECT_DIR$/catalogue/admin.py" />
         <option value="$PROJECT_DIR$/catalogue/product_details.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/list_view.html" />
-        <option value="$PROJECT_DIR$/frontend/mixins.py" />
-        <option value="$PROJECT_DIR$/frontend/views.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/include/navbar.html" />
         <option value="$PROJECT_DIR$/frontend/views_eng.py" />
         <option value="$PROJECT_DIR$/frontend/urls_eng.py" />
@@ -145,8 +210,13 @@
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/user_views/personal_data.html" />
         <option value="$PROJECT_DIR$/frontend/cart_checkout_eng_view.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/checkout_success.html" />
-        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
+        <option value="$PROJECT_DIR$/point_of_sale/views.py" />
         <option value="$PROJECT_DIR$/catalogue/models.py" />
+        <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
+        <option value="$PROJECT_DIR$/frontend/mixins.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/list_view.html" />
+        <option value="$PROJECT_DIR$/frontend/views.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/include/footer.html" />
       </list>
     </option>
   </component>
@@ -187,7 +257,7 @@
             <path>
               <item name="optika_kotsalis" type="b2602c69:ProjectViewProjectNode" />
               <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
-              <item name="catalogue" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -337,12 +407,12 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
+      <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.3296875" />
       <window_info active="true" anchor="bottom" id="manage.py@optika_kotsalis" order="11" visible="true" weight="0.32837406" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -354,15 +424,15 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.128125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32913387" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49895832" weight="0.32943678" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -370,13 +440,13 @@
       <window_info anchor="bottom" id="Terminal" order="14" visible="true" weight="0.25292242" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.25292242" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="manage.py@simply_you" order="13" sideWeight="0.4984375" weight="0.3134963" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="16" weight="0.32943678" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32913387" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +544,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/frontend/views.py</url>
-          <line>166</line>
+          <line>167</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -496,35 +566,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/list_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="260" column="37" selection-start-line="260" selection-start-column="37" selection-end-line="260" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/user_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend_eng/footer_views/order_status_form.html" />
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend_eng/footer_views/payment_policy_view.html" />
     <entry file="file://$PROJECT_DIR$/frontend/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="90" column="33" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -557,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="189" column="22" selection-start-line="189" selection-start-column="22" selection-end-line="189" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -592,27 +630,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/mixins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="60" column="71" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views_eng.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2193">
           <caret line="147" column="47" selection-start-line="147" selection-start-column="47" selection-end-line="147" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="151" column="79" selection-start-line="151" selection-start-column="79" selection-end-line="151" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,13 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -825,22 +839,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2805">
+          <caret line="189" column="22" selection-start-line="189" selection-start-column="22" selection-end-line="189" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/point_of_sale/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#0#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="221">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catalogue/models.py">
+    <entry file="file://$PROJECT_DIR$/point_of_sale/templates/point_of_sale/order-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="-187">
+          <caret line="23" column="108" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/mixins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="82" column="48" lean-forward="true" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://I:/multicart/theme/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="51" column="70" selection-start-line="51" selection-start-column="70" selection-end-line="51" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/list_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="310" column="33" selection-start-line="310" selection-start-column="33" selection-end-line="310" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/include/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="97" column="41" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#div#0;n#div#1;n#footer#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#footer#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

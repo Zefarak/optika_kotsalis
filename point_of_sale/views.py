@@ -56,6 +56,9 @@ class DashboardView(ListView):
         return context
 
 
+
+
+
 @method_decorator(staff_member_required, name='dispatch')
 class OrderListView(ListView):
     template_name = 'point_of_sale/order-list.html'
@@ -78,6 +81,7 @@ class OrderListView(ListView):
         date_now = datetime.datetime.now() - relativedelta(month=6)
         date_now, date_end = date_now.strftime('%m/%d/%Y'), datetime.datetime.now().strftime('%m/%d/%Y')
         date_range = self.request.GET.get('daterange', f'{date_now} - {date_end}')
+
         context.update(locals())
         return context
 

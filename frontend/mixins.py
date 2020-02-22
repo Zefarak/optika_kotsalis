@@ -78,6 +78,10 @@ class ListViewMixin(MultipleObjectMixin):
         low_selected, max_selected = low, max
         if price_name:
             low_selected, max_selected = price_name.split(';')
+
+        # create get params for infinite scroll
+        get_params = urlencode(self.request.GET)
+        infinite_next_point = f'?{get_params}'
         context.update(locals())
         return context
 
