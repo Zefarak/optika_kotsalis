@@ -22,7 +22,8 @@ from .validators import upload_product_photo, validate_file
 
 WAREHOUSE_ORDERS_TRANSCATIONS = settings.WAREHOUSE_ORDERS_TRANSCATIONS
 RETAIL_TRANSCATIONS = settings.RETAIL_TRANSCATIONS
-PRODUCTION = settings.PRODUCTION
+PRODUCTION = True
+
 
 class ProductClass(models.Model):
     title = models.CharField(unique=True, max_length=150)
@@ -283,7 +284,7 @@ class Product(DefaultBasicModel):
             queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
                                        Q(sku__contains=search_name) |
                                        Q(eng_title__icontains=search_name) |
-                                       Q(eng__title__search=search_name) |
+                                       Q(eng_title__search=search_name) |
                                        Q(title__search=search_name) |
                                        Q(brand__title__contains=search_name)
                                        ).distinct() if search_name else queryset

@@ -115,11 +115,9 @@ class SearchView(ListViewMixin, ListView):
     paginate_by = 8
 
     def get_queryset(self):
-        search_name = self.request.GET.get('search_name', None)
         qs = Product.my_query.active_for_site()
-        qs = Product.filters_data(self.request, qs) if len(search_name) > 2 else Product.objects.none()
+        qs = Product.filters_data(self.request, qs)
         self.initial_queryset = qs
-
         return qs
 
     def get_context_data(self, **kwargs):
