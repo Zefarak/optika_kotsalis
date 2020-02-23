@@ -7,7 +7,7 @@ def category_filter_data(queryset):
     brands_id = queryset.values_list('brand', flat=False)
     brands = Brand.objects.filter(id__in=brands_id)
     categories_id = queryset.values_list('category_site', flat=False)
-    categories = Category.objects.filter(id__in=categories_id)
+    categories = Category.objects.filter(id__in=categories_id).order_by('tree_id', 'level', 'parent')
     return [categories, brands]
 
 
@@ -21,9 +21,10 @@ def category_and_brands_filter_data(queryset, cate_id=None):
     brands_id = queryset.values_list('brand', flat=False)
     brands = Brand.objects.filter(id__in=brands_id)
     category = get_object_or_404(Category, id=cate_id)
-    categories = []
+    cate_ids = []
     for cate in category.get_childrens():
-        categories.append(cate)
+        cate_ids.append(cate.id)
         for cate_ in cate.get_childrens():
-            categories.append(cate_)
+            cate_ids.append(cate_.id)
+    categories = Category.objects.filter(id__in=cate_ids).order_by('tree_id', 'level', 'parent')
     return [categories, brands]

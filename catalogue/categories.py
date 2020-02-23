@@ -60,10 +60,9 @@ class Category(MPTTModel):
     objects = models.Manager()
 
     class Meta:
-        ordering = ['id']
         app_label = 'catalogue'
         verbose_name_plural = '3. Κατηγορίες Site'
-        unique_together = ('slug', 'parent' )
+        unique_together = ('slug', 'parent')
 
     def save(self, *args, **kwargs):
         new_slug = slugify(self.name, allow_unicode=True)

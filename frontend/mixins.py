@@ -53,7 +53,6 @@ class ListViewMixin(MultipleObjectMixin):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         # seo data
         page_title, description = 'Fixed it', 'Test'
 
@@ -82,6 +81,7 @@ class ListViewMixin(MultipleObjectMixin):
         # create get params for infinite scroll
         get_params = urlencode(self.request.GET)
         infinite_next_point = f'?{get_params}'
+        print(infinite_next_point)
         context.update(locals())
         return context
 
