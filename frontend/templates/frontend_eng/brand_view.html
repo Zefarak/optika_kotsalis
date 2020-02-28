@@ -51,7 +51,7 @@
                                                 <div class="popup-filter">
                                                     <div class="collection-view">
                                                          <form class="form" method="get">
-                                                             <input data-href="{% url 'eng:ajax_search_brands' %}" type="text" class="form-control search_brands" placeholder="Αναζήτηση Brand">
+                                                             <input data-href="{% url 'eng:ajax_search_brands' %}" type="text" class="form-control search_brands" placeholder="Search Brand">
                                                          </form>
                                                     </div>
 
@@ -146,7 +146,6 @@
     <script>
         $('.search_brands').keyup(function (evt) {
             evt.preventDefault();
-            console.log('so i will sent something');
             const my_input = $(this);
             const url = my_input.attr('data-href');
             const value = my_input.val();

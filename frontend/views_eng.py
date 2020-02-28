@@ -194,7 +194,10 @@ class BrandDetailView(ListViewMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(BrandDetailView, self).get_context_data(**kwargs)
-        page_title, description = f'{self.eng_title}', f'Welcome to our store  optika kotsalis. All the products of the brand {self.brand.eng_title} is here.'
+        brand = get_object_or_404(Brand, slug=self.kwargs['slug'])
+        page_title, description = f'{brand.eng_title}', \
+                                  f'Welcome to our store  optika kotsalis. All the products of ' \
+                                  f'the brand {brand.eng_title} is here.'
         context.update(locals())
         return context
 

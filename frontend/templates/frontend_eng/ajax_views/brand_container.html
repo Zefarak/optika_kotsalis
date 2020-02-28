@@ -5,7 +5,7 @@
             <div class="product-box product-wrap">
                 <div class="img-wrapper">
                     <div class="front">
-                        <a href="{{ brand.get_absolute_url }}">
+                        <a href="{{ brand.get_absolute_eng_url }}">
                             <img {% if brand.image %} src="{{ brand.image.url }}" class="img-fluid blur-up lazyload bg-img" alt="">
                             {% else %}
                                 src="{% static 'frontend/demo_images/no_image.png' %}" class="img-fluid blur-up lazyload bg-img" alt="">
@@ -15,8 +15,8 @@
                 </div>
                 <br>
                 <div class="product-detail text-center">
-                    <a href="{{ brand.get_absolute_url }}">
-                        <h6>{{ brand.title }}</h6>
+                    <a href="{{ brand.get_absolute_eng_url }}">
+                        <h6>{{ brand.eng_title }}</h6>
                     </a>
                 </div>
             </div>

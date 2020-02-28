@@ -21,7 +21,7 @@ def ajax_search_brands(request):
         object_list = Brand.filters_data(brands, request)
     else:
         object_list = brands
-    data['result'] = render_to_string(template_name='frontend/ajax_views/brand_container.html',
+    data['result'] = render_to_string(template_name='frontend_eng/ajax_views/brand_container.html',
                                       request=request,
                                       context={'object_list': object_list[:16]})
     return JsonResponse(data)
