@@ -85,13 +85,13 @@
                                                                     <a class="btn btn-warning" href="{{ request.path }}">Clear</a>
                                                                     <h3 class="collapse-block-title">Categories</h3>
                                                                     <div class="collection-collapse-block-content">
-                                                                        <div class="collection-brand-filter">
+                                                                        <div class="collection-brand-filter scrollable_div">
                                                                             {% for category in categories %}
                                                                                 <div class="custom-control custom-checkbox collection-filter-checkbox">
                                                                                     <input value="{{ category.slug }}" name='cate_name' type="checkbox" class="custom-control-input" id="cate_{{ category.id }}"
                                                                                     {% if category.slug|stringformat:"s" in request.GET|get_item:'cate_name' %} checked {% endif %}
                                                                                     >
-                                                                                    <label class="custom-control-label" for="cate_{{ category.id }}">{{ category.eng_title }}</label>
+                                                                                    <label class="custom-control-label" for="cate_{{ category.id }}">{{ category.eng_str__ }}</label>
                                                                                 </div>
                                                                                 {% empty %}
                                                                                 <p>No available categories</p>
@@ -104,7 +104,7 @@
                                                                 <div class="collection-collapse-block">
                                                                     <h3 class="collapse-block-title">brand</h3>
                                                                     <div class="collection-collapse-block-content">
-                                                                        <div class="collection-brand-filter">
+                                                                        <div class="collection-brand-filter scrollable_div">
                                                                             {% for brand in brands %}
                                                                                 <div class="custom-control custom-checkbox collection-filter-checkbox">
                                                                                     <input name="brand_name" value="{{ brand.slug }}"  type="checkbox" class="custom-control-input" id="brand_{{ brand.id}}"
@@ -131,7 +131,7 @@
                                                                 <div class="collection-collapse-block">
                                                                     <h3 class="collapse-block-title">Color</h3>
                                                                     <div class="collection-collapse-block-content">
-                                                                        <div class="collection-brand-filter">
+                                                                        <div class="collection-brand-filter scrollable_div">
                                                                             {% for color in colors %}
                                                                                 <div class="custom-control custom-checkbox collection-filter-checkbox">
                                                                                     <input name="color_name" value="{{ color.title }}"  type="checkbox" class="custom-control-input" id="color_{{ color.id}}"
@@ -155,7 +155,7 @@
                                                                     <div class="collection-collapse-block">
                                                                         <h3 class="collapse-block-title">{{ characteristic.0 }}</h3>
                                                                         <div class="collection-collapse-block-content">
-                                                                            <div class="collection-brand-filter">
+                                                                            <div class="collection-brand-filter scrollable_div">
                                                                                 {% for char in characteristic.1 %}
                                                                                     <div class="custom-control custom-checkbox collection-filter-checkbox">
                                                                                         <input name="char_name" value="{{ char.0 }}"  type="checkbox" class="custom-control-input" id="char_{{ char.0}}"
@@ -164,7 +164,7 @@
                                                                                         <label class="custom-control-label" for="char_{{ char.0 }}">{{ char.1 }}</label>
                                                                                     </div>
                                                                                     {% empty %}
-                                                                                    <p>No available  {{ characteristic }} values</p>
+                                                                                    <p>No available  {{ characteristic.0 }} values</p>
                                                                                 {% endfor %}
                                                                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> </button>
                                                                             </div>

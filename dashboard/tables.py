@@ -67,7 +67,7 @@ class CategorySiteTable(tables.Table):
     class Meta:
         model = Category
         template_name = 'django_tables2/bootstrap.html'
-        fields = ['id', 'name', 'eng_title', 'parent', 'active']
+        fields = ['id', '__str__', 'eng_title', 'parent', 'active']
 
 
 class BrandTable(tables.Table):

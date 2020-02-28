@@ -27,7 +27,7 @@
                                                 {% for ele in instance.my_values.all %}
                                                     <tr>
                                                         <td>{{ ele.id }}</td>
-                                                        <td>{{ ele }}</td>
+                                                        <td>{{ ele }} | {{ ele.eng_title }}</td>
                                                         <td><a href="{{ ele.get_edit_url }}" class="btn btn-primary">
                                                             <i class="fa fa-edit"></i>
                                                         </a> </td>

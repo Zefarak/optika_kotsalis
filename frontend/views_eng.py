@@ -49,7 +49,13 @@ class NewProductsListView(ListViewMixin, ListView):
         if self.request.GET.getlist('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)
         if self.request.GET.getlist('char_name', None):
-            qs = ProductCharacteristics.filters_data(self.request, qs)
+            try:
+                ids = ProductCharacteristics.filters_data(self.request,
+                                                          ProductCharacteristics.objects.all()).values_list(
+                    'product_related__id')
+                qs = qs.filter(id__in=ids)
+            except:
+                qs = qs
         return qs
 
     def get_context_data(self, **kwargs):
@@ -75,6 +81,12 @@ class OfferView(ListViewMixin, ListView):
         qs = Product.filters_data(self.request, self.initial_queryset)
         if self.request.GET.get('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)
+        if self.request.GET.getlist('char_name', None):
+            try:
+                ids = ProductCharacteristics.filters_data(self.request, ProductCharacteristics.objects.all()).values_list('product_related__id')
+                qs = qs.filter(id__in=ids)
+            except:
+                qs = qs
         return qs
 
     def get_context_data(self, **kwargs):
@@ -99,6 +111,14 @@ class CategoryView(ListViewMixin, ListView):
 
         qs = self.initial_queryset
         qs = Product.filters_data(self.request, qs)
+        if self.request.GET.getlist('char_name', None):
+            try:
+                ids = ProductCharacteristics.filters_data(self.request,
+                                                          ProductCharacteristics.objects.all()).values_list(
+                    'product_related__id')
+                qs = qs.filter(id__in=ids)
+            except:
+                qs = qs
         return qs
 
     def get_context_data(self, **kwargs):
@@ -121,7 +141,14 @@ class SearchView(ListViewMixin, ListView):
         qs = Product.my_query.active_for_site()
         qs = Product.filters_data(self.request, qs) if len(search_name) > 2 else Product.objects.none()
         self.initial_queryset = qs
-
+        if self.request.GET.getlist('char_name', None):
+            try:
+                ids = ProductCharacteristics.filters_data(self.request,
+                                                          ProductCharacteristics.objects.all()).values_list(
+                    'product_related__id')
+                qs = qs.filter(id__in=ids)
+            except:
+                qs = qs
         return qs
 
     def get_context_data(self, **kwargs):
@@ -155,6 +182,14 @@ class BrandDetailView(ListViewMixin, ListView):
         qs = Product.my_query.active_for_site().filter(brand=brand)
         self.initial_queryset = qs
         qs = Product.filters_data(self.request, qs)
+        if self.request.GET.getlist('char_name', None):
+            try:
+                ids = ProductCharacteristics.filters_data(self.request,
+                                                          ProductCharacteristics.objects.all()).values_list(
+                    'product_related__id')
+                qs = qs.filter(id__in=ids)
+            except:
+                qs = qs
         return qs
 
     def get_context_data(self, **kwargs):

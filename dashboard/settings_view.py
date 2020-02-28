@@ -72,6 +72,7 @@ class CategorySiteListView(ListView):
     def get_queryset(self):
         queryset = Category.objects.all()
         queryset = Category.filter_data(queryset, self.request)
+        queryset = queryset.order_by('tree_id', 'level', 'parent')
         return queryset
 
     def get_context_data(self, **kwargs):

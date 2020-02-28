@@ -257,7 +257,7 @@ class Product(DefaultBasicModel):
         price_name = price_name.split(';') if price_name else None
         color_name = request.GET.getlist('color_name', None)
         feature_name = request.GET.get('feature_name', None)
-        char_name = request.GET.get('char_name', None)
+        char_name = request.GET.getlist('char_name', None)
 
         queryset = queryset.filter(is_offer=True) if offer_name == '1' else queryset
         queryset = queryset.filter(color__title__in=color_name) if color_name else queryset
@@ -280,6 +280,7 @@ class Product(DefaultBasicModel):
         queryset = queryset.filter(qty__gt=0) if qty_name else queryset
 
         queryset = queryset.filter(brand__slug__in=brand_name) if brand_name else queryset
+
         if PRODUCTION:
             queryset = queryset.filter(Q(title__icontains=search_name.capitalize()) |
                                        Q(sku__contains=search_name) |

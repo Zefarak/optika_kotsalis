@@ -41,14 +41,19 @@ class ListViewMixin(MultipleObjectMixin):
         return self.paginate_by
 
     def get_queryset(self):
-
         qs = self.model.my_query.active_for_site()
         self.initial_queryset = qs
         qs = self.model.filters_data(self.request, qs)
         if self.request.GET.getlist('attr_name', None):
             qs = Attribute.product_filter_data(self.request, qs)
         if self.request.GET.getlist('char_name', None):
-            qs = ProductCharacteristics.filters_data(self.request, qs)
+            try:
+                ids = ProductCharacteristics.filters_data(self.request,
+                                                          ProductCharacteristics.objects.all()).values_list(
+                    'product_related__id')
+                qs = qs.filter(id__in=ids)
+            except:
+                qs = qs
         return qs
 
     def get_context_data(self, **kwargs):
@@ -68,7 +73,7 @@ class ListViewMixin(MultipleObjectMixin):
             new_qs_values = new_qs.values_list('value', 'value__title').distinct()
             chars_filters.append((char.title, new_qs_values))
             new_qs_values_eng = new_qs.values_list('value', 'value__eng_title').distinct()
-            chars_filters_eng.append((char.eng_title, new_qs_values_eng))
+            chars_filters_eng.append((char.str_eng, new_qs_values_eng))
 
         qs_attributes = Attribute.objects.filter(class_related__product_related__in=self.object_list)
         attributes = qs_attributes.values_list('title', 'title__name').distinct().order_by('class_related')
@@ -81,7 +86,7 @@ class ListViewMixin(MultipleObjectMixin):
         # create get params for infinite scroll
         get_params = urlencode(self.request.GET)
         infinite_next_point = f'?{get_params}'
-        print(infinite_next_point)
+        print(chars_filters_eng)
         context.update(locals())
         return context
 

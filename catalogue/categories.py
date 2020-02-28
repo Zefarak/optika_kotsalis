@@ -78,6 +78,14 @@ class Category(MPTTModel):
             k = k.parent
         return ' -> '.join(full_path[::-1])
 
+    def eng_str__(self):
+        full_path = [self.eng_title] if self.eng_title else ['--']
+        k = self.parent
+        while k is not None:
+            full_path.append(k.eng_title) if k.eng_title else full_path.append('--')
+            k = k.parent
+        return ' -> '.join(full_path[::-1])
+
     def front_name(self):
         full_path = [f'- {self.name}']
         k = self.parent

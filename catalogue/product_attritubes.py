@@ -26,6 +26,9 @@ class Characteristics(DefaultBasicModel):
     def __str__(self):
         return self.title
 
+    def str_eng(self):
+        return self.eng_title if self.eng_title else self.title
+
     def get_edit_url(self):
         return reverse('dashboard:char_edit_view', kwargs={'pk': self.id})
 
@@ -42,6 +45,9 @@ class CharacteristicsValue(DefaultBasicModel):
 
     def __str__(self):
         return self.title
+
+    def str_eng(self):
+        return self.eng_title if self.eng_title else self.title
 
     def get_edit_url(self):
         return reverse('dashboard:char_value_edit_view', kwargs={'pk': self.id})
