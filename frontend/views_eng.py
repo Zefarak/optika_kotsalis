@@ -39,7 +39,6 @@ class HomepageView(TemplateView):
 class NewProductsListView(ListViewMixin, ListView):
     template_name = 'frontend_eng/list_view.html'
     model = Product
-    paginate_by = 8
 
     def get_queryset(self):
         self.initial_queryset = Product.my_query.active_for_site().filter(
@@ -56,6 +55,7 @@ class NewProductsListView(ListViewMixin, ListView):
                 qs = qs.filter(id__in=ids)
             except:
                 qs = qs
+        print(qs.count())
         return qs
 
     def get_context_data(self, **kwargs):
@@ -74,7 +74,7 @@ class NewProductsListView(ListViewMixin, ListView):
 class OfferView(ListViewMixin, ListView):
     model = Product
     template_name = 'frontend_eng/list_view.html'
-    paginate_by = 8
+
 
     def get_queryset(self):
         self.initial_queryset = Product.my_query.products_with_offer()
@@ -102,7 +102,7 @@ class OfferView(ListViewMixin, ListView):
 class CategoryView(ListViewMixin, ListView):
     template_name = 'frontend_eng/list_view.html'
     model = Product
-    paginate_by = 8
+
 
     def get_queryset(self):
         self.category = get_object_or_404(Category, slug=self.kwargs['slug'])
@@ -134,7 +134,7 @@ class CategoryView(ListViewMixin, ListView):
 class SearchView(ListViewMixin, ListView):
     model = Product
     template_name = 'frontend_eng/list_view.html'
-    paginate_by = 8
+
 
     def get_queryset(self):
         search_name = self.request.GET.get('search_name', None)
