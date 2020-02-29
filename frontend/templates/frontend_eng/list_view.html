@@ -215,7 +215,7 @@
                                     </div>
                                     <div style='display: none' class="loading" style="display: none;">Loading...
                                         {% if page_obj.has_next %}
-                                            <a class="infinite-more-link" href="{{ infinite_next_point }}">More</a>
+                                            <a class="infinite-more-link" href="{{ infinite_next_point }}&page={{ page_obj.next_page_number }}">More</a>
                                         {% endif %}
                                     </div>
 
