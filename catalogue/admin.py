@@ -11,7 +11,7 @@ from .product_details import Vendor
 from .models import WarehouseCategory
 from .inlines import ProductCharacteristicsInline, ProductPhotosInline
 
-from mptt.admin import DraggableMPTTAdmin
+from mptt.admin import DraggableMPTTAdmin,MPTTModelAdmin
 from import_export.admin import ImportExportModelAdmin
 
 from .categories import Category
@@ -30,6 +30,7 @@ update_products_action.short_description = 'Ανανεωση Προϊoντων'
 
 @admin.register(Category)
 class CategorySiteAdmin(DraggableMPTTAdmin):
+    mptt_level_indent = 20
     list_display = ['tree_actions', 'indented_title', 'active', ]
     search_fields = ['name', ]
     list_filter = ['active']

@@ -43,7 +43,7 @@ class CategorySiteForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ['active', 'name', 'eng_title', 'parent', 'image', 'content', 'meta_description', 'slug', ]
+        fields = ['active', 'name', 'eng_title', 'parent', 'image', 'content', 'meta_description', 'slug', 'order' ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -124,7 +124,7 @@ class Category(MPTTModel):
         pass
 
     def get_childrens(self):
-        childrens = self.children.filter(active=True)
+        childrens = self.children.filter(active=True).order_by('order')
         return childrens
 
     @staticmethod
@@ -132,7 +132,6 @@ class Category(MPTTModel):
         search_name = request.GET.get('search_name', None)
         active_name = request.GET.getlist('active_name', None)
         menu_name = request.GET.getlist('menu_name', None)
-        print(menu_name)
         queryset = queryset.filter(name__icontains=search_name.capitalize()) if search_name else queryset
         queryset = queryset.filter(active=True) if active_name else queryset
         queryset = queryset.filter(show_on_menu=True) if 'a' in menu_name else queryset.filter(show_on_menu=False) if 'b' in menu_name else queryset

@@ -81,7 +81,7 @@
                                             <li>
                                                 <div class="container">
                                                     <div class="row">
-                                                       {% for cate in category.children.all %}
+                                                       {% for cate in category.get_childrens.all %}
                                                         <div class="col mega-box">
                                                             <div class="link-section">
                                                                 <div class="menu-title">
@@ -176,8 +176,8 @@
                                             <div class="show-div setting">
                                                 <h6>language</h6>
                                                 <ul>
-                                                    <li><a href="{% url 'eng:homepage' %}"><img src="{% static 'frontend/flags/en-gb.png'  %}" /> English</a></li>
-                                                    <li><a href="{% url 'homepage' %}"><img src="{% static 'frontend/flags/el-gr.png' %}" /> Greek</a></li>
+                                                    <li><a href="{{ eng_url }}"><img src="{% static 'frontend/flags/en-gb.png'  %}" />English</a></li>
+                                                    <li><a href="{{ greek_url }}"><img src="{% static 'frontend/flags/el-gr.png' %}" /> Greek</a></li>
                                                 </ul>
                                             </div>
                                         </li>
