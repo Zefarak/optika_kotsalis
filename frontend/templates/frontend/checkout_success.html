@@ -96,8 +96,15 @@
                     <div class="col-md-12">
                         <div class="delivery-sec">
                             <h3>Κατάσταση</h3>
-                            <h2>{{ order.get_status_display }}</h2></div>
+                            <h2>{{ order.get_status_display }}</h2>
+                        </div>
                     </div>
+                    {% if order.shipping_voucher %}
+                        <p>Η παραγγελια σας απεστάλη με {{ order.shipping_voucher.shipping_method }}. Περισσότερες πληροφορίες ==>
+                            <a target="_blank" href="{{ order.shipping_voucher.shipping_method.site_tracker}}{{order.shipping_voucher.shipping_code}}">εδώ</a>
+                        </p>
+
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -28,7 +28,7 @@ class ShippingForm(BaseForm, forms.ModelForm):
 
     class Meta:
         model = Shipping
-        fields = ['title', 'eng_title', 'active', 'additional_cost', 'limit_value', 'text', 'ordering_by']
+        fields = [ 'active', 'eng_title', 'title', 'site_tracker','additional_cost', 'limit_value', 'text', 'ordering_by']
 
 
 class BannerForm(BaseForm, forms.ModelForm):

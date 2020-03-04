@@ -226,8 +226,12 @@
                                                             </tr>
                                                         </tbody>
                                                    </table>
-                                                    <a href="{{ object.voucher.get_edit_url }}" class="btn btn-primary"> Επεξεργασία</a>
-                                                    <a href="" class="btn btn-warning"><i class="fa fa-mail-reply"></i> Αποστολή Με email </a>
+                                                    <a href="{% url 'point_of_sale:edit_shipping_voucher' object.shipping_voucher.id %}" class="btn btn-info"><i class="fa fa-edit"></i> </a>
+                                                   <br /> <hr>
+                                                   <a target="_blank" href="{{ object.shipping_voucher.shipping_method.site_tracker }}{{ object.shipping_voucher.shipping_code }}">Κατασταση Παραγγελιας</a>
+                                                   <br /> <hr>
+                                                   <a href="{{ object.voucher.get_edit_url }}" class="btn btn-primary"> Επεξεργασία</a>
+                                                   <a href="{% url 'point_of_sale:send_shipping_email' object.id %}" class="btn btn-warning"><i class="fa fa-mail-reply"></i>Αποστολή Με email</a>
                                                 {%  else  %}
                                                     <a href="{% url 'point_of_sale:create_shipping_voucher' object.id %}" class="btn btn-success">Δημιουργία Παραστατικού</a>
                                                 {% endif %}

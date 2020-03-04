@@ -11,7 +11,9 @@ from .ajax_views import (ajax_order_item, ajax_search_products, ajax_add_product
 from .views_actions import (auto_create_retail_order, done_order_view, quick_pay_costumer_view, create_copy_order,
                             OrderPrintView, CreateCostumerFromOrder, order_change_costumer, ProfileOrderDetailView,
                             create_or_edit_order_voucher_view, order_voucher_manager_view)
-from .eshop_views import EshopOrderListView, EshopOrderDetailView, eshop_order_edit_profile, create_user_view, CreateShippingVoucher
+from .eshop_views import (EshopOrderListView, EshopOrderDetailView, eshop_order_edit_profile, create_user_view,
+                          CreateShippingVoucher, send_shipping_info_email_view, EditShippingVoucher
+                          )
 from .ajax_eshop_views import ajax_change_status, ajax_find_product, ajax_find_product_attr, ajax_coupon_view
 from .autocomplete_widget import ProfileAutoComplete
 
@@ -72,6 +74,8 @@ urlpatterns = [
     # eshop views
     path('eshop/views/list/', EshopOrderListView.as_view(), name='eshop_list_view'),
     path('eshop/views/detail/<int:pk>/', EshopOrderDetailView.as_view(), name='eshop_detail_view'),
+    path('send-shipping-info-details/<int:pk>/', send_shipping_info_email_view, name='send_shipping_email'),
+    path('edit-shipping-voucher/<int:pk>/', EditShippingVoucher.as_view(), name='edit_shipping_voucher'),
 
     # eshop_ajax_views
     path('ajax/eshop/change-status/<int:pk>/', ajax_change_status, name='ajax_change_status'),

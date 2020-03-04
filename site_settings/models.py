@@ -65,6 +65,7 @@ class Shipping(models.Model):
                                       )
     country = models.ForeignKey(Country, blank=True, null=True, on_delete=models.SET_NULL)
     first_choice = models.BooleanField(default=False, verbose_name='Πρώτη Επιλογή')
+    site_tracker = models.URLField(blank=True, null=True)
     ordering_by = models.IntegerField(default=1, verbose_name='Priority Order')
     text = HTMLField(blank=True)
     objects = models.Manager()

@@ -78,11 +78,10 @@ class ListViewMixin(MultipleObjectMixin):
         qs_attributes = Attribute.objects.filter(class_related__product_related__in=self.object_list)
         attributes = qs_attributes.values_list('title', 'title__name').distinct().order_by('class_related')
         low, max = 0, self.initial_queryset.order_by('-final_price')[0].final_price if self.initial_queryset else 200
-        price_name = self.request.GET.get('price_name', None)
+        price_name = self.request.GET.get('price_name', '')
         low_selected, max_selected = low, max
-        if price_name:
+        if ';' in price_name:
             low_selected, max_selected = price_name.split(';')
-
         # create get params for infinite scroll
         get_params = urlencode(self.request.GET)
         infinite_next_point = f'?{get_params}'

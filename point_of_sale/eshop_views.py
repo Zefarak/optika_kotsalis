@@ -1,5 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.contrib import messages
+from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
@@ -13,6 +15,8 @@ from site_settings.constants import ORDER_STATUS
 from accounts.models import User
 import datetime
 from dateutil.relativedelta import relativedelta
+
+SITE_EMAIL = settings.SITE_EMAIL
 
 
 @method_decorator(staff_member_required, name='dispatch')
@@ -132,7 +136,7 @@ class EditShippingVoucher(UpdateView):
 
     def get_success_url(self):
         order = self.object.order_related
-        return order.get_edit_url()
+        return order.get_eshop_url()
 
     def get_context_data(self, **kwargs):
         context = super(EditShippingVoucher, self).get_context_data(**kwargs)
@@ -140,3 +144,21 @@ class EditShippingVoucher(UpdateView):
 
         context.update(locals())
         return context
+
+
+@staff_member_required
+def send_shipping_info_email_view(request, pk):
+    instance = get_object_or_404(Order, id=pk)
+    shipping_details = instance.shipping_voucher
+    send_mail(
+        'Ενημέρωση Κατάστασης Παραγγελιας',
+        f'H Παραγγελίας σας απεστάλη από το κατάστημα μας με {shipping_details.shipping_method}. '
+        f'Μπορειτε να δείτε την πορεία της παραγγελίας εδώ ==> '
+        f'{shipping_details.shipping_method.site_tracker}{shipping_details.shipping_code}',
+        SITE_EMAIL,
+        [instance.guest_email, ],
+        fail_silently=True
+
+    )
+    messages.success(request, 'To email σταλθηκε!')
+    return redirect(instance.get_eshop_url())

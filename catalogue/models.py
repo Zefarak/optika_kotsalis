@@ -254,7 +254,7 @@ class Product(DefaultBasicModel):
         ware_cate = request.GET.getlist('ware_cate', None)
         attr_name = request.GET.getlist('attr_name', None)
         price_name = request.GET.get('price_name', None)
-        price_name = price_name.split(';') if price_name else None
+
         color_name = request.GET.getlist('color_name', None)
         feature_name = request.GET.get('feature_name', None)
         char_name = request.GET.getlist('char_name', None)
@@ -262,6 +262,7 @@ class Product(DefaultBasicModel):
         queryset = queryset.filter(is_offer=True) if offer_name == '1' else queryset
         queryset = queryset.filter(color__title__in=color_name) if color_name else queryset
         try:
+            price_name = price_name.split(';') if ';' in price_name else None
             queryset = queryset.filter(final_price__range=price_name) if price_name else queryset
         except:
             queryset = queryset
@@ -303,7 +304,7 @@ class Product(DefaultBasicModel):
             order_by = request.GET.get('order_by', None)
             queryset = queryset.order_by(order_by) if order_by in ['title', '-title', 'final_price', '-final_price'] else queryset
         except:
-            queryset=queryset
+            queryset = queryset
         return queryset
 
     #   django table

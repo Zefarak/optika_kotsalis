@@ -8,12 +8,10 @@ from voucher.models import Voucher
 from .forms import EshopOrderStatusForm
 
 
-
 @staff_member_required
 def ajax_change_status(request, pk):
     order = get_object_or_404(Order, id=pk)
     new_status = request.GET.get('change_status', order.status)
-    print('ajax works', new_status)
     order.status = new_status
     order.save()
     data = dict()
