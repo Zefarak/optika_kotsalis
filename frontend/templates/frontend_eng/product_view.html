@@ -132,11 +132,11 @@
                                 <tbody>
                                 <tr>
                                     <td>Brand:</td>
-                                    <td>{{ object.brand.page_title }}</td>
+                                    <td>{{ object.brand.eng_title }}</td>
                                 </tr>
                                 <tr>
                                     <td>Color:</td>
-                                    <td>{{ object.color.page_title }}</td>
+                                    <td>{{ object.color.eng_title }}</td>
                                 </tr>
 
                                 </tbody>
@@ -304,7 +304,7 @@
                             {% for characteristic in object.characteristics.all %}
                                 <tr>
                                     <td>{{ characteristic.eng_title }}</td>
-                                    <td>{{ characteristic.value }}</td>
+                                    <td>{{ characteristic.value.eng_title }}</td>
                                 </tr>
                                 {% empty %}
                                 <tr>
