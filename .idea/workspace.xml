@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c49e2e5-bc6b-43f5-891f-91b31b909f43" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend_eng/product_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend_eng/product_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/optika_kotsalis/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/optika_kotsalis/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,35 +19,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="156">
+              <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views_eng.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views_eng.py">
+      <file leaf-file-name="cart_checkout_views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/cart_checkout_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3281">
-              <caret line="211" column="30" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#77#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="294">
+              <caret line="202" column="42" lean-forward="true" selection-start-line="202" selection-start-column="42" selection-end-line="202" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/templates/frontend_eng/product_view.html">
+      <file leaf-file-name="checkout_success.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/checkout_success.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5202">
-              <caret line="306" column="73" selection-start-line="306" selection-start-column="73" selection-end-line="306" selection-end-column="73" />
+            <state relative-caret-position="385">
+              <caret line="119" column="33" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="33" />
+              <folding>
+                <element signature="e#5211#5217#0#HTML" expanded="true" />
+                <element signature="e#5217#5223#0#HTML" expanded="true" />
+                <element signature="e#5223#5229#0#HTML" expanded="true" />
+                <element signature="e#5229#5235#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,7 +145,6 @@
         <option value="$PROJECT_DIR$/catalogue/categories.py" />
         <option value="$PROJECT_DIR$/site_settings/models.py" />
         <option value="$PROJECT_DIR$/site_settings/forms.py" />
-        <option value="$PROJECT_DIR$/frontend/templates/frontend/checkout_success.html" />
         <option value="$PROJECT_DIR$/catalogue/models.py" />
         <option value="$PROJECT_DIR$/frontend/mixins.py" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend/list_view.html" />
@@ -158,6 +154,7 @@
         <option value="$PROJECT_DIR$/point_of_sale/templates/point_of_sale/eshop_views/detail_view.html" />
         <option value="$PROJECT_DIR$/frontend/templates/frontend_eng/product_view.html" />
         <option value="$PROJECT_DIR$/optika_kotsalis/settings.py" />
+        <option value="$PROJECT_DIR$/frontend/templates/frontend/checkout_success.html" />
       </list>
     </option>
   </component>
@@ -175,11 +172,11 @@
       <path value="$PROJECT_DIR$/static/dashboard/my_static/jquery-file-upload/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="492" />
-    <option name="y" value="492" />
-    <option name="width" value="979" />
-    <option name="height" value="1049" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="491" />
+    <option name="y" value="491" />
+    <option name="width" value="980" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -187,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,13 +195,18 @@
             <path>
               <item name="optika_kotsalis" type="b2602c69:ProjectViewProjectNode" />
               <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optika_kotsalis" type="b2602c69:ProjectViewProjectNode" />
               <item name="optika_kotsalis" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -332,7 +335,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.25292242" />
@@ -340,20 +344,20 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32913387" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" visible="true" weight="0.25079703" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12760417" />
+      <window_info anchor="bottom" id="Terminal" order="13" visible="true" weight="0.24965517" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12760417" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
+      <window_info anchor="bottom" id="manage.py@simply_you" order="12" sideWeight="0.4984375" weight="0.3134963" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.3296875" />
       <window_info active="true" anchor="bottom" id="manage.py@optika_kotsalis" order="11" visible="true" weight="0.32837406" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -365,15 +369,15 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12760417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32913387" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49895832" weight="0.32943678" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -381,13 +385,13 @@
       <window_info active="true" anchor="bottom" id="Terminal" order="14" visible="true" weight="0.25079703" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.25292242" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="manage.py@simply_you" order="13" sideWeight="0.4984375" weight="0.3134963" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="16" weight="0.32943678" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32913387" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +489,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/frontend/views.py</url>
-          <line>203</line>
+          <line>244</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -740,27 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/checkout_success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/cart_checkout_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="202" column="34" lean-forward="true" selection-start-line="202" selection-start-column="34" selection-end-line="202" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/point_of_sale/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -834,29 +817,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views_eng.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="211" column="30" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="462">
+          <caret line="250" column="30" selection-start-line="250" selection-start-column="30" selection-end-line="250" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/templates/frontend_eng/product_view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5202">
-          <caret line="306" column="73" selection-start-line="306" selection-start-column="73" selection-end-line="306" selection-end-column="73" />
+        <state relative-caret-position="17">
+          <caret line="306" column="81" selection-start-line="306" selection-start-column="81" selection-end-line="306" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/optika_kotsalis/settings.py">
+    <entry file="file://$PROJECT_DIR$/frontend/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        <state relative-caret-position="156">
+          <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/cart_checkout_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="202" column="42" lean-forward="true" selection-start-line="202" selection-start-column="42" selection-end-line="202" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/frontend/checkout_success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="119" column="33" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="33" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#5211#5217#0#HTML" expanded="true" />
+            <element signature="e#5217#5223#0#HTML" expanded="true" />
+            <element signature="e#5223#5229#0#HTML" expanded="true" />
+            <element signature="e#5229#5235#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
