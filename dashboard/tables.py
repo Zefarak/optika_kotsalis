@@ -31,6 +31,7 @@ class TableProduct(tables.Table):
     #  qty = tables.TemplateColumn('<span class="label label-{{ record.color_qty }}">{{ record.tag_qty }}</span>')
     tag_final_price = tables.Column(orderable=False, verbose_name='Τιμή Πώλησης')
     #  title = TruncatedTextColumn()
+    sku = tables.TemplateColumn("<a href='{{ record.get_edit_url }}'>{{ record.sku }}</a>")
 
     class Meta:
         model = Product
