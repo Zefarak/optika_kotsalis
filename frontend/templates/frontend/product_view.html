@@ -121,7 +121,7 @@
                         {% if object.is_offer %}<h4><del>{{ object.tag_price}}</del><span>- {{ object.tag_discount_percent }}</span></h4>{% endif %}
                             <h3>{{ object.tag_final_price }}</h3>
                         {% else %}
-                            <h4>Δεν διατίθεται τιμή.</h4>
+                            <h4>--</h4>
                             <br>
                         {% endif %}
 
@@ -132,11 +132,11 @@
                                 <tbody>
                                 <tr>
                                     <td>Brand:</td>
-                                    <td>{{ object.brand }}</td>
+                                    <td>{% if object.brand == 'None'%}{{ object.brand|default_if_none:'---' }} {% else %}-- {% endif %}</td>
                                 </tr>
                                 <tr>
                                     <td>Χρωμα:</td>
-                                    <td>{{ object.color }}</td>
+                                    <td>{% if object.color == 'None'%}{{ object.color|default_if_none:'---' }} {% else %}-- {% endif %}</td>
                                 </tr>
 
                                 </tbody>

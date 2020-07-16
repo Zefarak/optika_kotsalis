@@ -47,6 +47,9 @@ class ProductManager(models.Manager):
     def only_info_products(self):
         return self.active().filter(product_class__have_transcations=False, featured_product=True)
 
+    def temporary_solution(self):
+        return self.only_info_products().filter(category_site__in=[9])
+
     def active_with_qty(self):
         return self.active_for_site().filter(qty__gte=0)
 
