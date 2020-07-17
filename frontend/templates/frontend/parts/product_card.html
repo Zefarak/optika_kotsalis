@@ -55,13 +55,18 @@
         <a href="{{ product.get_absolute_url }}">
             <h6>{{ product.title }}</h6>
         </a>
-        {% if product.product_class.have_transcations %}
-            <h4>{{ product.tag_final_price }} {% if product.is_offer %}
-                <span style="color: red;text-decoration: line-through">{{ product.tag_price }}</span>{% endif %}
-            </h4>
+        {% if product.have_price %}
+            {% if product.product_class.have_transcations %}
+                <h4>{{ product.tag_final_price }} {% if product.is_offer %}
+                    <span style="color: red;text-decoration: line-through">{{ product.tag_price }}</span>{% endif %}
+                </h4>
+            {% else %}
+                <br>
+            {% endif %}
         {% else %}
-            <br>
+            <h4>Ρωτήστε μας για την τιμή</h4>
         {% endif %}
+
     </div>
 </div>
 

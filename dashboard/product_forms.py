@@ -69,6 +69,7 @@ class ProductForm(BaseForm, forms.ModelForm):
                   'measure_unit',
                   'price', 'price_discount',
                   'site_text', 'eng_site_text', 'slug',
+                  'product_class',
 
                 ]
 

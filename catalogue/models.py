@@ -140,6 +140,9 @@ class Product(DefaultBasicModel):
     def __str__(self):
         return self.title
 
+    def have_price(self):
+        return self.price > 0
+
     def get_edit_url(self):
         return reverse('dashboard:product_detail', kwargs={'pk': self.id})
 
