@@ -174,12 +174,18 @@
 
                                 <br /> <br />
                                 <!-- Button trigger modal -->
+                                {% if product.have_price %}
                                 {% if product.product_class.have_transcations %}
                                     {% if not object.is_offer %}
                                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
                                          Μαθετε την νεα εκπληκτικη τιμη
                                         </button>
                                     {% endif %}
+                                {% else %}
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                                         Ρωτηστε μας για την τιμη!
+                                    </button>
+                                {% endif %}
                                 {% else %}
                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
                                          Ρωτηστε μας για την τιμη!

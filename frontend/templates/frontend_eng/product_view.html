@@ -170,17 +170,23 @@
                             {% endif %}
                                 <br /> <br />
                                 <!-- Button trigger modal -->
-                                {% if product.product_class.have_transcations %}
-                                    {% if not object.is_offer %}
+                                {% if product.have_price %}
+                                    {% if product.product_class.have_transcations %}
+                                        {% if not object.is_offer %}
+                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                                             Ask us for a better price
+                                            </button>
+                                        {% endif %}
+                                    {% else %}
                                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-                                         Ask us for a better price
+                                             Ask us for a price
                                         </button>
                                     {% endif %}
                                 {% else %}
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
                                          Ask us for a price
                                     </button>
-                                {% endif %}
+                            {% endif %}
                             </div>
                         </form>
 
@@ -302,7 +308,7 @@
                         <div style="margin-top: 2%" class="row">
 
                             <div class="col-md-12 col-lg-6 col-sm-12">
-                                <h5>Characteristics</h5>
+                                <h5>Characteristics </h5>
                                 <table style="background-color: white;margin-top: 3%" class="table table-bordered">
                             <thead>
                                 <tr>
@@ -310,9 +316,10 @@
                             </thead>
                             <tbody>
                             {% for characteristic in object.characteristics.all %}
+
                                 <tr>
-                                    <td>{{ characteristic.eng_title }}</td>
-                                    <td>{{ characteristic.value.eng_title }}</td>
+                                    <td>{{ characteristic.title.eng_title }}</td>
+                                    <td>{{ characteristic.value.str_eng }}</td>
                                 </tr>
                                 {% empty %}
                                 <tr>
