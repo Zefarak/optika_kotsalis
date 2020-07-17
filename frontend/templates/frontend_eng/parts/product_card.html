@@ -55,6 +55,7 @@
         <a href="{{ product.get_absolute_eng_url }}">
             <h6>{{ product.eng_title }}</h6>
         </a>
+     {% if product.have_price %}
         {% if product.product_class.have_transcations %}
             <h4>{{ product.tag_final_price }} {% if product.is_offer %}
                 <span style="color: red;text-decoration: line-through">{{ product.tag_price }}</span>{% endif %}
@@ -62,6 +63,10 @@
         {% else %}
             <br>
         {% endif %}
+     {% else %}
+         <h4>Ask us for a price.</h4>
+     {% endif %}
+
     </div>
 </div>
 

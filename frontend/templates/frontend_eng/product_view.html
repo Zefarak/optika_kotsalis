@@ -117,12 +117,16 @@
                 </div>
                 <div class="col-lg-4" style="background-color:white ">
                     <div class="product-right product-form-box">
+                        {% if product.have_price %}
                         {% if product.product_class.have_transcations %}
                         {% if object.is_offer %}<h4><del>{{ object.tag_price}}</del><span>- {{ object.tag_discount_percent }}</span></h4>{% endif %}
                             <h3>{{ object.tag_final_price }}</h3>
                         {% else %}
                             <h4>No Price.</h4>
                             <br>
+                        {% endif %}
+                        {% else %}
+                            <h3> --</h3>
                         {% endif %}
 
                         <a href="{% url 'add_product_wishlist' object.slug %}" class="btn btn-solid btn-sm btn-round"><i class="fa fa-heart"></i></a>
@@ -143,6 +147,7 @@
                             </table>
                         </div>
                         <form method="post">{% csrf_token %}
+                            {% if product.have_price %}
                             {% if product.product_class.have_transcations %}
                                 <div class="product-description border-product">
                                     <h6 class="product-title">Qty</h6>
@@ -156,10 +161,13 @@
                                     </div>
                                 </div>
                             {% endif %}
+                            {% endif %}
                             <div class="product-buttons">
+                            {% if product.have_price %}
                                 {% if product.product_class.have_transcations %}
                                 <button type="submit" data-target="#addtocart" class="btn btn-solid">Add to Cart</button>
                                 {% endif %}
+                            {% endif %}
                                 <br /> <br />
                                 <!-- Button trigger modal -->
                                 {% if product.product_class.have_transcations %}
