@@ -1,4 +1,6 @@
 {% extends 'frontend/index.html' %} {% load static %}
+
+
 {% block seo_data %}
     <title>Οπτικα - Κοτσαλης | {{ object }}</title>
     <meta name="description" content="Καλώς ήρθατε στο κατάστημά μας, Οπτικά Κότσαλης .Όλες οι λεπτομέριες για το προϊόν {{ object }} βρίσκονται εδώ.">
@@ -284,7 +286,7 @@
                                                             <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="col-12 product-related">
-                                                                        <h4>Επιπλέον Χρωματα</h4>
+                                                                        <h4>Επιπλέον Προτάσεις</h4>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -401,4 +403,6 @@
             $('#imageModal').modal('show');
         })
     </script>
+
+
 {% endblock %}
