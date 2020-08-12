@@ -63,7 +63,6 @@ class ProductForm(BaseForm, forms.ModelForm):
     class Meta:
         model = Product
         fields = ['active',
-                  'product_class',
                   'featured_product',
                   'ordering_by_letter',
                   'title', 'eng_title', 'sku',
