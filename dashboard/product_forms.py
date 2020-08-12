@@ -41,7 +41,7 @@ class ProductFormWarehouseTranscations(BaseForm, forms.ModelForm):
 class ProductNoQty(BaseForm, forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['title', 'sku',
+        fields = ['title', 'sku', 'product_class',
                   'vendor', 'order_code',
                   'price_buy', 'order_discount',
                   'brand', 'category',
