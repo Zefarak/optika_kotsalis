@@ -58,10 +58,12 @@ class ProductNoQty(BaseForm, forms.ModelForm):
 
 
 class ProductForm(BaseForm, forms.ModelForm):
+    # this is the real form
 
     class Meta:
         model = Product
         fields = ['active',
+                  'product_class',
                   'featured_product',
                   'ordering_by_letter',
                   'title', 'eng_title', 'sku',
@@ -72,6 +74,7 @@ class ProductForm(BaseForm, forms.ModelForm):
 
 
                 ]
+
 
 
 

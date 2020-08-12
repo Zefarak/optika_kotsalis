@@ -15,12 +15,12 @@ from catalogue.categories import Category
 from catalogue.product_details import Brand, Vendor
 from catalogue.forms import CreateProductForm, ProductPhotoUploadForm, ProductCharacteristicForm, WarehouseCategoryForm
 from .product_forms import ProductForm
-from .tables import TableProduct, WarehouseCategoryTable, ProductTable, ProductDiscountTable
+from .tables import TableProduct, WarehouseCategoryTable, ProductDiscountTable
 from point_of_sale.tables import OrderTable
 from catalogue.product_attritubes import ProductCharacteristics, Characteristics, CharacteristicsValue, Attribute, AttributeTitle, AttributeClass, AttributeProductClass
 from .models import ProductDiscount
 from .forms import ProductDiscountForm
-from point_of_sale.models import Order, OrderItem
+from point_of_sale.models import Order
 from contact.models import Contact
 from newsletter.models import NewsLetter
 
