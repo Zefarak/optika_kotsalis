@@ -157,6 +157,7 @@ def ajax_check_voucher(request):
 
 
 def ajax_add_product_modal(request, slug):
+    print('eng')
     product = get_object_or_404(Product, slug=slug)
     attributes = Attribute.my_query.product_attributes_with_qty(product)
     contact_form = ContactFrontEndEngForm()

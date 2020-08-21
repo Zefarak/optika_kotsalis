@@ -161,7 +161,7 @@ def ajax_add_product_modal(request, slug):
     attributes = Attribute.my_query.product_attributes_with_qty(product)
     contact_form = ContactFrontEndEngForm()
     data = dict()
-    data['add_modal'] = render_to_string(template_name='frontend_eng/parts/add_product_modal.html',
+    data['add_modal'] = render_to_string(template_name='frontend/parts/add_product_modal.html',
                                          request=request,
                                          context={'product': product,
                                                   'attributes': attributes,
