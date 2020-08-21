@@ -141,7 +141,9 @@ class Product(DefaultBasicModel):
         return self.title
 
     def have_price(self):
-        return self.price > 0
+        # because of client request to change the frontend depend on product price,
+        #  we need to check if there is a price added
+        return self.price > 0.1 if self.product_class.have_transcations else False
 
     def get_edit_url(self):
         return reverse('dashboard:product_detail', kwargs={'pk': self.id})
