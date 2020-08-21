@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-lg-6 rtl-text">
                         <div class="product-right">
-                            {% if product.product_class.have_transcations %}
+                            {% if product.have_price %}
                             <h3>{{ product.tag_final_price }} {% if product.is_offer %}<span style="text-decoration: line-through; color: red">{{ product.tag_price }}</span>  {% endif %}</h3>
                             {% endif %}
                             <br>
@@ -32,10 +32,10 @@
                             {% else %}
                             <p>
                                 <a class="btn btn-info btn-small" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                  {% if product.product_class.have_transcations %}
-                                      <i class="fa fa-phone"></i>  Ask us for a  <br>better price
+                                  {% if product.have_price %}
+                                      <i class="fa fa-phone"></i>  Learn more
                                   {% else %}
-                                      <i class="fa fa-phone"></i> Ask us for a price.
+                                      <i class="fa fa-phone"></i>  Learn more
                                   {% endif %}
                                 </a>
                             </p>
@@ -70,9 +70,9 @@
                             </div>
 
                             <div class="product-buttons">
-                                <a href="{{ product.get_absolute_eng_url }}" class="btn btn-solid">Details</a>
+                                <a href="{{ product.get_absolute_eng_url }}" class="btn btn-primary">Go to product</a>
                                 {% if product.product_class.have_transcations %}
-                                <a href="{% url 'eng:add_to_cart' product.slug %}"  class="btn btn-success btn-solid"> <i class="fa fa-cart-plus"></i> Add to Cart</a>
+                                <a href="{% url 'eng:add_to_cart' product.slug %}"  class="btn btn-success"> <i class="fa fa-cart-plus"></i> Add to Cart</a>
                                 {% endif %}
                             </div>
                         </div>
