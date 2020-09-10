@@ -103,9 +103,17 @@ def create_order_from_cart_view(request, pk):
 @staff_member_required
 def clear_cart_view(request):
     date_two_moths_before = datetime.now() - timedelta(days=60)
-    qs = Cart.objects.all().filter(order__isnull=True, timestamp__lte=date_two_moths_before)
-    CartItem.objects.filter(cart__in=qs).delete()
-    qs.delete()
+    qs_ = Cart.objects.filter(order__isnull=False)
+    qs = Cart.objects.filter(order__isnull=True, timestamp__lte=date_two_moths_before, )
+    print(qs.count(), qs_.count())
+    counter = 0
+    while counter < 5000:
+        for ele in qs:
+            ele.delete()
+            counter += 1
+            print('done')
+    # CartItem.objects.filter(cart__in=qs).delete()
+    # qs.delete()
     messages.success(request, 'Τα Καλαθια Καθαριστικαν.')
     return redirect(reverse('cart:cart_list'))
 
