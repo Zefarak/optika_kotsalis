@@ -40,6 +40,6 @@ xlwt==1.3.0
 django-autocomplete-light==3.5.1
 
 
-Pillow==4.0.0
+Pillow==7.1.0
 psycopg2==2.7.4
 pylibmc==1.5.1
