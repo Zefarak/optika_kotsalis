@@ -12,6 +12,8 @@ urlpatterns = [
     path('en/', include('frontend.urls_eng')),
     path('', include('frontend.urls')),
 
+    path('blog/', include('blog.urls')),
+
     path('accounts/', include('accounts.urls')),
     path('paypal/', include('paypal.standard.ipn.urls')),
 
@@ -26,6 +28,7 @@ urlpatterns = [
     path('dashboard-newsletter/', include('newsletter.urls')),
     path('dashboard-contact/', include('contact.urls')),
     path('dashboard-size-chart/', include('chartsize.urls')),
+    path('dashboard-blog/', include('blog.dashboard_urls')),
 
 
     path('social-auth/', include('social_django.urls', namespace="social")),

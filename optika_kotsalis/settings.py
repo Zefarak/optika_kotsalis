@@ -14,9 +14,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
-PRODUCTION = True
-REAl_DB = True
+DEBUG = True
+PRODUCTION = False
+REAl_DB = False
 
 if PRODUCTION:
     ALLOWED_HOSTS = ['optikakotsalis.herokuapp.com', 'www.optikakotsalis.gr']
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'newsletter',
     'contact',
     'chartsize',
+    'blog',
 
     #  third parties apps
     'django_tables2',
@@ -66,8 +67,8 @@ INSTALLED_APPS = [
     'mptt',
     'import_export',
     'paypal.standard.ipn',
-    'django_celery_beat',
-    'django_celery_results',
+    # 'django_celery_beat',
+    # 'django_celery_results',
 
 ]
 
