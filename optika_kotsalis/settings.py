@@ -226,8 +226,8 @@ SENDGRID_ECHO_TO_STDOUT = True
 SITE_EMAIL = 'kots_d@hotmail.com'
 
 
-TINYMCE_DEFAULT_CONFIG = {
-    'theme': "advanced",
+TINYMCE_DEFAULT_CONFIGdfgfg = {
+   # 'theme': "advanced",
     'skin': "o2k7",
     'skin_variant': "silver",
     'relative_urls': False,

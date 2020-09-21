@@ -30,7 +30,7 @@ urlpatterns = [
     path('dashboard-size-chart/', include('chartsize.urls')),
     path('dashboard-blog/', include('blog.dashboard_urls')),
 
-
+    path('tinymce/', include('tinymce.urls')),
     path('social-auth/', include('social_django.urls', namespace="social")),
 
     path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), )

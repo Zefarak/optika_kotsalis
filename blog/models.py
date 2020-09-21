@@ -15,6 +15,12 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+    def get_update_url(self):
+        return reverse('dashboard_blog:category_update_delete', kwargs={'pk': self.id, 'action': 'update'})
+
+    def get_delete_url(self):
+        return reverse('dashboard_blog:category_update_delete', kwargs={'pk': self.id, 'action': 'update'})
+
 
 class Tags(models.Model):
     title = models.CharField(max_length=200)
@@ -25,14 +31,14 @@ class Tags(models.Model):
 
 
 class Post(models.Model):
-    active = models.BooleanField(default=False)
-    is_featured = models.BooleanField(default=False)
+    active = models.BooleanField(default=False, verbose_name='Κατασταση')
+    is_featured = models.BooleanField(default=False, verbose_name='Pinned')
     timestamp = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, verbose_name='Τίτλος')
     title_eng = models.CharField(max_length=200, blank=True)
-    text = HTMLField()
+    text = HTMLField(verbose_name='Κείμενο')
     text_eng = HTMLField()
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Κατηγορια')
     tags = models.ManyToManyField(Tags, blank=True)
     slug = models.SlugField(blank=True, null=True, allow_unicode=True, max_length=240, db_index=True)
 
@@ -45,6 +51,12 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={'slug': self.slug})
+
+    def get_edit_url(self):
+        return reverse('dashboard_blog:post_update', kwargs={'pk': self.id})
+
+    def get_delete_url(self):
+        return reverse('dashboard_blog:post_delete', kwargs={'pk', self.id})
 
 
 class PostImage(models.Model):
@@ -67,7 +79,4 @@ def create_slug_for_post(sender, instance, **kwargs):
         new_slug = slugify(instance.title, allow_unicode=True)
         qs_exists = Post.objects.filter(slug=new_slug).exists()
         instance.slug = f'{new_slug}-{instance.id}' if qs_exists else new_slug
-        instance.save()
-    if not instance.eng_title:
-        instance.eng_title = instance.title
         instance.save()

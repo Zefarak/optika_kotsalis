@@ -1,0 +1,196 @@
+{% extends 'site_settings/dashboard.html' %}
+
+{% block content %}
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="row">
+                            <div class="col-12">
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>{{ object.title }}</h4>
+                                <form class="form" method="post">
+                                    {% csrf_token %}
+                                    {{ form }}
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> </button>
+                                </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Κατηγοριες</h5>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createCategory">
+                                          Δημιουργία Κατηγορίας
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="createCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form class="form" method="post" action="{% url 'dashboard_blog:validate_category_create' %}">
+                                                    {% csrf_token %}
+                                                    {{ category_form }}
+                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Αποθηκευση </button>
+                                                </form>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                         <table class="table table-bordered">
+                                             <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Κατηγορια</th>
+                                                    <th>-</th>
+                                                </tr>
+                                             </thead>
+                                            <tbody>
+                                                {% for category in categories %}
+                                                    <tr>
+                                                        <td>{{ category.id }}</td>
+                                                        <td>{{ category }}</td>
+                                                        <td><a data-href="{% url 'dashboard_blog:ajax_update_category' category.id %}" class="btn btn-primary handle_category"><i class="fa fa-edit"></i> </a> </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                         </table>
+                                    </div>
+                                </div>
+
+
+                                <br> <hr>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Tags</h5>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTag">
+                                          Δημιουργία Tag
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="createTag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form class="form" method="post" action="{% url 'dashboard_blog:validate_category_create' %}">
+                                                    {% csrf_token %}
+                                                    {{ category_form }}
+                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Αποθηκευση </button>
+                                                </form>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tag</th>
+                                            <th>-</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for tag in tags %}
+                                            <tr>
+                                                <td>{{ tag.id }}</td>
+                                                <td>{{ tag }}</td>
+                                                <td><button type="button" class="btn btn-primary handle_tag" data-href="">
+                                                    <i class="fa fa-edit"></i>
+                                                </button> </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal_area"></div>
+
+{% endblock %}
+
+{% block extra_js %}
+    {{ form.media }}
+
+    <script>
+        $('.handle_tag').click(function () {
+            this.preventDefault();
+            const data = $(this);
+            const url = data.attr('data-href');
+            $.ajax({
+                method: 'get',
+                url: url,
+
+                success: function (data) {
+                    $('.modal_area').html(data.result);
+                    $('#myModal').modal('show');
+                }
+            })
+
+        })
+    </script>
+
+    <script>
+        $('.handle_category').click(function (evt) {
+            evt.preventDefault();
+            console.log('frontend is trigger!')
+            const btn = $(this);
+            const url = btn.attr('data-href');
+            $('#modal_area').clean();
+            console.log('its ready for ajax call')
+            $.ajax({
+                method: 'GET',
+                dataType: 'json',
+                url: url,
+
+                success: function (data) {
+                    $('#modal_area').html(data.result)
+                    $('#myModal').modal('show')
+                }
+            })
+        })
+    </script>
+{% endblock %}
