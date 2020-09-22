@@ -42,10 +42,10 @@
                                 <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4> </a>
                                 <ul class="post-social">
                                     <li>Κατηγορια: {{ post.category }}</li>
-                                    <li><i class="fa fa-heart"></i> 5 Hits</li>
-                                    <li><i class="fa fa-comments"></i> 10 Comment</li>
+                                    <li><i class="fa fa-heart"></i>Tags: {% for ele in post.tags.all %} {{ tag }} {% endfor %}</li>
+
                                 </ul>
-                                <p>{{ post.text|truncatechars_html:50 }}</p>
+                                <p>{{ post.text|truncatechars:50 }}</p>
                             </div>
                         </div>
                     </div>

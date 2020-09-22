@@ -49,7 +49,7 @@
                             <div class="slider-right-nav">
                                 {% if object.image %}
                                     <div>
-                                        <img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload expand_image"></div>
+                                        <img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload"></div>
                                     {% else %}
                                     <div>
                                         <img src="{% static 'frontend/demo_images/no_image.png' %}" alt="" class="img-fluid blur-up lazyload">
@@ -57,7 +57,7 @@
                                 {% endif %}
                                 {% for image in object.get_extra_images.all %}
                                     <div>
-                                        <img src="{{ image.image.url }}" alt="" class="img-fluid blur-up lazyload expand_image">
+                                        <img src="{{ image.image.url }}" alt="" class="img-fluid blur-up lazyload">
                                     </div>
                                 {%  endfor %}
                             </div>
@@ -67,13 +67,13 @@
                 <div class="col-lg-3 col-sm-10 col-xs-12 order-up">
                     <div class="product-right-slick">
                         {% if object.image %}
-                            <div><img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload "></div>
+                            <div><img src="{{ product.image.url }}" alt="" class="img-fluid blur-up lazyload " data-toggle="modal" data-target="#images"></div>
                         {% else %}
-                            <div><img src="{% static 'frontend/demo_images/no_image.png' %}" alt="" class="img-fluid blur-up lazyload image_zoom_cls-{{ image.id}}"></div>
+                            <div><img src="{% static 'frontend/demo_images/no_image.png' %}" alt="" class="img-fluid blur-up lazyload image_zoom_cls-{{ image.id}}" data-toggle="modal" data-target="#images"></div>
                         {% endif %}
                         {% for image in object.get_extra_images.all %}
                             <div>
-                                <img src="{{ image.image.url }}" alt="" class="img-fluid blur-up lazyload image_zoom_cls-{{ image.id}}">
+                                <img src="{{ image.image.url }}" alt="" class="img-fluid blur-up lazyload image_zoom_cls-{{ image.id}}" data-toggle="modal" data-target="#images">
                             </div>
                         {%  endfor %}
 
@@ -83,11 +83,40 @@
                 <div class="col-lg-4">
                     <div class="product-right product-description-box">
                         <h2>{{ object }}</h2>
+
+                        <div id='images' class="modal" tabindex="-1" role="dialog">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Photos</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        {% for image in object.images.all %}
+                                            <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                                                <img class="d-block w-100" src="{{ image.image.url }}" alt="First slide">
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div class="border-product">
                             <h6 class="product-title">Πληροφοριες</h6>
-
-                           
-
                             {{ object.site_text|safe}}
                         </div>
 
@@ -397,28 +426,7 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
 
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function(){
-          modal.style.display = "block";
-          modalImg.src = this.src;
-          captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-    </script>
 
     <script>
         $('.expand_image').click(function(evt){
