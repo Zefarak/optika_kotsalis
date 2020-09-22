@@ -196,10 +196,50 @@
 </section>
 Parallax banner end -->
 
+    <section style="background-color: white; " class="ratio-square">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <iframe id="/tours/A6BKruRyU" allow="vr;accelerometer;gyroscope;fullscreen" allowfullscreen frameborder="0" width="100%" height="500" src="https://app.cloudpano.com/tours/A6BKruRyU"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
-<!-- instagram section -->
+
+
+    <!-- Product slider -->
+    <section style="margin-top: 3%" class="ratio_square section-b-space">
+    <div class="container">
+        <div class="title3">
+            <h4>Επιπλέον οι</h4>
+            <h2 class="title-inner3">Φακοι Επαφης μας</h2>
+            <hr />
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="product-4 product-m no-arrow">
+                    {% for product in only_info_products %}
+                        {% include 'frontend/parts/product_card.html' %}
+                    {% empty %}
+                        <div style="margin-top: 5%;" class="row">
+                                <div class="col-12 text-center">
+                                    <p class="text-center">Δε υπάρχουν προτάσεις αυτή την στιγμή</p>
+                                </div>
+                            </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- Product slider end -->
+
+
+    <!-- instagram section -->
 <section style="background-color:white;" class="instagram ratio_square">
     <div class="container-fluid">
         <div class="row">
@@ -277,34 +317,6 @@ Parallax banner end -->
     <br> <br>
 </section>
 <!-- instagram section end -->
-
-    <!-- Product slider -->
-    <section style="margin-top: 3%" class="ratio_square section-b-space">
-    <div class="container">
-        <div class="title3">
-            <h4>Επιπλέον οι</h4>
-            <h2 class="title-inner3">Φακοι Επαφης μας</h2>
-            <hr />
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="product-4 product-m no-arrow">
-                    {% for product in only_info_products %}
-                        {% include 'frontend/parts/product_card.html' %}
-                    {% empty %}
-                        <div style="margin-top: 5%;" class="row">
-                                <div class="col-12 text-center">
-                                    <p class="text-center">Δε υπάρχουν προτάσεις αυτή την στιγμή</p>
-                                </div>
-                            </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-    <!-- Product slider end -->
 
 {% endblock %}
 

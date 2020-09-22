@@ -566,3 +566,10 @@ class ProductDiscountUpdateView(UpdateView):
         return context
 
 
+@method_decorator(staff_member_required, name='dispatch')
+class ProductPresentationView(ListView):
+    model = Product
+    template_name = 'dashboard/product_presentation.html'
+
+
+

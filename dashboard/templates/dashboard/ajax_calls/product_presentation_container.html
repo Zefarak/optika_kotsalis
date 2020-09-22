@@ -1,0 +1,25 @@
+{% load static %}
+{% for product in product_list %}
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header"><h5>{{ product }}</h5></div>
+            <div class="card-body">
+                <img class="img-thumbnail"
+                        {% if product.image %}
+                     src="{{ product.image.url }}"
+                        {% else %}
+                     src="{% static 'frontend/demo_images/no_image.png' %}"
+                        {% endif %}
+                />
+                                        </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6"><h4>{{ product.tag_final_price }}</h4></div>
+                    <div class="col-6">
+                        <a href="{{ product.get_absolute_url }}" target="_blank" class="btn btn-success pull-right">Λεπτομεριες</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

@@ -264,3 +264,16 @@ def ajax_order_by_view(request, pk):
     instance.ordering_by_letter = new_value
     instance.save()
     return JsonResponse({'success': True})
+
+
+@staff_member_required
+def ajax_presentation_filter_products_view(request):
+    products = Product.filters_data(request, Product.objects.all())
+    products = products[:30]
+    data = dict()
+    data['result'] = render_to_string('dashboard/ajax_calls/product_presentation_container.html',
+                                      request=request,
+                                      context={
+                                          'product_list': products
+                                      })
+    return JsonResponse(data)

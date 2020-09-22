@@ -10,6 +10,8 @@
       <div class="modal-body">
         <form method="post" class="form" action="{{ form_action }}">
             {% csrf_token %}
+            <p>hey you</p>
+            {{ form }}
             <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> </button>
         </form>
       </div>

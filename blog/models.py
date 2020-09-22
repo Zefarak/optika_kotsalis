@@ -7,6 +7,9 @@ from tinymce.models import HTMLField
 from django.utils.text import slugify
 # Create your models here.
 
+def upload_product_photo(instance, filename):
+    return f'bl0g/{instance.post.id}/{filename}'
+
 
 class Category(models.Model):
     title = models.CharField(max_length=200)
@@ -19,7 +22,7 @@ class Category(models.Model):
         return reverse('dashboard_blog:category_update_delete', kwargs={'pk': self.id, 'action': 'update'})
 
     def get_delete_url(self):
-        return reverse('dashboard_blog:category_update_delete', kwargs={'pk': self.id, 'action': 'update'})
+        return reverse('dashboard_blog:category_update_delete', kwargs={'pk': self.id, 'action': 'delete'})
 
 
 class Tags(models.Model):
@@ -28,6 +31,12 @@ class Tags(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_update_url(self):
+        return reverse('dashboard_blog:validate_tag_edit_or_update', kwargs={'pk': self.id, 'action': 'update'})
+
+    def get_delete_url(self):
+        return reverse('dashboard_blog:validate_tag_edit_or_update', kwargs={'pk': self.id, 'action': 'update'})
 
 
 class Post(models.Model):
@@ -61,16 +70,16 @@ class Post(models.Model):
 
 class PostImage(models.Model):
     main = models.BooleanField(default=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to=upload_product_photo)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='my_images')
 
-    def save(self, *args, **kwargs):
-        if self.main:
-            self.post.my_images.all().exclude(id=self.id).update(main=False) if self.post.my_images.all().exists() else ''
-        self.save(*args, **kwargs)
+
 
     def __str__(self):
         return f'{self.post} - {self.id}'
+
+    def get_delete_url(self):
+        return reverse('dashboard_blog:delete_image_view', kwargs={'pk': self.id})
 
 
 @receiver(post_save, sender=Post)

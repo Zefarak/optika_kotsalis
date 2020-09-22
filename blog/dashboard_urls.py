@@ -1,7 +1,9 @@
 from django.urls import path
 
 from .views import (DashboardBlogListView, DashboardBlogCreateView, DashboardBlogUpdateView, post_delete_view,
-                    validate_category_edit_or_delete_view, ajax_update_category_view, validate_category_creation_view
+                    validate_category_edit_or_delete_view, ajax_update_category_view, validate_category_creation_view,
+                    ajax_update_tag_view, validate_tag_creation_view, validate_update_or_delete_tag_view,
+                    validate_post_image_creation_view, delete_image_view
                     )
 
 app_name = 'dashboard_blog'
@@ -17,5 +19,12 @@ urlpatterns = [
 
     path('ajax-update-category/<int:pk>/', ajax_update_category_view, name='ajax_update_category'),
     path('validate-category-creation/', validate_category_creation_view, name='validate_category_create'),
+
+    path('validate-tag-creation/', validate_tag_creation_view, name='validate_tag_create'),
+    path('validate-tag-edit-or-update/<int:pk>/<slug:action>/', validate_update_or_delete_tag_view, name='validate_tag_edit_or_update'),
+    path('ajax-update/tag/<int:pk>/', ajax_update_tag_view, name='ajax_update_tag'),
+
+    path('validate-post-image-view/<int:pk>/', validate_post_image_creation_view, name='validate_post_image'),
+    path('delete-image-view/<int:pk>/', delete_image_view, name='delete_image_view')
 
    ]

@@ -306,3 +306,6 @@ class SeoDataEditView(UpdateView):
     def form_valid(self, form):
         form.save()
         return super(SeoDataEditView, self).form_valid(form)
+
+
+

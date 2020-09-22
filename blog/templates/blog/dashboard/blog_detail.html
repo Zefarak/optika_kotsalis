@@ -84,63 +84,119 @@
 
 
                                 <br> <hr>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5>Tags</h5>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTag">
-                                          Δημιουργία Tag
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Tags</h5>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTag">
+                                              Δημιουργία Tag
+                                            </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="createTag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <form class="form" method="post" action="{% url 'dashboard_blog:validate_tag_create' %}">
+                                                        {% csrf_token %}
+                                                        {{ category_form }}
+                                                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Αποθηκευση </button>
+                                                    </form>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Tag</th>
+                                                <th>-</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for tag in tags %}
+                                                <tr>
+                                                    <td>{{ tag.id }}</td>
+                                                    <td>{{ tag }}</td>
+                                                    <td><button type="button" class="btn btn-primary handle_tag" data-href="">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button> </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Εικονες</h5>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal">
+                                          Προσθηκη Εικονας
                                         </button>
 
                                         <!-- Modal -->
-                                        <div class="modal fade" id="createTag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                               <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Προσθηκη Εικονας</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                   <span aria-hidden="true">&times;</span>
                                                 </button>
                                               </div>
                                               <div class="modal-body">
-                                                <form class="form" method="post" action="{% url 'dashboard_blog:validate_category_create' %}">
+                                                <form method="post" enctype="multipart/form-data"
+                                                      class="form"
+                                                      action="{% url 'dashboard_blog:validate_post_image' object.id %}"
+
+                                                >
                                                     {% csrf_token %}
-                                                    {{ category_form }}
-                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Αποθηκευση </button>
+                                                    {{ image_form }}
+                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> </button>
                                                 </form>
                                               </div>
-                                              <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                              </div>
+
                                             </div>
                                           </div>
                                         </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <th>Εικονα</th>
+                                                    <th>Size</th>
+                                                    <th>-</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for image in images %}
+                                                    <tr>
+                                                        <td>{{ image.id }}</td>
+                                                        <td><img width="100" height="100" src="{{ image.image.url }}" /></td>
+                                                        <td>{{ image.image.size }}</td>
+                                                        <td><a href="{{ image.get_delete_url }}" class="btn btn-danger"><i class="fa fa-remove"></i>X </a> </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Tag</th>
-                                            <th>-</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for tag in tags %}
-                                            <tr>
-                                                <td>{{ tag.id }}</td>
-                                                <td>{{ tag }}</td>
-                                                <td><button type="button" class="btn btn-primary handle_tag" data-href="">
-                                                    <i class="fa fa-edit"></i>
-                                                </button> </td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                                </div>
-                            </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -176,18 +232,18 @@
     <script>
         $('.handle_category').click(function (evt) {
             evt.preventDefault();
-            console.log('frontend is trigger!')
+            console.log('frontend is trigger!');
             const btn = $(this);
             const url = btn.attr('data-href');
-            $('#modal_area').clean();
-            console.log('its ready for ajax call')
+            $('#modal_area').empty();
+            console.log('its ready for ajax call');
             $.ajax({
                 method: 'GET',
                 dataType: 'json',
                 url: url,
 
                 success: function (data) {
-                    $('#modal_area').html(data.result)
+                    $('#modal_area').html(data.result);
                     $('#myModal').modal('show')
                 }
             })

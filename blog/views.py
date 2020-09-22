@@ -8,7 +8,7 @@ from django.http import JsonResponse
 
 from django_tables2 import RequestConfig
 from .models import Post, Category, Tags
-from .forms import PostForm, CreatePostForm, CategoryForm, TagForm
+from .forms import PostForm, CreatePostForm, CategoryForm, TagForm, PostImageForm
 from .tables import PostTable
 
 
@@ -77,6 +77,8 @@ class DashboardBlogUpdateView(UpdateView):
         context['tags'] = Tags.objects.all()
         context['category_form'] = CategoryForm()
         context['tag_form'] = TagForm()
+        context['images'] = self.object.my_images.all()
+        context['image_form'] = PostImageForm(self.request.POST or None,  initial={'post': self.object})
         return context
 
 
@@ -89,20 +91,20 @@ def post_delete_view(request, pk):
 
 @staff_member_required
 def ajax_update_category_view(request, pk):
-    print('the backend is trigger')
     obj = get_object_or_404(Category, id=pk)
     form = CategoryForm(instance=obj)
     data = {}
     response = render_to_string('blog/dashboard/ajax_modal.html',
+                                request=request,
                                 context={
                                     'form': form,
                                     'form_title': f'Επεξεργασια {obj.title}',
                                     'delete_url': obj.get_delete_url(),
-                                    'action_url': obj.get_update_url()
+                                    'action_url': obj.get_update_url(),
+
                                 })
     data['result'] = response
     return JsonResponse(data)
-
 
 
 @staff_member_required
@@ -116,18 +118,18 @@ def validate_category_creation_view(request):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-def validate_category_edit_or_delete_view(request, pk,action):
+def validate_category_edit_or_delete_view(request, pk, action):
     obj = get_object_or_404(Category, id=pk)
     if action == 'delete':
         obj.delete()
         messages.warning(request, f'H Κατηγορια {obj.title} διαγράφηκε.')
     elif action == 'update':
         form = CategoryForm(request.POST or None, instance=obj)
+
         if form.is_valid():
             form.save()
             messages.success(request, 'Η κατηγορισ επεξεργαστηκε επιτυχως')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
 
 
 @staff_member_required
@@ -167,3 +169,23 @@ def validate_tag_creation_view(request):
         obj = form.save()
         messages.success(request, f'Το tag {obj} δημιουργηθηκε!')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@staff_member_required
+def validate_post_image_creation_view(request, pk):
+    obj = get_object_or_404(Post, id=pk)
+    form = PostImageForm(request.POST or None, request.FILES or None)
+    print(form.data)
+    if form.is_valid():
+        form.save()
+    else:
+        print(form.errors)
+    return redirect(obj.get_edit_url())
+
+
+@staff_member_required
+def delete_image_view(request, pk):
+    obj = get_object_or_404(PostForm, id=pk)
+    obj.delete()
+    messages.success(request, 'Η εικόνα διαγραφηκε!')
+    return redirect(obj.post.get_edit_url())
