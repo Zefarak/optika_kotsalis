@@ -3,7 +3,7 @@ from django.urls import path
 from .views import (DashboardBlogListView, DashboardBlogCreateView, DashboardBlogUpdateView, post_delete_view,
                     validate_category_edit_or_delete_view, ajax_update_category_view, validate_category_creation_view,
                     ajax_update_tag_view, validate_tag_creation_view, validate_update_or_delete_tag_view,
-                    validate_post_image_creation_view, delete_image_view
+                    validate_post_image_creation_view, delete_image_view, ajax_image_modal_view, validate_post_image_update_view
                     )
 
 app_name = 'dashboard_blog'
@@ -25,6 +25,8 @@ urlpatterns = [
     path('ajax-update/tag/<int:pk>/', ajax_update_tag_view, name='ajax_update_tag'),
 
     path('validate-post-image-view/<int:pk>/', validate_post_image_creation_view, name='validate_post_image'),
-    path('delete-image-view/<int:pk>/', delete_image_view, name='delete_image_view')
+    path('delete-image-view/<int:pk>/', delete_image_view, name='delete_image_view'),
+    path('ajax-image-update/modal/<int:pk>/', ajax_image_modal_view, name='ajax_image_modal_view'),
+    path('validate-update-post-image/<int:pk>/', validate_post_image_update_view, name='validate_update_post_image')
 
    ]

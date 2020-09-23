@@ -29,27 +29,33 @@
         <div class="row">
             <div class="col-12">
                 {% for post in object_list %}
-                <div class="row blog-media">
-                    <div class="col-xl-6">
-                        <div class="blog-left">
-                            <a href="{{ post.get_absolute_url }}"><img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'frontend/demo_images/no_image.png' %} {% endif %}" class="img-fluid blur-up lazyload bg-img" alt=""></a>
+                    <div class="row blog-media">
+                        <div class="col-xl-6">
+                            <div class="blog-left">
+                                <a href="{{ post.get_absolute_url }}"><img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'frontend/demo_images/no_image.png' %} {% endif %}" class="img-fluid blur-up lazyload bg-img" alt=""></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="blog-right">
-                            <div>
-                                <h6>{{ post.timestamp|date }}</h6>
-                                <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4> </a>
-                                <ul class="post-social">
-                                    <li>Κατηγορια: {{ post.category }}</li>
-                                    <li><i class="fa fa-heart"></i>Tags: {% for ele in post.tags.all %} {{ tag }} {% endfor %}</li>
+                        <div class="col-xl-6">
+                            <div class="blog-right">
+                                <div>
+                                    <h6>{{ post.timestamp|date }}</h6>
+                                    <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4> </a>
+                                    <ul class="post-social">
+                                        <li>Κατηγορια: {{ post.category }}</li>
+                                        <li><i class="fa fa-heart"></i>Tags: {% for ele in post.tags.all %} {{ tag }} {% endfor %}</li>
 
-                                </ul>
-                                <p>{{ post.text|truncatechars:50 }}</p>
+                                    </ul>
+                                    <p>{{ post.text|truncatechars:50 }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                {% empty %}
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Δυστυχώς δε βρήκαμε κάτι</h4>
+                        </div>
+                    </div>
                 {% endfor %}
 
             </div>

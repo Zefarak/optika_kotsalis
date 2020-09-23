@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 
 from django_tables2 import RequestConfig
-from .models import Post, Category, Tags
+from .models import Post, Category, Tags, PostImage
 from .forms import PostForm, CreatePostForm, CategoryForm, TagForm, PostImageForm
 from .tables import PostTable
 
@@ -17,9 +17,13 @@ class PostListView(ListView):
     model = Post
     paginate_by = 20
 
+    def get_queryset(self):
+        qs = Post.objects.filter(active=True)
+        return qs
+
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
-
+        context['page_title'] = 'Blog List'
         return context
 
 
@@ -28,6 +32,11 @@ class PostDetailView(DetailView):
     model = Post
     slug_field = 'slug'
     slug_url_kwarg = 'slug'
+
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context['page_title'] = self.object.title
+        return context
 
 
 # dashboard views
@@ -71,6 +80,9 @@ class DashboardBlogUpdateView(UpdateView):
     model = Post
     template_name = 'blog/dashboard/blog_detail.html'
 
+    def get_success_url(self):
+        return self.object.get_edit_url()
+
     def get_context_data(self, **kwargs):
         context = super(DashboardBlogUpdateView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
@@ -80,6 +92,10 @@ class DashboardBlogUpdateView(UpdateView):
         context['images'] = self.object.my_images.all()
         context['image_form'] = PostImageForm(self.request.POST or None,  initial={'post': self.object})
         return context
+    
+    def form_valid(self, form):
+        form.save()
+        return super(DashboardBlogUpdateView, self).form_valid(form)
 
 
 @staff_member_required
@@ -189,3 +205,32 @@ def delete_image_view(request, pk):
     obj.delete()
     messages.success(request, 'Η εικόνα διαγραφηκε!')
     return redirect(obj.post.get_edit_url())
+
+
+@staff_member_required
+def validate_post_image_update_view(request, pk):
+    obj = get_object_or_404(PostImage, id=pk)
+    form = PostImageForm(request.POST, request.FILES, instance=obj)
+    print('here')
+    if form.is_valid():
+        print('form is ok')
+        form.save()
+        messages.success(request, 'Η εικονα επεξεργάστηκε επιτυχώς')
+    else:
+        messages.warning(request, form.errors)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@staff_member_required
+def ajax_image_modal_view(request, pk):
+    obj = get_object_or_404(PostImage, id=pk)
+    form = PostImageForm(instance=obj)
+    data = dict()
+    data['result'] = render_to_string('blog/dashboard/ajax_modal.html',
+                                      request=request,
+                                      context={
+                                          'form_title': obj,
+                                          'form': form,
+                                          'form_action': obj.get_validate_url()
+                                      })
+    return JsonResponse(data)

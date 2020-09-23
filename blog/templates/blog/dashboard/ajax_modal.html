@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" class="form" action="{{ form_action }}">
+        <form method="post" class="form" action="{{ form_action }}" enctype="multipart/form-data">
             {% csrf_token %}
             <p>hey you</p>
             {{ form }}

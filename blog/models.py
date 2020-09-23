@@ -73,13 +73,14 @@ class PostImage(models.Model):
     image = models.ImageField(upload_to=upload_product_photo)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='my_images')
 
-
-
     def __str__(self):
         return f'{self.post} - {self.id}'
 
     def get_delete_url(self):
         return reverse('dashboard_blog:delete_image_view', kwargs={'pk': self.id})
+
+    def get_validate_url(self):
+        return reverse('dashboard_blog:validate_update_post_image', kwargs={'pk': self.id})
 
 
 @receiver(post_save, sender=Post)
