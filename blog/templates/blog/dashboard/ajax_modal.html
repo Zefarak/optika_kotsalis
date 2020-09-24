@@ -10,7 +10,6 @@
       <div class="modal-body">
         <form method="post" class="form" action="{{ form_action }}" enctype="multipart/form-data">
             {% csrf_token %}
-            <p>hey you</p>
             {{ form }}
             <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> </button>
         </form>

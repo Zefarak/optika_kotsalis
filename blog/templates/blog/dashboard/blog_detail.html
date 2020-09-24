@@ -8,7 +8,6 @@
                     <div class="page-body">
                         <div class="row">
                             <div class="col-12">
-
                             </div>
                         </div>
 
@@ -22,6 +21,8 @@
                                             {{ form }}
                                             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> </button>
                                         </form>
+                                        <br> <hr>
+                                        <a href="{{ object.get_delete_url }}" class="btn btn-danger">Διαγραφη</a>
                                     </div>
                                 </div>
                             </div>
@@ -223,6 +224,7 @@
             $.ajax({
                 method: 'get',
                 url: url,
+                dataType: 'json',
 
                 success: function (data) {
                     $('.modal_area').html(data.result);

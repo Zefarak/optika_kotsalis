@@ -65,7 +65,7 @@ class Post(models.Model):
         return reverse('dashboard_blog:post_update', kwargs={'pk': self.id})
 
     def get_delete_url(self):
-        return reverse('dashboard_blog:post_delete', kwargs={'pk', self.id})
+        return reverse('dashboard_blog:post_delete', kwargs={'pk': self.id})
 
 
 class PostImage(models.Model):

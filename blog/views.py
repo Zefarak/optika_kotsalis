@@ -102,6 +102,7 @@ class DashboardBlogUpdateView(UpdateView):
 def post_delete_view(request, pk):
     instance = get_object_or_404(Post, id=pk)
     instance.delete()
+    messages.warning(request, 'Το αρθρο διαγραφηκε!')
     return redirect(reverse('dashboard_blog:post_list'))
 
 
@@ -116,7 +117,7 @@ def ajax_update_category_view(request, pk):
                                     'form': form,
                                     'form_title': f'Επεξεργασια {obj.title}',
                                     'delete_url': obj.get_delete_url(),
-                                    'action_url': obj.get_update_url(),
+                                    'form_action': obj.get_update_url(),
 
                                 })
     data['result'] = response
@@ -136,6 +137,7 @@ def validate_category_creation_view(request):
 
 def validate_category_edit_or_delete_view(request, pk, action):
     obj = get_object_or_404(Category, id=pk)
+    print('i am herre')
     if action == 'delete':
         obj.delete()
         messages.warning(request, f'H Κατηγορια {obj.title} διαγράφηκε.')
