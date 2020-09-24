@@ -131,7 +131,7 @@
                                                 <tr>
                                                     <td>{{ tag.id }}</td>
                                                     <td>{{ tag }}</td>
-                                                    <td><button type="button" class="btn btn-primary handle_tag" data-href="">
+                                                    <td><button type="button" class="btn btn-primary handle_category" data-href="{% url 'dashboard_blog:ajax_update_tag' tag.id %}">
                                                         <i class="fa fa-edit"></i>
                                                     </button> </td>
                                                 </tr>

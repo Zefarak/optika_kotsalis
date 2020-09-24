@@ -4,6 +4,9 @@ from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
+
 from .models import Contact
 from .tables import ContactTable
 from .forms import ContactForm, ContactFrontEndForm
@@ -45,6 +48,19 @@ class ContactUpdateView(UpdateView):
 def validate_frontend_contact_form_view(request):
     contact_form = ContactFrontEndForm(request.POST or None)
     if contact_form.is_valid():
-        contact_form.save()
+        obj = contact_form.save()
+        send_mail(
+            obj.name,
+            obj.message,
+            obj.email,
+            [settings.SITE_EMAIL],
+            fail_silently=True
+
+
+
+        )
         messages.success(request, 'Το μηνυμά σας εστάλει, θα επικοινωνήσουμε το συντομότερο δυνατόν.')
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+

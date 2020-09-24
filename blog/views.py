@@ -152,15 +152,22 @@ def validate_category_edit_or_delete_view(request, pk, action):
 
 @staff_member_required
 def ajax_update_tag_view(request, pk):
+
     obj = get_object_or_404(Tags, id=pk)
     form = TagForm(instance=obj)
     data = {}
     data['result'] = render_to_string('blog/dashboard/ajax_modal.html',
+                                      request=request,
                                       context={
                                           'form': form,
                                           'form_title': f'Επεξεργασια {obj.title}',
-                                          'action_url': '',
-                                          'delete_url': ''
+                                          'form_action': reverse('dashboard_blog:validate_tag_edit_or_update',
+                                                                kwargs={'pk': obj.id,
+                                                                        'action': 'update'}
+                                                                ),
+                                          'delete_url': reverse('dashboard_blog:validate_tag_edit_or_update',
+                                                                kwargs={'pk': obj.id,
+                                                                        'action': 'delete'})
                                       })
     return JsonResponse(data)
 

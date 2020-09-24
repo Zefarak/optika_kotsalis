@@ -14,9 +14,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
-PRODUCTION = False
-REAl_DB = False
+DEBUG = False
+PRODUCTION = True
+REAl_DB = True
 
 if PRODUCTION:
     ALLOWED_HOSTS = ['optikakotsalis.herokuapp.com', 'www.optikakotsalis.gr']
@@ -223,7 +223,7 @@ EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = config('SENDGRID_API_KEY')
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 SENDGRID_ECHO_TO_STDOUT = True
-SITE_EMAIL = 'kots_d@hotmail.com'
+SITE_EMAIL = 'kots_d@hotmail.com' if PRODUCTION else 'christosstath10@gmail.com'
 
 
 TINYMCE_DEFAULT_CONFIGdfgfg = {

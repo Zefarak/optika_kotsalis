@@ -27,6 +27,14 @@
 <section class="section-b-space blog-page ratio2_3">
     <div class="container">
         <div class="row">
+            {% if object_list.count == 0 %}
+            <div class="col-3" style="background-color: white"></div>
+            <div class="col-7" style="background-color: white">
+                <img src="{% static 'frontend/my_assets/under-construction.jpeg' %}">
+            </div>
+                <div class="col-2" style="background-color: white"></div>
+            <br />
+        {% else %}
             <div class="col-12">
                 {% for post in object_list %}
                     <div class="row blog-media">
@@ -59,6 +67,7 @@
                 {% endfor %}
 
             </div>
+        {% endif %}
         </div>
     </div>
 </section>
