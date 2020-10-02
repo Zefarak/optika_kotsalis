@@ -17,6 +17,9 @@ class Contact(models.Model):
     phone_number = models.CharField(max_length=10, blank=True, verbose_name='Τηλέφωνο')
     message = models.TextField(verbose_name='Μήνυμα *')
 
+    class Meta:
+        ordering = ['is_readed', '-timestamp']
+
     def __str__(self):
         return self.email
 

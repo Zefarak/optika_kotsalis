@@ -14,8 +14,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
-PRODUCTION = True
+DEBUG = True
+PRODUCTION = False
 REAl_DB = True
 
 if PRODUCTION:
