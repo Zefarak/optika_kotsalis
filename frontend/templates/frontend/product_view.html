@@ -172,11 +172,11 @@
                                 <tbody>
                                 <tr>
                                     <td>Brand:</td>
-                                    <td>{% if object.brand == 'None'%}{{ object.brand|default_if_none:'---' }} {% else %}-- {% endif %}</td>
+                                    <td>{% if object.brand == 'None'%}{{ object.brand|default_if_none:'---' }} {% else %}{{ object.brand }} {% endif %}</td>
                                 </tr>
                                 <tr>
                                     <td>Χρωμα:</td>
-                                    <td>{% if object.color == 'None'%}{{ object.color|default_if_none:'---' }} {% else %}-- {% endif %}</td>
+                                    <td>{% if object.color == 'None'%}{{ object.color|default_if_none:'---' }} {% else %}{{ object.color }} {% endif %}</td>
                                 </tr>
 
                                 </tbody>
