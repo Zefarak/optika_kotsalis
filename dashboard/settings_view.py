@@ -153,7 +153,7 @@ class BrandListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         queryset_table = BrandTable(self.object_list)
-        RequestConfig(self.request).configure(queryset_table)
+        RequestConfig(self.request, paginate={"per_page": self.paginate_by}).configure(queryset_table)
         page_title, create_url, delete_url = 'Brands', reverse('dashboard:brand_create_view'), reverse('dashboard:home')
         search_filter, active_filter = True, True
         context.update(locals())
