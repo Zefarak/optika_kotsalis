@@ -172,7 +172,9 @@
                                 <tbody>
                                 <tr>
                                     <td>Brand:</td>
-                                    <td>{% if object.brand == 'None'%}{{ object.brand|default_if_none:'---' }} {% else %}{{ object.brand }} {% endif %}</td>
+                                    <td>{% if object.brand == 'None'%}{{ object.brand|default_if_none:'---' }} {% else %}
+                                        <a href="{{ object.brand.get_absolute_url }}">{{ object.brand }}</a>
+                                    {% endif %}</td>
                                 </tr>
                                 <tr>
                                     <td>Χρωμα:</td>
