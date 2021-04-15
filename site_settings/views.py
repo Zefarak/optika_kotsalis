@@ -281,7 +281,7 @@ class SeoDataCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(SeoDataCreateView, self).get_context_data(**kwargs)
-        form_title, back_url='',''
+        form_title, back_url ='',''
         context.update(locals())
         return context
 
@@ -310,18 +310,16 @@ class SeoDataEditView(UpdateView):
 
 @method_decorator(staff_member_required, name='dispatch')
 class InstagramImageListView(ListView):
-    template_name = 'site_settings/list_view.html'
-    model = SeoDataModel
-
-    def get_queryset(self):
-        qs = InstagramImage.objects.all()
-        return qs
+    template_name = 'dashboard/list_page.html'
+    model = InstagramImage
+    queryset = InstagramImage.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        page_title, back_url = 'Instagram Image', ''
-        create_url = ''
-        queryset_table = InstagramImage(self.object_list)
+        page_title, back_url = 'Instagram Image', reverse('site_settings:dashboard')
+        create_url = reverse('site_settings:instagram-image-create')
+        back_url = reverse('site_settings:dashboard')
+        queryset_table = InstagramImageTable(self.object_list)
         RequestConfig(self.request).configure(queryset_table)
         context.update(locals())
         return context
@@ -330,13 +328,13 @@ class InstagramImageListView(ListView):
 @method_decorator(staff_member_required, name='dispatch')
 class InstagramImageCreateView(CreateView):
     template_name = 'site_settings/form.html'
-    model = SeoDataModel
-    form_class = SeoDataForm
-    success_url = ''
+    model = InstagramImage
+    form_class = InstagramImageForm
+    success_url = reverse_lazy('site_settings:instagram-image-list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        form_title, back_url = 'Create Instagram Image', ''
+        form_title, back_url = 'Create Instagram Image', self.success_url
         context.update(locals())
         return context
 
@@ -348,13 +346,15 @@ class InstagramImageCreateView(CreateView):
 @method_decorator(staff_member_required, name='dispatch')
 class InstagramImageEditView(UpdateView):
     template_name = 'site_settings/form.html'
-    model = SeoDataModel
-    form_class = SeoDataForm
-    success_url = ''
+    model = InstagramImage
+    form_class = InstagramImageForm
+    queryset = InstagramImage.objects.all()
+    success_url = reverse_lazy('site_settings:instagram-image-list')
 
     def get_context_data(self, **kwargs):
-        context = super(self).get_context_data(**kwargs)
-        form_title, back_url = '', ''
+        context = super().get_context_data(**kwargs)
+        form_title, back_url = self.object, self.success_url
+        delete_url = self.object.get_delete_url()
         context.update(locals())
         return context
 
@@ -363,4 +363,9 @@ class InstagramImageEditView(UpdateView):
         return super().form_valid(form)
 
 
+@staff_member_required
+def delete_instagram_image_view(request, pk):
+    obj = get_object_or_404(InstagramImage, id=pk)
+    obj.delete()
+    return redirect(reverse('site_settings:instagram-image-list'))
 

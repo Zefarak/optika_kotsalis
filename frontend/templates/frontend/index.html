@@ -222,77 +222,26 @@
 </section>
 Parallax banner end -->
 
-        <!-- instagram section -->
+
+
+    <!-- instagram section -->
 <section style="background-color:white;" class="instagram ratio_square">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 p-0">
                 <h2 class="title-borderless"># instagram</h2>
                 <div class="slide-7 no-arrow slick-instagram">
+                    {% for photo in instagram_qs %}
                     <div>
                         <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
                             <div class="instagram-box">
-                                <img alt="" src="{% static 'frontend/demo_images/insta_1.jpg' %}" class="bg-img" style="width:100%">
+                                <img alt="" src="{{ photo.image.url }}" class="bg-img" style="width:100%">
                                 <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                             </div>
                         </a>
                     </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta7.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta_2.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta_3.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta_4.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta_5.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta_6.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta_1.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">
-                            <div class="instagram-box"><img alt="" src="{% static 'frontend/demo_images/insta_1.jpg' %}" class="bg-img" style="width:100%">
-                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            </div>
-                        </a>
-                    </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>

@@ -6,6 +6,8 @@ from .views import (DashboardView,
                     BannerListView, BannerCreateView, BannerUpdateView, banner_delete_view,
                     company_edit_view,
                     SeoDataCreateView, SeoDataEditView, SeoDataListView,
+                    InstagramImageListView, InstagramImageEditView, InstagramImageCreateView,
+                    delete_instagram_image_view
                     )
 
 
@@ -37,4 +39,10 @@ urlpatterns = [
     path('seo-data-list/', SeoDataListView.as_view(), name='seo_data_list'),
     path('seo-data-create/', SeoDataCreateView.as_view(), name='seo_data_create'),
     path('sep-data-update/<int:pk>/', SeoDataEditView.as_view(), name='seo_data_update'),
+
+    path('instagram-image-list/', InstagramImageListView.as_view(), name='instagram-image-list'),
+    path('instagram-image/edit/<int:pk>/', InstagramImageEditView.as_view(), name='instagram-image-edit'),
+    path('instagram-image/create/', InstagramImageCreateView.as_view(), name='instagram-image-create'),
+    path('instagram-image/delete/<int:pk>/', delete_instagram_image_view, name='instagram-image-delete'),
+
 ]

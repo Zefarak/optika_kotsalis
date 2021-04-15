@@ -65,6 +65,7 @@ class SeoDataTable(tables.Table):
         model = SeoDataModel
         fields = ['choice' ,'action']
 
+
 class InstagramImageTable(tables.Table):
     action = tables.TemplateColumn(
         "<a href='{{ record.get_edit_url }}' class='btn btn-primary btn-round'><i class='fa fa-edit'></a>",

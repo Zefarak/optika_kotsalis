@@ -226,8 +226,17 @@ class SeoDataModel(models.Model):
 
 
 class InstagramImage(models.Model):
-    timestamp = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True, help_text='600*600', verbose_name='Image 600*600')
     image = models.ImageField(upload_to='instagram_photos/')
 
     def __str__(self):
-        return self.id
+        return f'Photo {self.id}'
+
+    def get_absolute_url(self):
+        return reverse('site_settings:instagram-image-edit', kwargs={'pk': self.id})
+
+    def get_delete_url(self):
+        return reverse('site_settings:instagram-image-delete', kwargs={'pk': self.id})
+
+    def get_edit_url(self):
+        return reverse('site_settings:instagram-image-edit', kwargs={'pk': self.id})

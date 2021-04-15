@@ -8,7 +8,7 @@ from catalogue.product_details import Brand
 from catalogue.product_attritubes import Attribute, Characteristics, ProductCharacteristics, CharacteristicsValue
 from catalogue.models import Product
 
-from site_settings.models import Banner
+from site_settings.models import Banner, InstagramImage
 from .mixins import ListViewMixin
 from .tools import category_and_brands_filter_data
 from cart.forms import ProductCartForm
@@ -32,6 +32,7 @@ class HomepageView(TemplateView):
         only_info_products = Product.my_query.only_info_products()
         new_products = Product.my_query.index_new_products()
         offers = Product.my_query.products_with_offer()[:4]
+        instagram_qs = InstagramImage.objects.all()[:7]
         brands = Brand.objects.filter(active=True)
         context.update(locals())
         return context
