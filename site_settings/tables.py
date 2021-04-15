@@ -1,5 +1,5 @@
 import django_tables2 as tables
-from .models import PaymentMethod, Shipping, SeoDataModel
+from .models import PaymentMethod, Shipping, SeoDataModel, InstagramImage
 
 
 class PaymentMethodTable(tables.Table):
@@ -65,3 +65,16 @@ class SeoDataTable(tables.Table):
         model = SeoDataModel
         fields = ['choice' ,'action']
 
+class InstagramImageTable(tables.Table):
+    action = tables.TemplateColumn(
+        "<a href='{{ record.get_edit_url }}' class='btn btn-primary btn-round'><i class='fa fa-edit'></a>",
+        orderable=False,
+    )
+    tag_image = tables.TemplateColumn(
+        "<img class='img-thumbnail' height='200px' width='200px' src='{{ record.image.url }}' />", orderable=False
+    )
+
+    class Meta:
+        model = InstagramImage
+        template_name = 'django_tables2/bootstrap.html'
+        fields = ['tag_image', 'timestamp', 'action']

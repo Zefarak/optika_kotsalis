@@ -225,4 +225,9 @@ class SeoDataModel(models.Model):
         return self.get_choice_display()
 
 
+class InstagramImage(models.Model):
+    timestamp = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='instagram_photos/')
 
+    def __str__(self):
+        return self.id

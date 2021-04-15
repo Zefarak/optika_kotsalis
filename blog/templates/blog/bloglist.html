@@ -53,7 +53,7 @@
                                         <li><i class="fa fa-heart"></i>Tags: {% for ele in post.tags.all %} {{ tag }} {% endfor %}</li>
 
                                     </ul>
-                                    <p>{{ post.text|truncatechars:50 }}</p>
+                                    <p>{{ post.text|truncatechars:50|safe }}</p>
                                 </div>
                             </div>
                         </div>

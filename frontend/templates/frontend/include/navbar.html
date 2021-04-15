@@ -17,9 +17,12 @@
                 <div class="col-lg-6 text-right">
                     <ul class="header-dropdown">
                          <li class="mobile-account" style="text-decoration:none">
-                             <a target="_blank"  style="text-decoration:none;color:#999" href="https://app.cloudpano.com/tours/A6BKruRyU?fbclid=IwAR1fSEk5638x4xiEue4iuboT5SI7ybcVhvDX5-sNfNgJEC556h-SoiR8JxQ">
-                                 </i> Δείτε το κατάστημα  σε <span style="color: pink;"> 3D </span>
+                             <a  style="text-decoration:none;color:#999" href="{% url 'contact_view' %}">
+                                 </i>  <span style="font-weight: bold"> Επικοινωνία </span>
                              </a>
+
+                        </li>
+                        <li class="mobile-account" style="text-decoration:none">
                             <a style="text-decoration:none;color:#999" href="{% url 'wishlist' %}"><i class="fa fa-heart" aria-hidden="true"></i> wishlist</a>
                         </li>
                         {% if request.user.is_authenticated %}
@@ -61,6 +64,7 @@
                                     <ul id="sub-menu" class="sm pixelstrap sm-vertical">
                                         <li><a target="_blank" href="https://www.facebook.com/optikakotsalis/">Βρειτε μας στο Facebook</a></li>
                                         <li><a target="_blank" href="https://www.instagram.com/optikakotsalis/?hl=el">Βρειτε μας στο Instagram</a></li>
+                                        <li><a target="_blank" href="{% url 'contact_view' %}">Επικοινωνία</a></li>
                                     </ul>
                                 </nav>
                             </div>

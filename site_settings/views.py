@@ -5,9 +5,9 @@ from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
 
 from .mixins import StoreBaseMixin, PaymentBaseMixin, ShippingBaseMixin
-from .models import Store, PaymentMethod, Shipping, Banner, Company, SeoDataModel
-from .forms import StoreForm, PaymentMethodForm, ShippingForm, BannerForm, CompanyForm, SeoDataForm
-from .tables import PaymentMethodTable, StoreTable, ShippingTable, BannerTable, SeoDataTable
+from .models import Store, PaymentMethod, Shipping, Banner, Company, SeoDataModel, InstagramImage
+from .forms import StoreForm, PaymentMethodForm, ShippingForm, BannerForm, CompanyForm, SeoDataForm, InstagramImageForm
+from .tables import PaymentMethodTable, StoreTable, ShippingTable, BannerTable, SeoDataTable, InstagramImageTable
 from django_tables2 import RequestConfig
 
 
@@ -306,6 +306,61 @@ class SeoDataEditView(UpdateView):
     def form_valid(self, form):
         form.save()
         return super(SeoDataEditView, self).form_valid(form)
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class InstagramImageListView(ListView):
+    template_name = 'site_settings/list_view.html'
+    model = SeoDataModel
+
+    def get_queryset(self):
+        qs = InstagramImage.objects.all()
+        return qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        page_title, back_url = 'Instagram Image', ''
+        create_url = ''
+        queryset_table = InstagramImage(self.object_list)
+        RequestConfig(self.request).configure(queryset_table)
+        context.update(locals())
+        return context
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class InstagramImageCreateView(CreateView):
+    template_name = 'site_settings/form.html'
+    model = SeoDataModel
+    form_class = SeoDataForm
+    success_url = ''
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        form_title, back_url = 'Create Instagram Image', ''
+        context.update(locals())
+        return context
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class InstagramImageEditView(UpdateView):
+    template_name = 'site_settings/form.html'
+    model = SeoDataModel
+    form_class = SeoDataForm
+    success_url = ''
+
+    def get_context_data(self, **kwargs):
+        context = super(self).get_context_data(**kwargs)
+        form_title, back_url = '', ''
+        context.update(locals())
+        return context
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
 
 
 

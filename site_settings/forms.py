@@ -1,5 +1,5 @@
 from django import forms
-from .models import Store, PaymentMethod, Shipping, Banner, Company, SeoDataModel
+from .models import Store, PaymentMethod, Shipping, Banner, Company, SeoDataModel, InstagramImage
 
 
 class BaseForm(forms.Form):
@@ -49,4 +49,11 @@ class SeoDataForm(BaseForm, forms.ModelForm):
 
     class Meta:
         model = SeoDataModel
+        fields = '__all__'
+
+
+class InstagramImageForm(BaseForm, forms.ModelForm):
+
+    class Meta:
+        model = InstagramImage
         fields = '__all__'
