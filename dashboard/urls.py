@@ -25,8 +25,9 @@ from .settings_view import (ProductClassView, ProductClassCreateView,
 from .dashboard_actions import copy_product_view
 from .ajax_views import (ajax_category_site, ajax_product_images, ajax_add_or_delete_attribute,
                          ajax_change_qty_on_attribute, ajax_products_discount_add, ajax_product_discount_delete,
-                         popup_category, popup_brand, popup_vendor, popup_color,ajax_different_color_product_view,
-                         ajax_product_calculate_view, ajax_related_products_view, ajax_order_by_view, ajax_presentation_filter_products_view
+                         popup_category, popup_brand, popup_vendor, popup_color, ajax_different_color_product_view,
+                         ajax_product_calculate_view, ajax_related_products_view, ajax_order_by_view, ajax_presentation_filter_products_view,
+                         ajax_search_products
                          )
 app_name = 'dashboard'
 
@@ -125,7 +126,8 @@ urlpatterns = [
 
 
     path('product-presentation/', ProductPresentationView.as_view(), name='product_presentation'),
-    path('ajax/product-presentation-filter/', ajax_presentation_filter_products_view, name='ajax_filter_products_presentation')
+    path('ajax/product-presentation-filter/', ajax_presentation_filter_products_view, name='ajax_filter_products_presentation'),
+    path('ajax-search-products/', ajax_search_products, name='ajax_search_products'),
 
 
 

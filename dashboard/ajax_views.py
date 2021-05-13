@@ -4,12 +4,17 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.contrib.admin.views.decorators import staff_member_required
+
+
 from catalogue.categories import Category
 from catalogue.models import Product, ProductPhotos
 from catalogue.product_attritubes import AttributeTitle, AttributeProductClass, Attribute
 from .models import ProductDiscount
 from catalogue.forms import WarehouseCategoryForm, BrandForm, VendorForm, ColorForm
 from site_settings.constants import CURRENCY
+from .tables import TableProduct
+
+from django_tables2 import RequestConfig
 
 
 @staff_member_required
@@ -275,5 +280,21 @@ def ajax_presentation_filter_products_view(request):
                                       request=request,
                                       context={
                                           'product_list': products
+                                      })
+    return JsonResponse(data)
+
+
+@staff_member_required
+def ajax_search_products(request):
+    products = Product.filters_data(request, Product.objects.all())
+    print('hey!', products.count())
+    data = dict()
+    queryset_table = TableProduct(products)
+    RequestConfig(request, paginate={"per_page": 30}).configure(queryset_table)
+    data['result'] = render_to_string('dashboard/ajax_calls/queryset_table.html',
+                                      request=request,
+                                      context={
+                                          'product_list': products,
+                                          'queryset_table': queryset_table
                                       })
     return JsonResponse(data)

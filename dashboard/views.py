@@ -73,6 +73,7 @@ class ProductsListView(ListView):
             active=True), Vendor.objects.all(), Brand.objects.all()
         #  reports
         reports, report_url = True, reverse('dashboard:ajax_product_analysis')
+        ajax_search_url = reverse('dashboard:ajax_search_products')
         context.update(locals())
         return context
 

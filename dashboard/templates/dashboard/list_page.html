@@ -88,18 +88,18 @@
 
 {% block extra_js %}
     <script>
-        $('#search_ajax').change(function(event){
-            event.preventDefault();
+        $('#search_ajax').keydown(function(event){
             const btn = $(this);
             const url = btn.attr('data-href');
             const search_name = btn.val();
+            console.log('works!', url, 'why');
             $.ajax({
                 method: 'GET',
                 dataType: 'json',
                 url: url + '?search_name='+ search_name,
 
                 success: function (data) {
-                    $('#result_table').html(data.result_table)
+                    $('#result_table').html(data.result)
                 }
             })
         })
